@@ -144,7 +144,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t border-border py-8 text-center text-sm text-muted-foreground">
         <p>© {new Date().getFullYear()} QuickFix Reykjavík. All rights reserved.</p>
-        <p className="mt-1">Reykjavík · Njardvík · Keflavík · Grindavík</p>
+        <p className="mt-1">Greater Reykjavík · Reykjanesbær</p>
       </footer>
     </div>
   );
