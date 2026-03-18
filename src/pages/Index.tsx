@@ -22,7 +22,7 @@ const Index = () => {
             QuickFix Reykjavík
           </h1>
           <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10 font-body">
-            Handyman Services & Repairs — Reykjavík, Njardvík, Keflavík & Grindavík
+            Handyman Services & Repairs — Reykjavík area & Reykjanesbær
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${PHONE_NUMBER}`}>
@@ -63,6 +63,7 @@ const Index = () => {
               "Move-out cleaning available",
             ]}
             delay={100}
+            highlighted
           />
           <ServiceCard
             icon={<Wrench className="w-8 h-8 text-primary" />}
@@ -122,7 +123,7 @@ const Index = () => {
           Ready to Get It Fixed?
         </h2>
         <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
-          Serving Reykjavík, Njardvík, Keflavík & Grindavík. Fast, reliable, affordable.
+          Serving the Greater Reykjavík area & Reykjanesbær. Fast, reliable, affordable.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href={`tel:${PHONE_NUMBER}`}>
@@ -143,7 +144,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t border-border py-8 text-center text-sm text-muted-foreground">
         <p>© {new Date().getFullYear()} QuickFix Reykjavík. All rights reserved.</p>
-        <p className="mt-1">Reykjavík · Njardvík · Keflavík · Grindavík</p>
+        <p className="mt-1">Greater Reykjavík · Reykjanesbær</p>
       </footer>
     </div>
   );
