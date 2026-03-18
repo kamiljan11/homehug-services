@@ -29,8 +29,8 @@ const ServiceCard = ({ icon, title, description, features, delay = 0, highlighte
       <p className={`mb-5 leading-relaxed ${highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>{description}</p>
       <ul className="space-y-2">
         {features.map((feature, i) => (
-          <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+          <li key={i} className={`flex items-center gap-2 text-sm ${highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+            <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${highlighted ? "bg-secondary" : "bg-accent"}`} />
             {feature}
           </li>
         ))}
