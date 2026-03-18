@@ -123,7 +123,7 @@ const Index = () => {
           Ready to Get It Fixed?
         </h2>
         <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
-          Serving Reykjavík, Njardvík, Keflavík & Grindavík. Fast, reliable, affordable.
+          Serving the Greater Reykjavík area & Reykjanesbær. Fast, reliable, affordable.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href={`tel:${PHONE_NUMBER}`}>
