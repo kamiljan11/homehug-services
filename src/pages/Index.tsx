@@ -63,6 +63,7 @@ const Index = () => {
               "Move-out cleaning available",
             ]}
             delay={100}
+            highlighted
           />
           <ServiceCard
             icon={<Wrench className="w-8 h-8 text-primary" />}
