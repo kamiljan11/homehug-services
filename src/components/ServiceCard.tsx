@@ -6,6 +6,7 @@ interface ServiceCardProps {
   description: string;
   features: string[];
   delay?: number;
+  highlighted?: boolean;
 }
 
 const ServiceCard = ({ icon, title, description, features, delay = 0 }: ServiceCardProps) => {
