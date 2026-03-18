@@ -22,7 +22,7 @@ const Index = () => {
             QuickFix Reykjavík
           </h1>
           <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10 font-body">
-            Handyman Services & Repairs — Reykjavík, Njardvík, Keflavík & Grindavík
+            Handyman Services & Repairs — Reykjavík area & Reykjanesbær
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${PHONE_NUMBER}`}>
