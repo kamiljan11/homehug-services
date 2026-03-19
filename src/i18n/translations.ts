@@ -202,12 +202,14 @@ export const translations = {
   // Before & After Gallery
   "gallery.subtitle": { en: "Our Work", pl: "Nasze prace", is: "Okkar verk" },
   "gallery.title": { en: "See the Difference", pl: "Zobacz różnicę", is: "Sjáðu muninn" },
-  "gallery.description": { en: "Real jobs, real results. Drag the slider to see before & after.", pl: "Prawdziwe zlecenia, prawdziwe efekty. Przeciągnij suwak, żeby zobaczyć przed i po.", is: "Raunveruleg verkefni, raunverulegar niðurstöður. Dragðu sleðann til að sjá fyrir og eftir." },
+  "gallery.description": { en: "Real jobs, real results. Tap to compare before & after.", pl: "Prawdziwe zlecenia, prawdziwe efekty. Kliknij, żeby porównać przed i po.", is: "Raunveruleg verkefni, raunverulegar niðurstöður. Smelltu til að bera saman fyrir og eftir." },
   "gallery.before": { en: "Before", pl: "Przed", is: "Fyrir" },
   "gallery.after": { en: "After", pl: "Po", is: "Eftir" },
   "gallery.wallRepair": { en: "Wall Patching & Painting", pl: "Łatanie i malowanie ścian", is: "Veggjaviðgerðir og málun" },
   "gallery.floorRepair": { en: "Floor Scratch Repair", pl: "Naprawa rys na podłodze", is: "Viðgerðir á gólfrispu" },
   "gallery.sofaClean": { en: "Kärcher Sofa Deep Clean", pl: "Czyszczenie sofy Kärcher", is: "Kärcher djúpþrif á sófa" },
+  "gallery.tapBefore": { en: "Tap to see before", pl: "Kliknij by zobaczyć przed", is: "Smelltu til að sjá fyrir" },
+  "gallery.tapAfter": { en: "Tap to see after", pl: "Kliknij by zobaczyć po", is: "Smelltu til að sjá eftir" },
 
   // Trust Stats
   "stats.jobsDone": { en: "Jobs completed", pl: "Wykonanych zleceń", is: "Verkefnum lokið" },
