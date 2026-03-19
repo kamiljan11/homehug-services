@@ -4,28 +4,28 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { WHATSAPP_URL } from "@/lib/contact";
 
 const cardHover = {
-  rest: { y: 0, boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)" },
-  hover: { y: -6, boxShadow: "0 20px 40px -12px rgb(0 0 0 / 0.15)", transition: { duration: 0.3, ease: "easeOut" } },
+  rest: { y: 0 },
+  hover: { y: -3, transition: { duration: 0.25, ease: "easeOut" } },
 };
 
 const iconFloat = {
   rest: { rotate: 0, scale: 1 },
-  hover: { rotate: [0, -10, 10, -5, 0], scale: 1.1, transition: { duration: 0.5 } },
+  hover: { rotate: 5, scale: 1.05, transition: { duration: 0.3 } },
 };
 
 const arrowSlide = {
   rest: { x: 0 },
-  hover: { x: 6, transition: { duration: 0.3, repeat: Infinity, repeatType: "reverse" as const } },
+  hover: { x: 4, transition: { duration: 0.25 } },
 };
 
 const stagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
+  visible: { transition: { staggerChildren: 0.08 } },
 };
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, y: 15 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 };
 
 const Services = () => {
