@@ -41,7 +41,7 @@ const Services = () => {
               <Shield className="w-7 h-7 text-primary-foreground" />
             </div>
             <h3 className="font-heading text-2xl font-bold mb-1">{t("services.depositSaver")}</h3>
-            <p className="text-secondary text-sm font-semibold mb-3">{t("services.fromPrice")} 8.000 ISK</p>
+            <p className="text-secondary text-sm font-semibold mb-3">{t("services.fromPrice")} 15.000 ISK</p>
             <p className="text-sm leading-relaxed mb-6 text-primary-foreground/75">
               {t("services.depositSaverDesc")}
             </p>
@@ -61,8 +61,8 @@ const Services = () => {
           {/* IKEA + Kärcher */}
           <div className="grid gap-6">
             {([
-              { icon: Wrench, title: t("services.ikeaAssembly"), desc: t("services.ikeaDesc"), features: tArray("services.ikeaFeatures"), price: "5.000 ISK" },
-              { icon: Droplets, title: t("services.karcherClean"), desc: t("services.karcherDesc"), features: tArray("services.karcherFeatures"), price: "7.000 ISK" },
+              { icon: Wrench, title: t("services.ikeaAssembly"), desc: t("services.ikeaDesc"), features: tArray("services.ikeaFeatures"), price: "8.000 ISK" },
+              { icon: Droplets, title: t("services.karcherClean"), desc: t("services.karcherDesc"), features: tArray("services.karcherFeatures"), price: "9.000 ISK" },
             ]).map((service, idx) => {
               const Icon = service.icon;
               return (
@@ -119,7 +119,7 @@ const Services = () => {
             </div>
             <div className="flex-1">
               <h3 className="font-heading text-xl font-bold mb-1 text-card-foreground">{t("services.quickFixes")}</h3>
-              <p className="text-primary text-sm font-semibold mb-3">{t("services.fromPrice")} 4.000 ISK</p>
+              <p className="text-primary text-sm font-semibold mb-3">{t("services.fromPrice")} 5.000 ISK</p>
               <p className="text-sm leading-relaxed mb-4 text-muted-foreground">
                 {t("services.quickFixesDesc")}
               </p>
