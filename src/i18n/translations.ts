@@ -219,6 +219,12 @@ export const translations = {
 
   // Google Reviews
   "testimonials.googleReviews": { en: "Google Reviews", pl: "Opinie Google", is: "Google umsagnir" },
+
+  // Service Area
+  "areas.title": { en: "Areas We Serve", pl: "Obsługiwane obszary", is: "Svæði sem við þjónustum" },
+
+  // Pricing
+  "services.fromPrice": { en: "From", pl: "Od", is: "Frá" },
 } as const;
 
 export type TranslationKey = keyof typeof translations;
