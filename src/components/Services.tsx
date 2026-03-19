@@ -46,12 +46,12 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">What We Offer</span>
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">What We Fix</span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
-            Our Services
+            Golden Hands at Your Service
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Professional handyman services for your home. Transparent pricing, quality work, photo updates after every job.
+            If it's broken, we fix it. If it needs building, we build it. Polish craftsmanship, lowest prices guaranteed.
           </p>
         </motion.div>
 
