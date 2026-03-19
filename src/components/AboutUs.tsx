@@ -17,44 +17,77 @@ const AboutUs = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <span className="inline-block bg-accent/20 text-accent-foreground border border-accent/30 text-sm font-medium px-4 py-1.5 rounded-full mb-4 backdrop-blur-sm">
+            <motion.span
+              className="inline-block bg-accent/20 text-accent-foreground border border-accent/30 text-sm font-medium px-4 py-1.5 rounded-full mb-4 backdrop-blur-sm"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 300, delay: 0.2 }}
+            >
               {t("about.badge")}
-            </span>
+            </motion.span>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-6">
               {t("about.title1")}
               <br />
               <span className="text-primary">{t("about.title2")}</span>
             </h2>
-            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-4">{t("about.p1")}</p>
-            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-4">{t("about.p2")}</p>
-            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">{t("about.p3")}</p>
+            <motion.p
+              className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-4"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              {t("about.p1")}
+            </motion.p>
+            <motion.p
+              className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-4"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
+              {t("about.p2")}
+            </motion.p>
+            <motion.p
+              className="text-muted-foreground text-base sm:text-lg leading-relaxed"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+            >
+              {t("about.p3")}
+            </motion.p>
           </motion.div>
 
-          <motion.div
-            className="grid grid-cols-2 gap-4"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+          <div className="grid grid-cols-2 gap-4">
             {traits.map((trait, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="bg-card border border-border rounded-xl p-5 hover:shadow-md transition-shadow"
+                className="bg-card border border-border rounded-xl p-5 group cursor-default"
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.1 + i * 0.12, type: "spring", stiffness: 200 }}
+                whileHover={{ y: -4, boxShadow: "0 12px 30px -8px rgb(0 0 0 / 0.12)" }}
               >
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-3">
+                <motion.div
+                  className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-3"
+                  whileHover={{ rotate: 10, scale: 1.15 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
                   <trait.icon className="w-5 h-5 text-primary" />
-                </div>
+                </motion.div>
                 <h3 className="font-heading font-bold text-foreground mb-1">{trait.label}</h3>
                 <p className="text-sm text-muted-foreground">{trait.desc}</p>
-              </div>
+              </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
