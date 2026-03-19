@@ -60,22 +60,26 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            <a
+            <motion.a
               href={`tel:${PHONE_NUMBER}`}
               className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-heading font-bold text-base px-8 py-4 rounded-xl hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/25"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.97 }}
             >
               <Phone className="w-5 h-5" />
               {t("hero.callNow")}
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-heading font-bold text-base px-8 py-4 rounded-xl hover:bg-accent/90 transition-all hover:shadow-lg hover:shadow-accent/25"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.97 }}
             >
               <MessageCircle className="w-5 h-5" />
               {t("hero.whatsappQuote")}
-            </a>
+            </motion.a>
           </motion.div>
         </div>
       </div>
