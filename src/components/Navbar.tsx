@@ -32,8 +32,8 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2.5">
-          <img src={logo} alt="QuickFix Iceland" className="w-11 h-11" />
+        <a href="#" className="flex items-center gap-1.5">
+          <img src={logo} alt="QuickFix Iceland" className="w-14 h-14" />
           <span className={`font-heading font-bold text-lg tracking-tight transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
             QuickFix Iceland
           </span>
