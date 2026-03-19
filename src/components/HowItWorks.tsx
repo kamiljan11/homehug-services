@@ -1,28 +1,16 @@
 import { motion } from "framer-motion";
 import { Camera, MessageCircle, CheckCircle } from "lucide-react";
-
-const steps = [
-  {
-    icon: Camera,
-    step: "01",
-    title: "Snap a Photo",
-    description: "Take a picture of what needs fixing — a scratched floor, broken hinge, or flat-pack box.",
-  },
-  {
-    icon: MessageCircle,
-    step: "02",
-    title: "Get a Quote",
-    description: "Send it via WhatsApp. We reply with a clear, honest price — no hidden fees, no surprises.",
-  },
-  {
-    icon: CheckCircle,
-    step: "03",
-    title: "We Fix It",
-    description: "Our handyman arrives, gets it done, and sends you before & after photos as proof.",
-  },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const HowItWorks = () => {
+  const { t } = useLanguage();
+
+  const steps = [
+    { icon: Camera, step: "01", title: t("how.step1Title"), description: t("how.step1Desc") },
+    { icon: MessageCircle, step: "02", title: t("how.step2Title"), description: t("how.step2Desc") },
+    { icon: CheckCircle, step: "03", title: t("how.step3Title"), description: t("how.step3Desc") },
+  ];
+
   return (
     <section id="how-it-works" className="py-24 bg-card border-y border-border">
       <div className="max-w-6xl mx-auto px-6">
@@ -32,12 +20,12 @@ const HowItWorks = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Simple Process</span>
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">{t("how.subtitle")}</span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-card-foreground mt-3 mb-4">
-            Easy as 1-2-3
+            {t("how.title")}
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            No complicated booking. Send a photo, get a price, we show up and fix it. That's it.
+            {t("how.description")}
           </p>
         </motion.div>
 

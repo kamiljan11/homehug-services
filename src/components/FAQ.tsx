@@ -1,36 +1,20 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-
-const faqs = [
-  {
-    q: "What areas do you cover?",
-    a: "We serve the Greater Reykjavík area (Reykjavík, Kópavogur, Hafnarfjörður, Garðabær, Mosfellsbær) and Reykjanesbær (Keflavík, Njardvík, Hafnir). Contact us if you're nearby — we may still be able to help!",
-  },
-  {
-    q: "How does the Deposit Saver service work?",
-    a: "Send us photos of any damage in your rental before you move out — scratched floors, wall holes, broken hinges, etc. We'll give you a clear quote and our handyman will fix everything in one visit. We can also coordinate directly with your landlord as an add-on service.",
-  },
-  {
-    q: "How quickly can you come?",
-    a: "Most jobs are scheduled within 1-3 days. For urgent requests, we'll do our best to come the same or next day — just let us know via WhatsApp.",
-  },
-  {
-    q: "How do I get a quote?",
-    a: "Simply take a photo of what needs fixing and send it to us via WhatsApp. We'll reply with a clear price — no obligation, no hidden fees.",
-  },
-  {
-    q: "Do I need to buy the materials?",
-    a: "For most small jobs, we bring everything needed. For larger jobs (e.g., specific paint colors, furniture), we'll let you know in advance what's needed.",
-  },
-  {
-    q: "What payment methods do you accept?",
-    a: "We accept bank transfer (millifærsla) and cash. Payment is due after the job is completed to your satisfaction.",
-  },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const FAQ = () => {
   const [open, setOpen] = useState<number | null>(null);
+  const { t } = useLanguage();
+
+  const faqs = [
+    { q: t("faq.q1"), a: t("faq.a1") },
+    { q: t("faq.q2"), a: t("faq.a2") },
+    { q: t("faq.q3"), a: t("faq.a3") },
+    { q: t("faq.q4"), a: t("faq.a4") },
+    { q: t("faq.q5"), a: t("faq.a5") },
+    { q: t("faq.q6"), a: t("faq.a6") },
+  ];
 
   return (
     <section id="faq" className="py-24 bg-card border-y border-border">
@@ -41,9 +25,9 @@ const FAQ = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">FAQ</span>
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">{t("faq.subtitle")}</span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-card-foreground mt-3 mb-4">
-            Frequently Asked Questions
+            {t("faq.title")}
           </h2>
         </motion.div>
 
