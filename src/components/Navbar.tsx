@@ -3,9 +3,7 @@ import { Phone, MessageCircle, Menu, X } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import LanguageSwitcher from "./LanguageSwitcher";
 import logo from "@/assets/logo.png";
-
-const PHONE_NUMBER = "+3547655175";
-const WHATSAPP_URL = `https://wa.me/${PHONE_NUMBER.replace("+", "")}?text=${encodeURIComponent("Hi! I need a quote for QuickFix services.")}`;
+import { WHATSAPP_URL } from "@/lib/contact";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
