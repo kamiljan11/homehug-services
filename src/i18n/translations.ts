@@ -222,6 +222,7 @@ export const translations = {
 
   // Service Area
   "areas.title": { en: "Areas We Serve", pl: "Obsługiwane obszary", is: "Svæði sem við þjónustum" },
+  "areas.other": { en: "Not in the list? Reach out — we may still be able to help in your area!", pl: "Nie ma Twojej okolicy? Napisz do nas — możliwe, że i tak możemy pomóc!", is: "Ekki á listanum? Hafðu samband — við getum kannski samt hjálpað!" },
 
   // Pricing
   "services.fromPrice": { en: "From", pl: "Od", is: "Frá" },

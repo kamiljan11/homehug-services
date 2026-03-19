@@ -45,6 +45,15 @@ const ServiceArea = () => {
               </motion.span>
             ))}
           </div>
+          <motion.p
+            className="mt-4 text-sm text-muted-foreground"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            {t("areas.other")}
+          </motion.p>
         </motion.div>
       </div>
     </section>
