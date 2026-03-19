@@ -108,7 +108,7 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="rounded-2xl p-8 bg-card shadow-lg hover:shadow-xl border border-border hover:-translate-y-1 transition-all duration-300"
+          className="rounded-2xl p-6 sm:p-8 bg-card shadow-lg hover:shadow-xl border border-border hover:-translate-y-1 transition-all duration-300"
         >
           <div className="flex flex-col md:flex-row gap-6">
             <div className="shrink-0">

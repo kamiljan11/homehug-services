@@ -30,9 +30,9 @@ const AboutUs = () => {
               <br />
               <span className="text-primary">{t("about.title2")}</span>
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-4">{t("about.p1")}</p>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-4">{t("about.p2")}</p>
-            <p className="text-muted-foreground text-lg leading-relaxed">{t("about.p3")}</p>
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-4">{t("about.p1")}</p>
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-4">{t("about.p2")}</p>
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">{t("about.p3")}</p>
           </motion.div>
 
           <motion.div

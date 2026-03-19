@@ -34,7 +34,7 @@ const Hero = () => {
           </motion.h1>
 
           <motion.p
-            className="text-lg text-primary-foreground/70 mb-10 max-w-lg leading-relaxed"
+            className="text-base sm:text-lg text-primary-foreground/70 mb-8 sm:mb-10 max-w-lg leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}

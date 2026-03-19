@@ -9,11 +9,11 @@ const CTASection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="contact" className="py-24 bg-primary relative overflow-hidden">
+    <section id="contact" className="py-16 sm:py-24 bg-primary relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary-foreground/5 rounded-full -translate-y-1/2 translate-x-1/3" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary-foreground/5 rounded-full translate-y-1/3 -translate-x-1/4" />
 
-      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
