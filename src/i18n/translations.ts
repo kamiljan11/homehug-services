@@ -86,9 +86,9 @@ export const translations = {
   },
   "how.step1Title": { en: "Snap a Photo", pl: "Zrób zdjęcie", is: "Taktu mynd" },
   "how.step1Desc": {
-    en: "Take a picture of what needs fixing — a scratched floor, broken hinge, or flat-pack box.",
-    pl: "Zrób zdjęcie tego, co wymaga naprawy — zarysowana podłoga, zepsuty zawias, czy paczka z IKEA.",
-    is: "Taktu mynd af því sem þarf að laga — rispað gólf, brotna lömur eða flatpakka kassa.",
+    en: "Take a picture of what needs fixing — a scratched floor, broken hinge, or flat-pack box. Add a short description of what happened and what you'd like done.",
+    pl: "Zrób zdjęcie tego, co wymaga naprawy — zarysowana podłoga, zepsuty zawias, czy paczka z IKEA. Dodaj krótki opis co się stało i czego oczekujesz.",
+    is: "Taktu mynd af því sem þarf að laga — rispað gólf, brotna lömur eða flatpakka kassa. Bættu við stuttri lýsingu á því sem gerðist og hvað þú vilt láta gera.",
   },
   "how.step2Title": { en: "Get a Quote", pl: "Dostaniesz wycenę", is: "Fáðu tilboð" },
   "how.step2Desc": {
