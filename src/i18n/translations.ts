@@ -9,7 +9,7 @@ export const translations = {
   "nav.getQuote": { en: "Get a Quote", pl: "Wycena", is: "Fá tilboð" },
 
   // Hero
-  "hero.badge": { en: "🔧 Polish Golden Hands in Iceland", pl: "🔧 Polskie Złote Ręce na Islandii", is: "🔧 Pólskir gullhendir á Íslandi" },
+  "hero.badge": { en: "Polish Golden Hands in Iceland", pl: "Polskie Złote Ręce na Islandii", is: "Pólskir gullhendir á Íslandi" },
   "hero.title1": { en: "Polish Handymen.", pl: "Polscy Fachowcy.", is: "Pólskir iðnaðarmenn." },
   "hero.title2": { en: "One Chat Away.", pl: "Napisz i gotowe.", is: "Eitt skilaboð í burtu." },
   "hero.title3": { en: "Quick, Solid & Reliable.", pl: "Szybko, solidnie i na pewno.", is: "Hratt, traust og áreiðanlegt." },
