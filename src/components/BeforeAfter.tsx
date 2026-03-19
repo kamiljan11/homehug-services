@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 import beforeWall from "@/assets/before-wall.jpg";
@@ -10,49 +11,89 @@ import beforeSofa from "@/assets/before-sofa.jpg";
 import afterSofa from "@/assets/after-sofa.jpg";
 
 const projects = [
-  {
-    before: beforeWall,
-    after: afterWall,
-    labelKey: "gallery.wallRepair" as const,
-  },
-  {
-    before: beforeFloor,
-    after: afterFloor,
-    labelKey: "gallery.floorRepair" as const,
-  },
-  {
-    before: beforeSofa,
-    after: afterSofa,
-    labelKey: "gallery.sofaClean" as const,
-  },
+  { before: beforeWall, after: afterWall, labelKey: "gallery.wallRepair" as const },
+  { before: beforeFloor, after: afterFloor, labelKey: "gallery.floorRepair" as const },
+  { before: beforeSofa, after: afterSofa, labelKey: "gallery.sofaClean" as const },
 ];
 
 const BeforeAfterCard = ({ before, after, label }: { before: string; after: string; label: string }) => {
-  const [showAfter, setShowAfter] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [sliderPos, setSliderPos] = useState(50);
+  const isDragging = useRef(false);
   const { t } = useLanguage();
+
+  const updatePosition = useCallback((clientX: number) => {
+    const rect = containerRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const x = clientX - rect.left;
+    const pct = Math.max(0, Math.min(100, (x / rect.width) * 100));
+    setSliderPos(pct);
+  }, []);
+
+  const handlePointerDown = useCallback((e: React.PointerEvent) => {
+    isDragging.current = true;
+    (e.target as HTMLElement).setPointerCapture(e.pointerId);
+    updatePosition(e.clientX);
+  }, [updatePosition]);
+
+  const handlePointerMove = useCallback((e: React.PointerEvent) => {
+    if (!isDragging.current) return;
+    updatePosition(e.clientX);
+  }, [updatePosition]);
+
+  const handlePointerUp = useCallback(() => {
+    isDragging.current = false;
+  }, []);
 
   return (
     <div className="rounded-2xl overflow-hidden shadow-lg border border-border bg-card">
       <div
-        className="relative aspect-square cursor-pointer select-none"
-        onClick={() => setShowAfter(!showAfter)}
+        ref={containerRef}
+        className="relative aspect-[4/5] cursor-col-resize select-none touch-none overflow-hidden"
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
       >
+        {/* After image (full, behind) */}
         <img
-          src={showAfter ? after : before}
-          alt={showAfter ? "After" : "Before"}
-          className="w-full h-full object-cover transition-all duration-500"
+          src={after}
+          alt="After"
+          className="absolute inset-0 w-full h-full object-cover"
+          draggable={false}
         />
-        {/* Label badge */}
-        <span className={`absolute top-3 left-3 text-xs font-semibold px-2.5 py-1 rounded-full backdrop-blur-sm z-20 transition-colors duration-300 ${
-          showAfter
-            ? "bg-accent/90 text-accent-foreground"
-            : "bg-foreground/70 text-primary-foreground"
-        }`}>
-          {showAfter ? t("gallery.after") : t("gallery.before")}
+
+        {/* Before image (clipped via clip-path) */}
+        <img
+          src={before}
+          alt="Before"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
+          draggable={false}
+        />
+
+        {/* Slider line */}
+        <div
+          className="absolute top-0 bottom-0 w-[3px] bg-white shadow-md z-10"
+          style={{ left: `${sliderPos}%`, transform: "translateX(-50%)" }}
+        />
+
+        {/* Slider handle */}
+        <div
+          className="absolute top-1/2 z-20 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center -translate-y-1/2"
+          style={{ left: `${sliderPos}%`, transform: `translateX(-50%) translateY(-50%)` }}
+        >
+          <ChevronLeft className="w-4 h-4 text-foreground/70 -mr-1" />
+          <ChevronRight className="w-4 h-4 text-foreground/70 -ml-1" />
+        </div>
+
+        {/* Before badge */}
+        <span className="absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full bg-foreground/70 text-primary-foreground backdrop-blur-sm z-20">
+          {t("gallery.before")}
         </span>
-        {/* Tap hint */}
-        <span className="absolute bottom-3 right-3 bg-foreground/50 text-primary-foreground text-[10px] font-medium px-2 py-0.5 rounded-full backdrop-blur-sm z-20">
-          {showAfter ? t("gallery.tapBefore") : t("gallery.tapAfter")}
+
+        {/* After badge */}
+        <span className="absolute top-3 right-3 text-xs font-semibold px-3 py-1 rounded-full bg-accent text-accent-foreground backdrop-blur-sm z-20">
+          {t("gallery.after")}
         </span>
       </div>
       <div className="p-4">
