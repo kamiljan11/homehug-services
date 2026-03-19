@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Shield, Wrench, Tv, Droplets, SlidersHorizontal, Hammer, ArrowRight, MessageCircle } from "lucide-react";
+import { Shield, Wrench, Hammer, Droplets, ArrowRight, MessageCircle } from "lucide-react";
 
 const WHATSAPP_URL = `https://wa.me/3541234567?text=${encodeURIComponent("Hi! I need a quote for QuickFix services.")}`;
 
