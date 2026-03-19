@@ -208,6 +208,8 @@ export const translations = {
   "gallery.wallRepair": { en: "Wall Patching & Painting", pl: "Łatanie i malowanie ścian", is: "Veggjaviðgerðir og málun" },
   "gallery.floorRepair": { en: "Floor Scratch Repair", pl: "Naprawa rys na podłodze", is: "Viðgerðir á gólfrispu" },
   "gallery.sofaClean": { en: "Kärcher Sofa Deep Clean", pl: "Czyszczenie sofy Kärcher", is: "Kärcher djúpþrif á sófa" },
+  "gallery.tapBefore": { en: "Tap to see before", pl: "Kliknij by zobaczyć przed", is: "Smelltu til að sjá fyrir" },
+  "gallery.tapAfter": { en: "Tap to see after", pl: "Kliknij by zobaczyć po", is: "Smelltu til að sjá eftir" },
 
   // Trust Stats
   "stats.jobsDone": { en: "Jobs completed", pl: "Wykonanych zleceń", is: "Verkefnum lokið" },
