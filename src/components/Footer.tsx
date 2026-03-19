@@ -26,7 +26,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>Deposit Saver</li>
               <li>IKEA & Furniture Assembly</li>
-              <li>TV Mounting</li>
+              <li>Kärcher Deep Clean</li>
               <li>Minor Plumbing</li>
               <li>Shelf & Curtain Rod Installation</li>
               <li>General Repairs</li>

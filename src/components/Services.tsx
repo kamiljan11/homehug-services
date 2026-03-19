@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Shield, Wrench, Tv, Droplets, SlidersHorizontal, Hammer, ArrowRight, MessageCircle } from "lucide-react";
+import { Shield, Wrench, Hammer, Droplets, ArrowRight, MessageCircle } from "lucide-react";
 
 const WHATSAPP_URL = `https://wa.me/3541234567?text=${encodeURIComponent("Hi! I need a quote for QuickFix services.")}`;
 
@@ -17,6 +17,13 @@ const services = [
     title: "IKEA Assembly",
     description: "From KALLAX to PAX — we build your furniture fast, right, and without the headache.",
     features: ["All IKEA furniture", "Shelf & curtain rod installation", "TV wall mounting", "Desk & wardrobe assembly"],
+    highlighted: false,
+  },
+  {
+    icon: Droplets,
+    title: "Kärcher Deep Clean",
+    description: "Professional deep cleaning for sofas, carpets, and upholstery using Kärcher equipment. Like-new results guaranteed.",
+    features: ["Sofa & armchair cleaning", "Carpet & rug deep cleaning", "Stain removal", "Pet odor treatment"],
     highlighted: false,
   },
   {
