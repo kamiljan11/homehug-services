@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2">
           <img src={logo} alt="QuickFix" className="w-10 h-10 brightness-150 drop-shadow-md" />
-          <span className={`font-heading font-bold text-lg transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
+          <span className={`font-heading font-bold text-xl transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
             QuickFix
           </span>
         </a>
