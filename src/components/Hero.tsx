@@ -22,7 +22,7 @@ const Hero = () => {
             transition={{ duration: 0.7 }}
           >
             <span className="inline-block bg-accent/20 text-accent-foreground border border-accent/30 text-sm font-medium px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm">
-              🔧 Serving Greater Reykjavík & Reykjanesbær
+              🔧 Polish Golden Hands in Iceland
             </span>
           </motion.div>
 
@@ -32,9 +32,11 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            Your Trusted
+            We Don't Speak
             <br />
-            <span className="text-secondary">Handyman</span> in Iceland
+            Perfect English.
+            <br />
+            <span className="text-secondary">We Speak Tools.</span>
           </motion.h1>
 
           <motion.p
@@ -43,7 +45,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            From deposit-saving repairs to IKEA assembly — snap a photo, get a quote, and we'll fix it. Fast, reliable, no hidden fees.
+            Polish handymen who fix everything — from deposit-saving repairs to IKEA assembly. Reliable, affordable, no surprises. Snap a photo, get a quote.
           </motion.p>
 
           <motion.div
