@@ -12,8 +12,8 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-24 bg-card border-y border-border">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="how-it-works" className="py-16 sm:py-24 bg-card border-y border-border">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
