@@ -21,13 +21,12 @@ const Hero = () => {
         <div className="max-w-2xl">
 
           <motion.div
-            className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-4 py-1.5 mb-6"
+            className="mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <img src="https://flagcdn.com/w40/pl.png" alt="Poland" className="w-5 h-auto rounded-sm" />
-            <span className="text-primary-foreground/90 text-sm font-medium">{t("hero.badge")}</span>
+            <img src="https://flagcdn.com/w80/pl.png" alt="Poland" className="w-10 h-auto rounded-sm shadow-md" />
           </motion.div>
 
           <motion.h1
