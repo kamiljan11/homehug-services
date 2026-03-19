@@ -22,15 +22,9 @@ const AboutUs = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <motion.span
-              className="inline-block bg-accent/20 text-accent-foreground border border-accent/30 text-sm font-medium px-4 py-1.5 rounded-full mb-4 backdrop-blur-sm"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ type: "spring", stiffness: 300, delay: 0.2 }}
-            >
+            <span className="inline-block bg-accent/20 text-accent-foreground border border-accent/30 text-sm font-medium px-4 py-1.5 rounded-full mb-4 backdrop-blur-sm">
               {t("about.badge")}
-            </motion.span>
+            </span>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-6">
               {t("about.title1")}
               <br />
