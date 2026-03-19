@@ -8,7 +8,7 @@ const TrustStats = () => {
   const stats = [
     { icon: Hammer, value: "300+", labelKey: "stats.jobsDone" as const },
     { icon: Users, value: "6", labelKey: "stats.yearsExp" as const },
-    { icon: Clock, value: "<15min", labelKey: "stats.replyTime" as const },
+    { icon: Clock, value: "<60min", labelKey: "stats.replyTime" as const },
     { icon: ThumbsUp, value: "98%", labelKey: "stats.satisfaction" as const },
   ];
 
