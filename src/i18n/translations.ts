@@ -225,6 +225,26 @@ export const translations = {
 
   // Pricing
   "services.fromPrice": { en: "From", pl: "Od", is: "Frá" },
+
+  // Hero - Free Quote
+  "hero.freeQuote": { en: "Free Quote — No Obligation", pl: "Darmowa wycena — bez zobowiązań", is: "Ókeypis tilboð — engin skuldbinding" },
+
+  // Footer - Hours & Privacy
+  "footer.hours": { en: "Working Hours", pl: "Godziny pracy", is: "Opnunartími" },
+  "footer.weekdays": { en: "Mon – Fri: 8:00 – 18:00", pl: "Pon – Pt: 8:00 – 18:00", is: "Mán – Fös: 8:00 – 18:00" },
+  "footer.saturday": { en: "Sat: 10:00 – 16:00", pl: "Sob: 10:00 – 16:00", is: "Lau: 10:00 – 16:00" },
+  "footer.sunday": { en: "Sun: Closed", pl: "Ndz: Zamknięte", is: "Sun: Lokað" },
+  "footer.privacy": { en: "Privacy Policy", pl: "Polityka prywatności", is: "Persónuverndarstefna" },
+
+  // Privacy Page
+  "privacy.title": { en: "Privacy Policy", pl: "Polityka Prywatności", is: "Persónuverndarstefna" },
+  "privacy.intro": { en: "QuickFix Reykjavík respects your privacy. This policy explains how we handle your personal data when you contact us for a quote or service.", pl: "QuickFix Reykjavík szanuje Twoją prywatność. Ta polityka wyjaśnia, jak przetwarzamy Twoje dane osobowe, gdy kontaktujesz się z nami w sprawie wyceny lub usługi.", is: "QuickFix Reykjavík virðir friðhelgi þína. Þessi stefna útskýrir hvernig við meðhöndlum persónuupplýsingar þínar þegar þú hefur samband vegna tilboðs eða þjónustu." },
+  "privacy.collectTitle": { en: "What We Collect", pl: "Co zbieramy", is: "Hvað söfnum við" },
+  "privacy.collectText": { en: "We only collect information you voluntarily provide: your name, phone number, photos of the repair, and location. We do not use cookies or tracking tools on this website.", pl: "Zbieramy tylko informacje, które dobrowolnie podajesz: imię, numer telefonu, zdjęcia naprawy i lokalizację. Nie używamy cookies ani narzędzi śledzących na tej stronie.", is: "Við söfnum aðeins upplýsingum sem þú gefur sjálfviljugur: nafn, símanúmer, myndir af viðgerð og staðsetningu. Við notum ekki vafrakökur eða rakningartæki á þessari vefsíðu." },
+  "privacy.useTitle": { en: "How We Use It", pl: "Jak to wykorzystujemy", is: "Hvernig notum við þær" },
+  "privacy.useText": { en: "Your data is used solely to provide you with a quote and deliver our handyman services. We never sell or share your data with third parties.", pl: "Twoje dane są wykorzystywane wyłącznie do przygotowania wyceny i świadczenia usług naprawczych. Nigdy nie sprzedajemy ani nie udostępniamy Twoich danych osobom trzecim.", is: "Gögnin þín eru aðeins notuð til að veita þér tilboð og veita iðnaðarþjónustu okkar. Við seljum aldrei eða deilum gögnum þínum með þriðja aðila." },
+  "privacy.contactTitle": { en: "Contact", pl: "Kontakt", is: "Hafa samband" },
+  "privacy.contactText": { en: "Questions about your data? Contact us at", pl: "Pytania dotyczące Twoich danych? Skontaktuj się z nami:", is: "Spurningar um gögnin þín? Hafðu samband við okkur:" },
 } as const;
 
 export type TranslationKey = keyof typeof translations;
