@@ -62,19 +62,14 @@ const BeforeAfterCard = ({ before, after, label }: { before: string; after: stri
           draggable={false}
         />
 
-        {/* Before image (clipped) */}
-        <div
-          className="absolute inset-0 overflow-hidden"
-          style={{ width: `${sliderPos}%` }}
-        >
-          <img
-            src={before}
-            alt="Before"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ width: containerRef.current ? `${containerRef.current.offsetWidth}px` : "100vw", maxWidth: "none" }}
-            draggable={false}
-          />
-        </div>
+        {/* Before image (clipped via clip-path) */}
+        <img
+          src={before}
+          alt="Before"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
+          draggable={false}
+        />
 
         {/* Slider line */}
         <div
