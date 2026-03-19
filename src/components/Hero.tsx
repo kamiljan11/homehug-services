@@ -45,7 +45,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            Polish handymen who fix everything — from deposit-saving repairs to IKEA assembly. Reliable, affordable, no surprises. Snap a photo, get a quote.
+            We're Polish handymen — the kind of guys who've been helping friends and family with repairs for years. We work fast, we work well, and we always find the cheapest solution. 💪
           </motion.p>
 
           <motion.div
