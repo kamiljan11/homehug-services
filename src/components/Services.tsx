@@ -61,8 +61,8 @@ const Services = () => {
           {/* IKEA + Kärcher */}
           <div className="grid gap-6">
             {([
-              { icon: Wrench, title: t("services.ikeaAssembly"), desc: t("services.ikeaDesc"), features: tArray("services.ikeaFeatures") },
-              { icon: Droplets, title: t("services.karcherClean"), desc: t("services.karcherDesc"), features: tArray("services.karcherFeatures") },
+              { icon: Wrench, title: t("services.ikeaAssembly"), desc: t("services.ikeaDesc"), features: tArray("services.ikeaFeatures"), price: "5.000 ISK" },
+              { icon: Droplets, title: t("services.karcherClean"), desc: t("services.karcherDesc"), features: tArray("services.karcherFeatures"), price: "7.000 ISK" },
             ]).map((service, idx) => {
               const Icon = service.icon;
               return (
