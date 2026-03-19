@@ -47,9 +47,9 @@ const Hero = () => {
 
           <motion.p
             className="text-base sm:text-lg text-primary-foreground/70 mb-8 sm:mb-10 max-w-lg leading-relaxed"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             {t("hero.description")}
           </motion.p>
