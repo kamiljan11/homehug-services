@@ -20,6 +20,13 @@ const services = [
     highlighted: false,
   },
   {
+    icon: Droplets,
+    title: "Kärcher Deep Clean",
+    description: "Professional deep cleaning for sofas, carpets, and upholstery using Kärcher equipment. Like-new results guaranteed.",
+    features: ["Sofa & armchair cleaning", "Carpet & rug deep cleaning", "Stain removal", "Pet odor treatment"],
+    highlighted: false,
+  },
+  {
     icon: Hammer,
     title: "Quick Fixes",
     description: "Small repairs that make a big difference. Send a photo and get a free quote within minutes.",
