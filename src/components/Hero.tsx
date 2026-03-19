@@ -63,8 +63,8 @@ const Hero = () => {
             <motion.a
               href={`tel:${PHONE_NUMBER}`}
               className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-heading font-bold text-base px-8 py-4 rounded-xl hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/25"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.97 }}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
             >
               <Phone className="w-5 h-5" />
               {t("hero.callNow")}
