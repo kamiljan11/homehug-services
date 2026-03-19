@@ -32,9 +32,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            We Don't Speak
+            We're Not Great
             <br />
-            Perfect English.
+            With Languages.
             <br />
             <span className="text-secondary">We Speak Tools.</span>
           </motion.h1>
