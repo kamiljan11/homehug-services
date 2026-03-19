@@ -13,15 +13,15 @@ const GoogleBadge = () => {
   return (
     <motion.div
       className="flex items-center justify-center gap-3 mb-10"
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ type: "spring", stiffness: 200 }}
+      transition={{ duration: 0.4 }}
     >
       <motion.div
         className="flex items-center gap-2.5 bg-card border border-border rounded-full px-5 py-2.5 shadow-sm"
-        whileHover={{ scale: 1.05, boxShadow: "0 8px 25px -5px rgb(0 0 0 / 0.1)" }}
-        transition={{ type: "spring", stiffness: 300 }}
+        whileHover={{ scale: 1.02 }}
+        transition={{ duration: 0.2 }}
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
           <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
@@ -33,15 +33,9 @@ const GoogleBadge = () => {
           <span className="font-heading font-bold text-card-foreground text-sm">4.9</span>
           <div className="flex gap-0.5">
             {[...Array(5)].map((_, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 + i * 0.1, type: "spring", stiffness: 500 }}
-              >
+              <div key={i}>
                 <Star className="w-3.5 h-3.5 fill-secondary text-secondary" />
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -78,32 +72,18 @@ const Testimonials = () => {
             <motion.div
               key={item.name}
               className="bg-card rounded-2xl p-8 shadow-md border border-border relative overflow-hidden group"
-              initial={{ opacity: 0, y: 30, rotateX: 5 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-              whileHover={{ y: -4, boxShadow: "0 20px 40px -12px rgb(0 0 0 / 0.12)" }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              whileHover={{ y: -2 }}
             >
-              <motion.div
-                className="absolute top-4 right-4 text-primary/10"
-                initial={{ scale: 0, rotate: -20 }}
-                whileInView={{ scale: 1, rotate: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 + i * 0.15, type: "spring" }}
-              >
+              <div className="absolute top-4 right-4 text-primary/10">
                 <Quote className="w-10 h-10" />
-              </motion.div>
+              </div>
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: item.rating }).map((_, j) => (
-                  <motion.div
-                    key={j}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 + i * 0.1 + j * 0.05 }}
-                  >
-                    <Star className="w-4 h-4 fill-secondary text-secondary" />
-                  </motion.div>
+                  <Star key={j} className="w-4 h-4 fill-secondary text-secondary" />
                 ))}
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6 relative z-10">"{item.text}"</p>

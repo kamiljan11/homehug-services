@@ -17,20 +17,14 @@ const AboutUs = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <motion.span
-              className="inline-block bg-accent/20 text-accent-foreground border border-accent/30 text-sm font-medium px-4 py-1.5 rounded-full mb-4 backdrop-blur-sm"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ type: "spring", stiffness: 300, delay: 0.2 }}
-            >
+            <span className="inline-block bg-accent/20 text-accent-foreground border border-accent/30 text-sm font-medium px-4 py-1.5 rounded-full mb-4 backdrop-blur-sm">
               {t("about.badge")}
-            </motion.span>
+            </span>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-6">
               {t("about.title1")}
               <br />
@@ -70,16 +64,16 @@ const AboutUs = () => {
               <motion.div
                 key={i}
                 className="bg-card border border-border rounded-xl p-5 group cursor-default"
-                initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.1 + i * 0.12, type: "spring", stiffness: 200 }}
-                whileHover={{ y: -4, boxShadow: "0 12px 30px -8px rgb(0 0 0 / 0.12)" }}
+                transition={{ duration: 0.35, delay: i * 0.08 }}
+                whileHover={{ y: -2 }}
               >
                 <motion.div
                   className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-3"
-                  whileHover={{ rotate: 10, scale: 1.15 }}
-                  transition={{ type: "spring", stiffness: 400 }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
                 >
                   <trait.icon className="w-5 h-5 text-primary" />
                 </motion.div>

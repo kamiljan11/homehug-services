@@ -27,7 +27,7 @@ const TrustStats = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
               >
-                <motion.div whileHover={{ scale: 1.15, rotate: 5 }} transition={{ type: "spring", stiffness: 300 }}>
+                <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
                   <Icon className="w-6 h-6 text-secondary mx-auto mb-2" />
                 </motion.div>
                 <p className="font-heading text-2xl sm:text-3xl font-bold text-primary-foreground">{stat.value}</p>

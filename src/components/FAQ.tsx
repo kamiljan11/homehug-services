@@ -36,11 +36,10 @@ const FAQ = () => {
             <motion.div
               key={i}
               className="bg-background rounded-xl border border-border overflow-hidden"
-              initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.07, type: "spring", stiffness: 200 }}
-              whileHover={{ scale: 1.01 }}
+              transition={{ duration: 0.3, delay: i * 0.05 }}
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}

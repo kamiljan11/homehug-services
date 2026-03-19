@@ -36,10 +36,10 @@ const HowItWorks = () => {
               <motion.div
                 key={item.step}
                 className="text-center relative group"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.2 }}
+                transition={{ duration: 0.4, delay: i * 0.12 }}
               >
                 {i < steps.length - 1 && (
                   <motion.div
@@ -53,16 +53,16 @@ const HowItWorks = () => {
                 )}
                 <motion.div
                   className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6 relative"
-                  whileHover={{ scale: 1.1, rotate: 5, backgroundColor: "hsl(var(--primary) / 0.2)" }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
                 >
                   <Icon className="w-9 h-9 text-primary" />
                   <motion.span
                     className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ type: "spring", delay: 0.3 + i * 0.2, stiffness: 500 }}
+                    transition={{ duration: 0.3, delay: 0.2 + i * 0.1 }}
                   >
                     {item.step}
                   </motion.span>

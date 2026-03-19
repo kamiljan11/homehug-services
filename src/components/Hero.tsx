@@ -22,9 +22,9 @@ const Hero = () => {
 
           <motion.div
             className="mb-6 flex items-center gap-3"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.5 }}
           >
             <img src="https://flagcdn.com/w80/pl.png" alt="Poland" className="w-10 h-auto rounded-sm shadow-md hidden sm:block" />
             <span className="bg-accent text-accent-foreground text-xs sm:text-sm font-bold px-3 py-1.5 rounded-full shadow-lg">
@@ -34,9 +34,9 @@ const Hero = () => {
 
           <motion.h1
             className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4 sm:mb-6"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
             {t("hero.title1")}
             <br />
@@ -47,24 +47,24 @@ const Hero = () => {
 
           <motion.p
             className="text-base sm:text-lg text-primary-foreground/70 mb-8 sm:mb-10 max-w-lg leading-relaxed"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             {t("hero.description")}
           </motion.p>
 
           <motion.div
             className="flex flex-col sm:flex-row gap-4"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
           >
             <motion.a
               href={`tel:${PHONE_NUMBER}`}
               className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-heading font-bold text-base px-8 py-4 rounded-xl hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/25"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.97 }}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
             >
               <Phone className="w-5 h-5" />
               {t("hero.callNow")}
@@ -74,8 +74,8 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-heading font-bold text-base px-8 py-4 rounded-xl hover:bg-accent/90 transition-all hover:shadow-lg hover:shadow-accent/25"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.97 }}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
             >
               <MessageCircle className="w-5 h-5" />
               {t("hero.whatsappQuote")}

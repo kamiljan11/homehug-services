@@ -39,8 +39,8 @@ const Navbar = () => {
             src={logo}
             alt="QuickFix Iceland"
             className="w-14 h-14"
-            whileHover={{ rotate: [0, -5, 5, 0] }}
-            transition={{ duration: 0.4 }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
           />
           <span className={`font-heading font-bold text-lg tracking-tight transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
             QuickFix Iceland
@@ -59,7 +59,7 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 + i * 0.08 }}
-              whileHover={{ y: -1 }}
+              whileHover={{ color: "hsl(var(--primary))" }}
             >
               {link.label}
             </motion.a>
@@ -70,8 +70,8 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="bg-accent text-accent-foreground text-sm font-semibold px-5 py-2 rounded-lg hover:bg-accent/90 transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
           >
             {t("nav.getQuote")}
           </motion.a>

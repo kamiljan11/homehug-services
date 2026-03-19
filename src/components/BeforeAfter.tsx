@@ -48,8 +48,8 @@ const BeforeAfterCard = ({ before, after, label }: { before: string; after: stri
   return (
     <motion.div
       className="rounded-2xl overflow-hidden shadow-lg border border-border bg-card"
-      whileHover={{ y: -4, boxShadow: "0 20px 40px -12px rgb(0 0 0 / 0.15)" }}
-      transition={{ duration: 0.3 }}
+      whileHover={{ y: -2 }}
+      transition={{ duration: 0.25 }}
     >
       <div
         ref={containerRef}
@@ -70,8 +70,8 @@ const BeforeAfterCard = ({ before, after, label }: { before: string; after: stri
         <motion.div
           className="absolute top-1/2 z-20 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center -translate-y-1/2"
           style={{ left: `${sliderPos}%`, transform: `translateX(-50%) translateY(-50%)` }}
-          animate={{ scale: [1, 1.1, 1] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ scale: [1, 1.05, 1] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
         >
           <ChevronLeft className="w-4 h-4 text-foreground/70 -mr-1" />
           <ChevronRight className="w-4 h-4 text-foreground/70 -ml-1" />
@@ -115,10 +115,10 @@ const BeforeAfter = () => {
           {projects.map((project, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
             >
               <BeforeAfterCard
                 before={project.before}
