@@ -3,12 +3,14 @@ import Hero from "@/components/Hero";
 import TrustStats from "@/components/TrustStats";
 import Services from "@/components/Services";
 import BeforeAfter from "@/components/BeforeAfter";
+import ServiceArea from "@/components/ServiceArea";
 import AboutUs from "@/components/AboutUs";
 import HowItWorks from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const Index = () => {
   return (
@@ -18,12 +20,14 @@ const Index = () => {
       <TrustStats />
       <Services />
       <BeforeAfter />
+      <ServiceArea />
       <AboutUs />
       <HowItWorks />
       <Testimonials />
       <FAQ />
       <CTASection />
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 };
