@@ -80,7 +80,7 @@ const Testimonials = () => {
             >
               <div className="absolute top-4 right-4 text-primary/10">
                 <Quote className="w-10 h-10" />
-              </motion.div>
+              </div>
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: item.rating }).map((_, j) => (
                   <motion.div
