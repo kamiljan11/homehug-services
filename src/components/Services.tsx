@@ -8,8 +8,8 @@ const Services = () => {
   const { t, tArray } = useLanguage();
 
   return (
-    <section id="services" className="py-24 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="services" className="py-16 sm:py-24 bg-muted/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
