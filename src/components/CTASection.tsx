@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Phone, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-const PHONE_NUMBER = "+3541234567";
+const PHONE_NUMBER = "+3547655175";
 const WHATSAPP_URL = `https://wa.me/${PHONE_NUMBER.replace("+", "")}?text=${encodeURIComponent("Hi! I need a quote for QuickFix services.")}`;
 
 const CTASection = () => {
