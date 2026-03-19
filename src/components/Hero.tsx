@@ -34,9 +34,9 @@ const Hero = () => {
           >
             Polish Handymen.
             <br />
-            <span className="text-secondary">Golden Hands.</span>
+            <span className="text-secondary">Built to Fix.</span>
             <br />
-            Cheapest Fix.
+            Cheapest Price.
           </motion.h1>
 
           <motion.p
