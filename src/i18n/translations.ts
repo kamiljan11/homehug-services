@@ -11,7 +11,7 @@ export const translations = {
   // Hero
   "hero.badge": { en: "🔧 Polish Golden Hands in Iceland", pl: "🔧 Polskie Złote Ręce na Islandii", is: "🔧 Pólskir gullhendir á Íslandi" },
   "hero.title1": { en: "Polish Handymen.", pl: "Polscy Fachowcy.", is: "Pólskir iðnaðarmenn." },
-  "hero.title2": { en: "Built to Fix.", pl: "Stworzeni do napraw.", is: "Skapaðir til að laga." },
+  "hero.title2": { en: "One Chat Away.", pl: "Napisz i gotowe.", is: "Eitt skilaboð í burtu." },
   "hero.title3": { en: "Quick, Solid & Reliable.", pl: "Szybko, solidnie i na pewno.", is: "Hratt, traust og áreiðanlegt." },
   "hero.description": {
     en: "We're the kind of guys who've been helping friends and family with repairs for years. We work fast, we work well, and we always find the cheapest solution. No upselling, no inflated quotes — just honest work. 💪",
