@@ -20,6 +20,16 @@ const Hero = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-32 w-full">
         <div className="max-w-2xl">
 
+          <motion.div
+            className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-4 py-1.5 mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <img src="https://flagcdn.com/w40/pl.png" alt="Poland" className="w-5 h-auto rounded-sm" />
+            <span className="text-primary-foreground/90 text-sm font-medium">{t("hero.badge")}</span>
+          </motion.div>
+
           <motion.h1
             className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 30 }}
