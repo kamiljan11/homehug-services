@@ -81,7 +81,8 @@ const Services = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-heading text-xl font-bold mb-2 text-card-foreground">{service.title}</h3>
+                      <h3 className="font-heading text-xl font-bold mb-1 text-card-foreground">{service.title}</h3>
+                      <p className="text-primary text-sm font-semibold mb-3">{t("services.fromPrice")} {service.price}</p>
                       <p className="text-sm leading-relaxed mb-4 text-muted-foreground">{service.desc}</p>
                       <ul className="space-y-1.5 mb-4">
                         {service.features.map((f, i) => (
