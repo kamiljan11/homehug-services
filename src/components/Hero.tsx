@@ -26,7 +26,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <img src="https://flagcdn.com/w80/pl.png" alt="Poland" className="w-10 h-auto rounded-sm shadow-md" />
+            <img src="https://flagcdn.com/w80/pl.png" alt="Poland" className="w-10 h-auto rounded-sm shadow-md hidden sm:block" />
             <span className="bg-accent text-accent-foreground text-xs sm:text-sm font-bold px-3 py-1.5 rounded-full shadow-lg">
               ✅ {t("hero.freeQuote")}
             </span>
