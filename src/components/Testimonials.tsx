@@ -35,7 +35,7 @@ const GoogleBadge = () => {
             {[...Array(5)].map((_, i) => (
               <div key={i}>
                 <Star className="w-3.5 h-3.5 fill-secondary text-secondary" />
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
