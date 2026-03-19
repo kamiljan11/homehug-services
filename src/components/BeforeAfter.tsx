@@ -1,4 +1,4 @@
-import { useRef, useState, useCallback, useEffect } from "react";
+import { useRef, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -46,7 +46,11 @@ const BeforeAfterCard = ({ before, after, label }: { before: string; after: stri
   }, []);
 
   return (
-    <div className="rounded-2xl overflow-hidden shadow-lg border border-border bg-card">
+    <motion.div
+      className="rounded-2xl overflow-hidden shadow-lg border border-border bg-card"
+      whileHover={{ y: -4, boxShadow: "0 20px 40px -12px rgb(0 0 0 / 0.15)" }}
+      transition={{ duration: 0.3 }}
+    >
       <div
         ref={containerRef}
         className="relative aspect-[4/5] cursor-col-resize select-none touch-none overflow-hidden"
@@ -54,15 +58,7 @@ const BeforeAfterCard = ({ before, after, label }: { before: string; after: stri
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
       >
-        {/* After image (full, behind) */}
-        <img
-          src={after}
-          alt="After"
-          className="absolute inset-0 w-full h-full object-cover"
-          draggable={false}
-        />
-
-        {/* Before image (clipped via clip-path) */}
+        <img src={after} alt="After" className="absolute inset-0 w-full h-full object-cover" draggable={false} />
         <img
           src={before}
           alt="Before"
@@ -70,28 +66,19 @@ const BeforeAfterCard = ({ before, after, label }: { before: string; after: stri
           style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
           draggable={false}
         />
-
-        {/* Slider line */}
-        <div
-          className="absolute top-0 bottom-0 w-[3px] bg-white shadow-md z-10"
-          style={{ left: `${sliderPos}%`, transform: "translateX(-50%)" }}
-        />
-
-        {/* Slider handle */}
-        <div
+        <div className="absolute top-0 bottom-0 w-[3px] bg-white shadow-md z-10" style={{ left: `${sliderPos}%`, transform: "translateX(-50%)" }} />
+        <motion.div
           className="absolute top-1/2 z-20 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center -translate-y-1/2"
           style={{ left: `${sliderPos}%`, transform: `translateX(-50%) translateY(-50%)` }}
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
           <ChevronLeft className="w-4 h-4 text-foreground/70 -mr-1" />
           <ChevronRight className="w-4 h-4 text-foreground/70 -ml-1" />
-        </div>
-
-        {/* Before badge */}
+        </motion.div>
         <span className="absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full bg-foreground/70 text-primary-foreground backdrop-blur-sm z-20">
           {t("gallery.before")}
         </span>
-
-        {/* After badge */}
         <span className="absolute top-3 right-3 text-xs font-semibold px-3 py-1 rounded-full bg-accent text-accent-foreground backdrop-blur-sm z-20">
           {t("gallery.after")}
         </span>
@@ -99,7 +86,7 @@ const BeforeAfterCard = ({ before, after, label }: { before: string; after: stri
       <div className="p-4">
         <p className="font-heading font-semibold text-card-foreground text-sm">{label}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -128,10 +115,10 @@ const BeforeAfter = () => {
           {projects.map((project, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
             >
               <BeforeAfterCard
                 before={project.before}

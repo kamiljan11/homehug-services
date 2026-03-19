@@ -35,21 +35,38 @@ const HowItWorks = () => {
             return (
               <motion.div
                 key={item.step}
-                className="text-center relative"
+                className="text-center relative group"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
+                transition={{ duration: 0.5, delay: i * 0.2 }}
               >
                 {i < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px border-t-2 border-dashed border-border" />
+                  <motion.div
+                    className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px border-t-2 border-dashed border-border"
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.4 + i * 0.2 }}
+                    style={{ originX: 0 }}
+                  />
                 )}
-                <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6 relative">
+                <motion.div
+                  className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6 relative"
+                  whileHover={{ scale: 1.1, rotate: 5, backgroundColor: "hsl(var(--primary) / 0.2)" }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
                   <Icon className="w-9 h-9 text-primary" />
-                  <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center">
+                  <motion.span
+                    className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ type: "spring", delay: 0.3 + i * 0.2, stiffness: 500 }}
+                  >
                     {item.step}
-                  </span>
-                </div>
+                  </motion.span>
+                </motion.div>
                 <h3 className="font-heading text-lg font-bold text-card-foreground mb-2">{item.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed max-w-xs mx-auto">{item.description}</p>
               </motion.div>
