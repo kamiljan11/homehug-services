@@ -40,7 +40,8 @@ const Services = () => {
             <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-primary-foreground/15">
               <Shield className="w-7 h-7 text-primary-foreground" />
             </div>
-            <h3 className="font-heading text-2xl font-bold mb-3">{t("services.depositSaver")}</h3>
+            <h3 className="font-heading text-2xl font-bold mb-1">{t("services.depositSaver")}</h3>
+            <p className="text-secondary text-sm font-semibold mb-3">{t("services.fromPrice")} 8.000 ISK</p>
             <p className="text-sm leading-relaxed mb-6 text-primary-foreground/75">
               {t("services.depositSaverDesc")}
             </p>
