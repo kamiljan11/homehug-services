@@ -13,7 +13,7 @@ const Hero = () => {
     <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroImg} alt="" className="w-full h-full object-cover object-[50%_30%] sm:object-center" />
+        <img src={heroImg} alt="" className="w-full h-full object-cover object-[50%_15%] sm:object-center" />
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/80 via-foreground/60 to-foreground/80" />
       </div>
 
