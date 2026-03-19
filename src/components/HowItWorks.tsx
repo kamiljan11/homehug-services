@@ -34,10 +34,10 @@ const HowItWorks = () => {
         >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">Simple Process</span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-card-foreground mt-3 mb-4">
-            How It Works
+            Easy as 1-2-3
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Three simple steps from problem to solution. No complicated booking, no waiting.
+            No complicated booking. Send a photo, get a price, we show up and fix it. That's it.
           </p>
         </motion.div>
 

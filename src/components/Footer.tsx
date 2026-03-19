@@ -16,7 +16,7 @@ const Footer = () => {
               <span className="font-heading font-bold text-lg text-primary-foreground">QuickFix Reykjavík</span>
             </div>
             <p className="text-sm leading-relaxed">
-              Professional handyman services for the Greater Reykjavík area and Reykjanesbær. Fast, reliable, and affordable.
+              Polish handymen serving Greater Reykjavík & Reykjanesbær. We fix everything — fast, reliable, best prices.
             </p>
           </div>
 

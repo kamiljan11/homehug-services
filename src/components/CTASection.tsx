@@ -18,10 +18,10 @@ const CTASection = () => {
           viewport={{ once: true }}
         >
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            Ready to Get It Fixed?
+            Something Broken? We'll Fix It.
           </h2>
           <p className="text-primary-foreground/70 mb-10 text-lg max-w-lg mx-auto">
-            Send us a photo on WhatsApp and get a free quote in minutes. No commitment, no hidden fees.
+            Polish golden hands at your service. Send a photo, get a free quote in minutes. Cheapest rates, honest work, no hidden fees.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
