@@ -32,11 +32,11 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            We're Not Great
+            Polish Handymen.
             <br />
-            With Languages.
+            <span className="text-secondary">Golden Hands.</span>
             <br />
-            <span className="text-secondary">We Speak Tools.</span>
+            Cheapest Fix.
           </motion.h1>
 
           <motion.p
@@ -45,7 +45,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            We're Polish handymen — the kind of guys who've been helping friends and family with repairs for years. We work fast, we work well, and we always find the cheapest solution. 💪
+            We're the kind of guys who've been helping friends and family with repairs for years. We work fast, we work well, and we always find the cheapest solution. No upselling, no inflated quotes — just honest work. 💪
           </motion.p>
 
           <motion.div
