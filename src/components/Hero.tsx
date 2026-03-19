@@ -3,9 +3,7 @@ import { Phone, MessageCircle, ArrowDown } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import heroImg from "@/assets/hero-handyman.jpg";
 import heroMobileImg from "@/assets/hero-handyman-mobile.jpg";
-
-const PHONE_NUMBER = "+3547655175";
-const WHATSAPP_URL = `https://wa.me/${PHONE_NUMBER.replace("+", "")}?text=${encodeURIComponent("Hi! I need a quote for QuickFix services.")}`;
+import { PHONE_NUMBER, WHATSAPP_URL } from "@/lib/contact";
 
 const Hero = () => {
   const { t } = useLanguage();
