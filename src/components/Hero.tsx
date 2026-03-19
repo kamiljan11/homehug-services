@@ -10,18 +10,18 @@ const Hero = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <img src={heroImg} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/80 via-foreground/60 to-foreground/80" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-32 w-full">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-32 w-full">
         <div className="max-w-2xl">
 
           <motion.h1
-            className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6"
+            className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
@@ -34,7 +34,7 @@ const Hero = () => {
           </motion.h1>
 
           <motion.p
-            className="text-lg text-primary-foreground/70 mb-10 max-w-lg leading-relaxed"
+            className="text-base sm:text-lg text-primary-foreground/70 mb-8 sm:mb-10 max-w-lg leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}

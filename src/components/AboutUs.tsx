@@ -13,9 +13,9 @@ const AboutUs = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-muted/30">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+    <section id="about" className="py-16 sm:py-20 bg-muted/30">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -30,9 +30,9 @@ const AboutUs = () => {
               <br />
               <span className="text-primary">{t("about.title2")}</span>
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-4">{t("about.p1")}</p>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-4">{t("about.p2")}</p>
-            <p className="text-muted-foreground text-lg leading-relaxed">{t("about.p3")}</p>
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-4">{t("about.p1")}</p>
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-4">{t("about.p2")}</p>
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">{t("about.p3")}</p>
           </motion.div>
 
           <motion.div

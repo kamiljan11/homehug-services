@@ -8,8 +8,8 @@ const Services = () => {
   const { t, tArray } = useLanguage();
 
   return (
-    <section id="services" className="py-24 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="services" className="py-16 sm:py-24 bg-muted/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -33,7 +33,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="relative rounded-2xl p-8 bg-primary text-primary-foreground shadow-xl shadow-primary/20 ring-1 ring-primary/30 hover:-translate-y-1 transition-all duration-300"
+            className="relative rounded-2xl p-6 sm:p-8 bg-primary text-primary-foreground shadow-xl shadow-primary/20 ring-1 ring-primary/30 hover:-translate-y-1 transition-all duration-300"
           >
             <span className="absolute -top-3 left-8 bg-secondary text-secondary-foreground text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
               {t("services.mostPopular")}
@@ -72,9 +72,9 @@ const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 * (idx + 1) }}
-                  className="rounded-2xl p-8 bg-card shadow-lg hover:shadow-xl border border-border hover:-translate-y-1 transition-all duration-300"
+                  className="rounded-2xl p-6 sm:p-8 bg-card shadow-lg hover:shadow-xl border border-border hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="flex gap-6">
+                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                     <div className="shrink-0">
                       <div className="w-14 h-14 rounded-xl flex items-center justify-center bg-primary/10">
                         <Icon className="w-7 h-7 text-primary" />
@@ -108,7 +108,7 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="rounded-2xl p-8 bg-card shadow-lg hover:shadow-xl border border-border hover:-translate-y-1 transition-all duration-300"
+          className="rounded-2xl p-6 sm:p-8 bg-card shadow-lg hover:shadow-xl border border-border hover:-translate-y-1 transition-all duration-300"
         >
           <div className="flex flex-col md:flex-row gap-6">
             <div className="shrink-0">

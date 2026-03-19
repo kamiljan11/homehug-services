@@ -9,9 +9,9 @@ const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-foreground text-primary-foreground/70 py-16">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-10 mb-12">
+    <footer className="bg-foreground text-primary-foreground/70 py-12 sm:py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 mb-10 sm:mb-12">
           <div>
             <div className="flex items-center gap-2.5 mb-4">
               <img src={logo} alt="QuickFix Iceland" className="w-11 h-11 brightness-150" />
