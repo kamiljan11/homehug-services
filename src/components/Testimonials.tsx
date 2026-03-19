@@ -78,13 +78,7 @@ const Testimonials = () => {
               transition={{ duration: 0.4, delay: i * 0.1 }}
               whileHover={{ y: -2 }}
             >
-              <motion.div
-                className="absolute top-4 right-4 text-primary/10"
-                initial={{ scale: 0, rotate: -20 }}
-                whileInView={{ scale: 1, rotate: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 + i * 0.15, type: "spring" }}
-              >
+              <div className="absolute top-4 right-4 text-primary/10">
                 <Quote className="w-10 h-10" />
               </motion.div>
               <div className="flex gap-1 mb-4">
