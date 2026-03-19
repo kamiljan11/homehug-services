@@ -48,8 +48,8 @@ const BeforeAfterCard = ({ before, after, label }: { before: string; after: stri
   return (
     <motion.div
       className="rounded-2xl overflow-hidden shadow-lg border border-border bg-card"
-      whileHover={{ y: -4, boxShadow: "0 20px 40px -12px rgb(0 0 0 / 0.15)" }}
-      transition={{ duration: 0.3 }}
+      whileHover={{ y: -2 }}
+      transition={{ duration: 0.25 }}
     >
       <div
         ref={containerRef}
