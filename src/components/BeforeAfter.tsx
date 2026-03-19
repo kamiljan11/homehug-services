@@ -28,51 +28,31 @@ const projects = [
 ];
 
 const BeforeAfterCard = ({ before, after, label }: { before: string; after: string; label: string }) => {
-  const [sliderPos, setSliderPos] = useState(50);
-  const [isDragging, setIsDragging] = useState(false);
+  const [showAfter, setShowAfter] = useState(false);
   const { t } = useLanguage();
-
-  const handleMove = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
-    if (!isDragging) return;
-    const rect = (e.currentTarget as HTMLDivElement).getBoundingClientRect();
-    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
-    const pos = ((clientX - rect.left) / rect.width) * 100;
-    setSliderPos(Math.max(5, Math.min(95, pos)));
-  };
 
   return (
     <div className="rounded-2xl overflow-hidden shadow-lg border border-border bg-card">
       <div
-        className="relative aspect-square cursor-col-resize select-none"
-        onMouseDown={() => setIsDragging(true)}
-        onMouseUp={() => setIsDragging(false)}
-        onMouseLeave={() => setIsDragging(false)}
-        onMouseMove={handleMove}
-        onTouchStart={() => setIsDragging(true)}
-        onTouchEnd={() => setIsDragging(false)}
-        onTouchMove={handleMove}
+        className="relative aspect-square cursor-pointer select-none"
+        onClick={() => setShowAfter(!showAfter)}
       >
-        {/* After image (full) */}
-        <img src={after} alt="After" className="absolute inset-0 w-full h-full object-cover" />
-        {/* Before image (clipped) */}
-        <div className="absolute inset-0 overflow-hidden" style={{ width: `${sliderPos}%` }}>
-          <img src={before} alt="Before" className="absolute inset-0 w-full h-full object-cover" style={{ minWidth: `${10000 / sliderPos}%` }} />
-        </div>
-        {/* Slider line */}
-        <div className="absolute top-0 bottom-0 z-10" style={{ left: `${sliderPos}%` }}>
-          <div className="absolute -translate-x-1/2 w-0.5 h-full bg-primary-foreground/90 shadow-md" />
-          <div className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-primary-foreground shadow-lg flex items-center justify-center">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-foreground">
-              <path d="M5 3L2 8L5 13M11 3L14 8L11 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-        </div>
-        {/* Labels */}
-        <span className="absolute top-3 left-3 bg-foreground/70 text-primary-foreground text-xs font-semibold px-2.5 py-1 rounded-full backdrop-blur-sm z-20">
-          {t("gallery.before")}
+        <img
+          src={showAfter ? after : before}
+          alt={showAfter ? "After" : "Before"}
+          className="w-full h-full object-cover transition-all duration-500"
+        />
+        {/* Label badge */}
+        <span className={`absolute top-3 left-3 text-xs font-semibold px-2.5 py-1 rounded-full backdrop-blur-sm z-20 transition-colors duration-300 ${
+          showAfter
+            ? "bg-accent/90 text-accent-foreground"
+            : "bg-foreground/70 text-primary-foreground"
+        }`}>
+          {showAfter ? t("gallery.after") : t("gallery.before")}
         </span>
-        <span className="absolute top-3 right-3 bg-accent/90 text-accent-foreground text-xs font-semibold px-2.5 py-1 rounded-full backdrop-blur-sm z-20">
-          {t("gallery.after")}
+        {/* Tap hint */}
+        <span className="absolute bottom-3 right-3 bg-foreground/50 text-primary-foreground text-[10px] font-medium px-2 py-0.5 rounded-full backdrop-blur-sm z-20">
+          {showAfter ? t("gallery.tapBefore") : t("gallery.tapAfter")}
         </span>
       </div>
       <div className="p-4">
