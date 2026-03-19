@@ -22,9 +22,9 @@ const Hero = () => {
 
           <motion.div
             className="mb-6 flex items-center gap-3"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.5 }}
           >
             <img src="https://flagcdn.com/w80/pl.png" alt="Poland" className="w-10 h-auto rounded-sm shadow-md hidden sm:block" />
             <span className="bg-accent text-accent-foreground text-xs sm:text-sm font-bold px-3 py-1.5 rounded-full shadow-lg">
