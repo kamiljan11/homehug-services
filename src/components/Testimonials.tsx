@@ -13,10 +13,10 @@ const GoogleBadge = () => {
   return (
     <motion.div
       className="flex items-center justify-center gap-3 mb-10"
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ type: "spring", stiffness: 200 }}
+      transition={{ duration: 0.4 }}
     >
       <motion.div
         className="flex items-center gap-2.5 bg-card border border-border rounded-full px-5 py-2.5 shadow-sm"
