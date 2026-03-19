@@ -41,15 +41,9 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <motion.span
-            className="text-primary font-semibold text-sm uppercase tracking-wider inline-block"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, type: "spring" }}
-          >
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider inline-block">
             {t("services.subtitle")}
-          </motion.span>
+          </span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
             {t("services.title")}
           </h2>
