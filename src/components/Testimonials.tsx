@@ -33,13 +33,7 @@ const GoogleBadge = () => {
           <span className="font-heading font-bold text-card-foreground text-sm">4.9</span>
           <div className="flex gap-0.5">
             {[...Array(5)].map((_, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 + i * 0.1, type: "spring", stiffness: 500 }}
-              >
+              <div key={i}>
                 <Star className="w-3.5 h-3.5 fill-secondary text-secondary" />
               </motion.div>
             ))}
