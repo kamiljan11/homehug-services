@@ -28,10 +28,10 @@ const AboutUs = () => {
               <span className="text-primary">Now in Iceland.</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-              We're Polish handymen — the kind of guys who've been helping friends and family with repairs for years. Need a shelf hung? A door fixed? A leaky tap sorted? We've done it all, hundreds of times.
+              Polish handymen who fix everything — from deposit-saving repairs to IKEA assembly. Reliable, affordable, no surprises. Snap a photo, get a quote.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-              We work fast, we work well, and we always look for the cheapest solution. No unnecessary upselling, no inflated quotes — just honest work at honest prices.
+              Need a shelf hung? A door fixed? A leaky tap sorted? We've done it all, hundreds of times. No unnecessary upselling, no inflated quotes — just honest work at honest prices.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed">
               Our English might not be perfect, but our work speaks for itself. 💪
