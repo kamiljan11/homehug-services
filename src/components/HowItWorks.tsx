@@ -36,10 +36,10 @@ const HowItWorks = () => {
               <motion.div
                 key={item.step}
                 className="text-center relative group"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.2 }}
+                transition={{ duration: 0.4, delay: i * 0.12 }}
               >
                 {i < steps.length - 1 && (
                   <motion.div
