@@ -39,8 +39,8 @@ const Navbar = () => {
             src={logo}
             alt="QuickFix Iceland"
             className="w-14 h-14"
-            whileHover={{ rotate: [0, -5, 5, 0] }}
-            transition={{ duration: 0.4 }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
           />
           <span className={`font-heading font-bold text-lg tracking-tight transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
             QuickFix Iceland
