@@ -34,9 +34,9 @@ const Hero = () => {
 
           <motion.h1
             className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4 sm:mb-6"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
             {t("hero.title1")}
             <br />
