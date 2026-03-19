@@ -37,7 +37,7 @@ const ServiceArea = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.06 }}
-                whileHover={{ scale: 1.08, y: -2 }}
+                whileHover={{ scale: 1.03 }}
                 className="inline-flex items-center gap-1.5 bg-primary/5 border border-primary/15 text-foreground text-sm font-medium px-3.5 py-1.5 rounded-full cursor-default transition-colors hover:bg-primary/10"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />

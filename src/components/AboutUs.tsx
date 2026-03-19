@@ -72,8 +72,8 @@ const AboutUs = () => {
               >
                 <motion.div
                   className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-3"
-                  whileHover={{ rotate: 10, scale: 1.15 }}
-                  transition={{ type: "spring", stiffness: 400 }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
                 >
                   <trait.icon className="w-5 h-5 text-primary" />
                 </motion.div>

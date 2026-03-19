@@ -66,13 +66,9 @@ const Services = () => {
             whileHover="hover"
             className="relative rounded-2xl p-6 sm:p-8 bg-primary text-primary-foreground shadow-xl shadow-primary/20 ring-1 ring-primary/30 transition-all duration-300 cursor-default"
           >
-            <motion.span
-              className="absolute -top-3 left-8 bg-secondary text-secondary-foreground text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full"
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            >
+            <span className="absolute -top-3 left-8 bg-secondary text-secondary-foreground text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
               {t("services.mostPopular")}
-            </motion.span>
+            </span>
             <motion.div
               className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-primary-foreground/15"
               variants={iconFloat}

@@ -83,15 +83,7 @@ const Testimonials = () => {
               </div>
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: item.rating }).map((_, j) => (
-                  <motion.div
-                    key={j}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 + i * 0.1 + j * 0.05 }}
-                  >
-                    <Star className="w-4 h-4 fill-secondary text-secondary" />
-                  </motion.div>
+                  <Star key={j} className="w-4 h-4 fill-secondary text-secondary" />
                 ))}
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6 relative z-10">"{item.text}"</p>

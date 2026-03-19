@@ -115,10 +115,10 @@ const BeforeAfter = () => {
           {projects.map((project, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
             >
               <BeforeAfterCard
                 before={project.before}

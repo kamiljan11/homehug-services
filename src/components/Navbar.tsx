@@ -70,8 +70,8 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="bg-accent text-accent-foreground text-sm font-semibold px-5 py-2 rounded-lg hover:bg-accent/90 transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
           >
             {t("nav.getQuote")}
           </motion.a>

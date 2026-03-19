@@ -59,10 +59,10 @@ const HowItWorks = () => {
                   <Icon className="w-9 h-9 text-primary" />
                   <motion.span
                     className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ type: "spring", delay: 0.3 + i * 0.2, stiffness: 500 }}
+                    transition={{ duration: 0.3, delay: 0.2 + i * 0.1 }}
                   >
                     {item.step}
                   </motion.span>

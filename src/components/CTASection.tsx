@@ -47,8 +47,8 @@ const CTASection = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-heading font-bold text-base px-8 py-4 rounded-xl hover:bg-accent/90 transition-all shadow-lg"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.97 }}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
             >
               <MessageCircle className="w-5 h-5" />
               {t("hero.whatsappQuote")}
