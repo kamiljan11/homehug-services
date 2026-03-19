@@ -70,8 +70,8 @@ const BeforeAfterCard = ({ before, after, label }: { before: string; after: stri
         <motion.div
           className="absolute top-1/2 z-20 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center -translate-y-1/2"
           style={{ left: `${sliderPos}%`, transform: `translateX(-50%) translateY(-50%)` }}
-          animate={{ scale: [1, 1.1, 1] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ scale: [1, 1.05, 1] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
         >
           <ChevronLeft className="w-4 h-4 text-foreground/70 -mr-1" />
           <ChevronRight className="w-4 h-4 text-foreground/70 -ml-1" />
