@@ -1,4 +1,5 @@
 export const PHONE_NUMBER = "+3547655175";
+export const EMAIL = "quickfixiceland@gmail.com";
 
 const WHATSAPP_NUMBER = "3547655175";
 
