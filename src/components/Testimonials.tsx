@@ -72,11 +72,11 @@ const Testimonials = () => {
             <motion.div
               key={item.name}
               className="bg-card rounded-2xl p-8 shadow-md border border-border relative overflow-hidden group"
-              initial={{ opacity: 0, y: 30, rotateX: 5 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-              whileHover={{ y: -4, boxShadow: "0 20px 40px -12px rgb(0 0 0 / 0.12)" }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              whileHover={{ y: -2 }}
             >
               <motion.div
                 className="absolute top-4 right-4 text-primary/10"
