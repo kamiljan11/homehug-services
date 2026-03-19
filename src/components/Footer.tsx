@@ -12,8 +12,8 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <img src={logo} alt="QuickFix" className="w-9 h-9 brightness-150" />
-              <span className="font-heading font-bold text-lg text-primary-foreground">QuickFix Reykjavík</span>
+              <img src={logo} alt="QuickFix Iceland" className="w-11 h-11 brightness-150" />
+              <span className="font-heading font-bold text-lg text-primary-foreground">QuickFix Iceland</span>
             </div>
             <p className="text-sm leading-relaxed">
               Polish handymen serving Greater Reykjavík & Reykjanesbær. We fix everything — fast, reliable, best prices.
