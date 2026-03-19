@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, ArrowDown } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 import heroImg from "@/assets/hero-handyman.jpg";
 
 const PHONE_NUMBER = "+3541234567";
 const WHATSAPP_URL = `https://wa.me/${PHONE_NUMBER.replace("+", "")}?text=${encodeURIComponent("Hi! I need a quote for QuickFix services.")}`;
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
       {/* Background */}
@@ -22,7 +25,7 @@ const Hero = () => {
             transition={{ duration: 0.7 }}
           >
             <span className="inline-block bg-accent/20 text-accent-foreground border border-accent/30 text-sm font-medium px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm">
-              🔧 Polish Golden Hands in Iceland
+              {t("hero.badge")}
             </span>
           </motion.div>
 
@@ -32,11 +35,11 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            Polish Handymen.
+            {t("hero.title1")}
             <br />
-            <span className="text-secondary">Built to Fix.</span>
+            <span className="text-secondary">{t("hero.title2")}</span>
             <br />
-            Cheapest Price.
+            {t("hero.title3")}
           </motion.h1>
 
           <motion.p
@@ -45,7 +48,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            We're the kind of guys who've been helping friends and family with repairs for years. We work fast, we work well, and we always find the cheapest solution. No upselling, no inflated quotes — just honest work. 💪
+            {t("hero.description")}
           </motion.p>
 
           <motion.div
@@ -59,7 +62,7 @@ const Hero = () => {
               className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-heading font-bold text-base px-8 py-4 rounded-xl hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/25"
             >
               <Phone className="w-5 h-5" />
-              Call Now
+              {t("hero.callNow")}
             </a>
             <a
               href={WHATSAPP_URL}
@@ -68,7 +71,7 @@ const Hero = () => {
               className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-heading font-bold text-base px-8 py-4 rounded-xl hover:bg-accent/90 transition-all hover:shadow-lg hover:shadow-accent/25"
             >
               <MessageCircle className="w-5 h-5" />
-              WhatsApp Quote
+              {t("hero.whatsappQuote")}
             </a>
           </motion.div>
         </div>

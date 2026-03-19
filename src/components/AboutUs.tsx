@@ -1,14 +1,17 @@
 import { motion } from "framer-motion";
 import { Wrench, Clock, PiggyBank, Users } from "lucide-react";
-
-const traits = [
-  { icon: Wrench, label: "Złote ręce", desc: "Years of hands-on experience fixing everything" },
-  { icon: Clock, label: "Fast & efficient", desc: "We get the job done quickly, no delays" },
-  { icon: PiggyBank, label: "Cheapest solutions", desc: "We always find the most affordable way" },
-  { icon: Users, label: "Word of mouth", desc: "Built on trust — friends recommend friends" },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const AboutUs = () => {
+  const { t } = useLanguage();
+
+  const traits = [
+    { icon: Wrench, label: t("about.trait1Label"), desc: t("about.trait1Desc") },
+    { icon: Clock, label: t("about.trait2Label"), desc: t("about.trait2Desc") },
+    { icon: PiggyBank, label: t("about.trait3Label"), desc: t("about.trait3Desc") },
+    { icon: Users, label: t("about.trait4Label"), desc: t("about.trait4Desc") },
+  ];
+
   return (
     <section id="about" className="py-20 bg-muted/30">
       <div className="max-w-6xl mx-auto px-6">
@@ -20,22 +23,16 @@ const AboutUs = () => {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block bg-accent/20 text-accent-foreground border border-accent/30 text-sm font-medium px-4 py-1.5 rounded-full mb-4 backdrop-blur-sm">
-              🇵🇱 About Us
+              {t("about.badge")}
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-6">
-              Polish Golden Hands,
+              {t("about.title1")}
               <br />
-              <span className="text-primary">Now in Iceland.</span>
+              <span className="text-primary">{t("about.title2")}</span>
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-              Polish handymen who fix everything — from deposit-saving repairs to IKEA assembly. Reliable, affordable, no surprises. Snap a photo, get a quote.
-            </p>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-              Need a shelf hung? A door fixed? A leaky tap sorted? We've done it all, hundreds of times. No unnecessary upselling, no inflated quotes — just honest work at honest prices.
-            </p>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Our English might not be perfect, but our work speaks for itself. 💪
-            </p>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-4">{t("about.p1")}</p>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-4">{t("about.p2")}</p>
+            <p className="text-muted-foreground text-lg leading-relaxed">{t("about.p3")}</p>
           </motion.div>
 
           <motion.div
