@@ -59,7 +59,7 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 + i * 0.08 }}
-              whileHover={{ y: -1 }}
+              whileHover={{ color: "hsl(var(--primary))" }}
             >
               {link.label}
             </motion.a>
