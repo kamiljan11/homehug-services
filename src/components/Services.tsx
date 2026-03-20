@@ -216,13 +216,11 @@ const Services = () => {
           />
         </motion.div>
 
-        {/* Quick Fixes */}
+        {/* Quick Fixes - now inside the grid */}
         <motion.div
           initial="rest"
           whileHover="hover"
           variants={fadeUp}
-          whileInView="visible"
-          viewport={{ once: true }}
           className="rounded-2xl p-6 sm:p-8 bg-card shadow-lg border border-border transition-all duration-300 cursor-default"
         >
           <div className="flex flex-col md:flex-row gap-6">
