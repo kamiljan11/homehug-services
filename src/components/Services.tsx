@@ -176,7 +176,7 @@ const Services = () => {
             />
           </div>
 
-          {/* Kärcher — narrow left */}
+          {/* Kärcher */}
           <div className="md:col-span-4">
             <ServiceCard
               icon={Droplets}
@@ -185,13 +185,12 @@ const Services = () => {
               features={tArray("services.karcherFeatures")}
               price="10.000 ISK"
               t={t}
-              compact
               className="h-full"
             />
           </div>
 
-          {/* Deep Clean — wider middle */}
-          <div className="md:col-span-5">
+          {/* Deep Clean */}
+          <div className="md:col-span-4">
             <ServiceCard
               icon={Sparkles}
               title={t("services.deepClean")}
@@ -203,8 +202,8 @@ const Services = () => {
             />
           </div>
 
-          {/* Regular Cleaning — narrow right */}
-          <div className="md:col-span-3">
+          {/* Regular Cleaning */}
+          <div className="md:col-span-4">
             <ServiceCard
               icon={Home}
               title={t("services.regularCleaning")}
@@ -212,7 +211,6 @@ const Services = () => {
               features={tArray("services.regularCleaningFeatures")}
               price="8.000 ISK"
               t={t}
-              compact
               className="h-full"
             />
           </div>
