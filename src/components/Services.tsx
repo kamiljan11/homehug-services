@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Shield, Wrench, Hammer, Droplets, ArrowRight, MessageCircle } from "lucide-react";
+import { Shield, Wrench, Hammer, Droplets, Sparkles, ArrowRight, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { WHATSAPP_URL } from "@/lib/contact";
 
