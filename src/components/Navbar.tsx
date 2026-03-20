@@ -43,8 +43,8 @@ const Navbar = () => {
             transition={{ duration: 0.2 }}
           />
           <span className={`font-heading font-bold text-lg tracking-tight transition-colors`}>
-            <span className={`${scrolled ? "text-rose-700" : "text-rose-300"}`}>Quick</span>
-            <span className={`${scrolled ? "text-sky-700" : "text-sky-300"}`}>Fix</span>
+            <span className={`${scrolled ? "text-red-500" : "text-red-300"}`}>Quick</span>
+            <span className={`${scrolled ? "text-blue-500" : "text-blue-300"}`}>Fix</span>
             <span className={`${scrolled ? "text-foreground" : "text-primary-foreground"}`}> Iceland</span>
           </span>
         </a>
