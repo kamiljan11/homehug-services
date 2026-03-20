@@ -214,57 +214,14 @@ const Services = () => {
             price="8.000 ISK"
             t={t}
           />
-        </motion.div>
-
-        {/* Quick Fixes - now inside the grid */}
-        <motion.div
-          initial="rest"
-          whileHover="hover"
-          variants={fadeUp}
-          className="rounded-2xl p-6 sm:p-8 bg-card shadow-lg border border-border transition-all duration-300 cursor-default"
-        >
-          <div className="flex flex-col md:flex-row gap-6">
-            <div className="shrink-0">
-              <motion.div
-                className="w-14 h-14 rounded-xl flex items-center justify-center bg-primary/10"
-                variants={iconFloat}
-              >
-                <Hammer className="w-7 h-7 text-primary" />
-              </motion.div>
-            </div>
-            <div className="flex-1">
-              <h3 className="font-heading text-xl font-bold mb-1 text-card-foreground">{t("services.quickFixes")}</h3>
-              <p className="text-primary text-sm font-semibold mb-3">{t("services.fromPrice")} 6.000 ISK</p>
-              <p className="text-sm leading-relaxed mb-4 text-muted-foreground">
-                {t("services.quickFixesDesc")}
-              </p>
-              <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-1.5 mb-4">
-                {tArray("services.quickFixesFeatures").map((f, i) => (
-                  <motion.li
-                    key={i}
-                    className="flex items-start gap-2 text-sm text-muted-foreground"
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 + i * 0.05 }}
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-accent" />
-                    {f}
-                  </motion.li>
-                ))}
-              </ul>
-              <motion.a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
-                whileHover="hover"
-                initial="rest"
-              >
-                <MessageCircle className="w-4 h-4" /> {t("services.getFreeQuote")} <motion.span variants={arrowSlide}><ArrowRight className="w-4 h-4" /></motion.span>
-              </motion.a>
-            </div>
-          </div>
+          <ServiceCard
+            icon={Hammer}
+            title={t("services.quickFixes")}
+            desc={t("services.quickFixesDesc")}
+            features={tArray("services.quickFixesFeatures")}
+            price="6.000 ISK"
+            t={t}
+          />
         </motion.div>
       </div>
     </section>
