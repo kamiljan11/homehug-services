@@ -185,7 +185,7 @@ const Services = () => {
             title={t("services.karcherClean")}
             desc={t("services.karcherDesc")}
             features={tArray("services.karcherFeatures")}
-            price="9.000 ISK"
+            price="10.000 ISK"
             t={t}
           />
           <ServiceCard
@@ -193,7 +193,25 @@ const Services = () => {
             title={t("services.deepClean")}
             desc={t("services.deepCleanDesc")}
             features={tArray("services.deepCleanFeatures")}
-            price="12.000 ISK"
+            price="16.000 ISK"
+            t={t}
+          />
+        </motion.div>
+
+        {/* Row 3: Regular Cleaning + Quick Fixes */}
+        <motion.div
+          className="grid md:grid-cols-2 gap-6 mb-6"
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <ServiceCard
+            icon={Home}
+            title={t("services.regularCleaning")}
+            desc={t("services.regularCleaningDesc")}
+            features={tArray("services.regularCleaningFeatures")}
+            price="8.000 ISK"
             t={t}
           />
         </motion.div>
