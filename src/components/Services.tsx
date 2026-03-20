@@ -28,6 +28,59 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 };
 
+interface ServiceCardProps {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  desc: string;
+  features: string[];
+  price: string;
+  t: (key: string) => string;
+}
+
+const ServiceCard = ({ icon: Icon, title, desc, features, price, t }: ServiceCardProps) => (
+  <motion.div
+    variants={fadeUp}
+    initial="rest"
+    whileHover="hover"
+    className="rounded-2xl p-6 sm:p-8 bg-card shadow-lg border border-border transition-all duration-300 cursor-default"
+  >
+    <motion.div
+      className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-primary/10"
+      variants={iconFloat}
+    >
+      <Icon className="w-7 h-7 text-primary" />
+    </motion.div>
+    <h3 className="font-heading text-xl font-bold mb-1 text-card-foreground">{title}</h3>
+    <p className="text-primary text-sm font-semibold mb-3">{t("services.fromPrice")} {price}</p>
+    <p className="text-sm leading-relaxed mb-4 text-muted-foreground">{desc}</p>
+    <ul className="space-y-1.5 mb-4">
+      {features.map((f, i) => (
+        <motion.li
+          key={i}
+          className="flex items-start gap-2 text-sm text-muted-foreground"
+          initial={{ opacity: 0, x: -10 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 + i * 0.06 }}
+        >
+          <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-accent" />
+          {f}
+        </motion.li>
+      ))}
+    </ul>
+    <motion.a
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+      whileHover="hover"
+      initial="rest"
+    >
+      <MessageCircle className="w-4 h-4" /> {t("services.getFreeQuote")} <motion.span variants={arrowSlide}><ArrowRight className="w-4 h-4" /></motion.span>
+    </motion.a>
+  </motion.div>
+);
+
 const Services = () => {
   const { t, tArray } = useLanguage();
 
