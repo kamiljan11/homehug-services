@@ -189,7 +189,7 @@ const Services = () => {
             </div>
             <div className="flex-1">
               <h3 className="font-heading text-xl font-bold mb-1 text-card-foreground">{t("services.quickFixes")}</h3>
-              <p className="text-primary text-sm font-semibold mb-3">{t("services.fromPrice")} 5.000 ISK</p>
+              <p className="text-primary text-sm font-semibold mb-3">{t("services.fromPrice")} 6.000 ISK</p>
               <p className="text-sm leading-relaxed mb-4 text-muted-foreground">
                 {t("services.quickFixesDesc")}
               </p>
