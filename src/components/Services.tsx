@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Shield, Wrench, Hammer, Droplets, ArrowRight, MessageCircle } from "lucide-react";
+import { Shield, Wrench, Hammer, Droplets, Sparkles, ArrowRight, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { WHATSAPP_URL } from "@/lib/contact";
 
@@ -112,6 +112,7 @@ const Services = () => {
             {([
               { icon: Wrench, title: t("services.ikeaAssembly"), desc: t("services.ikeaDesc"), features: tArray("services.ikeaFeatures"), price: "8.000 ISK" },
               { icon: Droplets, title: t("services.karcherClean"), desc: t("services.karcherDesc"), features: tArray("services.karcherFeatures"), price: "9.000 ISK" },
+              { icon: Sparkles, title: t("services.deepClean"), desc: t("services.deepCleanDesc"), features: tArray("services.deepCleanFeatures"), price: "12.000 ISK" },
             ]).map((service, idx) => {
               const Icon = service.icon;
               return (

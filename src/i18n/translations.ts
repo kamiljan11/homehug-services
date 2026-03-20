@@ -73,6 +73,17 @@ export const translations = {
     pl: ["Drobne naprawy hydrauliczne", "Wymiana kranów i udrażnianie", "Regulacja drzwi i okien", "Ogólne prace naprawcze"],
     is: ["Smá pípulagnaviðgerðir", "Skipt um krana og opna niðurföll", "Stillingar á dyrum og gluggum", "Almennar viðgerðir"],
   },
+  "services.deepClean": { en: "Deep Clean", pl: "Gruntowne czyszczenie", is: "Djúpþrif" },
+  "services.deepCleanDesc": {
+    en: "Shower cabins, tiles, kitchen hoods, ovens — we tackle the grime you've been avoiding. Sparkling results, every time.",
+    pl: "Kabiny prysznicowe, kafelki, okapy, piekarniki — zajmiemy się brudem, którego unikasz. Lśniące efekty za każdym razem.",
+    is: "Sturtuklefar, flísar, eldhúsháfar, ofnar — við tökumst á við óhreinindahin sem þú hefur verið að forðast. Glansandi árangur í hvert skipti.",
+  },
+  "services.deepCleanFeatures": {
+    en: ["Shower cabin descaling & polishing", "Tile & grout deep cleaning", "Kitchen hood degreasing", "Oven & stovetop restoration"],
+    pl: ["Odkamienianie i polerowanie kabin", "Czyszczenie kafelków i fug", "Odtłuszczanie okapów", "Czyszczenie piekarników i płyt"],
+    is: ["Kalkhreinun og bónun á sturtuklefa", "Djúpþrif á flísum og fúgum", "Fitushreinun á eldhúsháf", "Hreinun á ofni og helluborði"],
+  },
   "services.getFreeQuote": { en: "Get a Free Quote", pl: "Darmowa wycena", is: "Ókeypis tilboð" },
   "services.mostPopular": { en: "Most Popular", pl: "Najpopularniejsze", is: "Vinsælast" },
 
@@ -196,6 +207,7 @@ export const translations = {
   "footer.ikeaAssembly": { en: "IKEA & Furniture Assembly", pl: "Montaż IKEA i mebli", is: "IKEA og húsgagnsamsetning" },
   "footer.karcherClean": { en: "Kärcher Deep Clean", pl: "Czyszczenie Kärcher", is: "Kärcher djúpþrif" },
   "footer.plumbing": { en: "Minor Plumbing", pl: "Drobna hydraulika", is: "Smá pípulagnir" },
+  "footer.deepClean": { en: "Deep Clean (Shower, Tiles, Hood)", pl: "Gruntowne czyszczenie (prysznic, kafelki, okap)", is: "Djúpþrif (sturta, flísar, háfur)" },
   "footer.shelfInstall": { en: "Shelf & Curtain Rod Installation", pl: "Montaż półek i karniszy", is: "Uppsetning á hillum og gardínustöngum" },
   "footer.generalRepairs": { en: "General Repairs", pl: "Ogólne naprawy", is: "Almennar viðgerðir" },
 
