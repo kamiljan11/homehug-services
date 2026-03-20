@@ -42,8 +42,10 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           />
-          <span className={`font-heading font-bold text-lg tracking-tight transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
-            QuickFix Iceland
+          <span className={`font-heading font-bold text-lg tracking-tight transition-colors`}>
+            <span className={`${scrolled ? "text-red-600" : "text-red-400"}`}>Quick</span>
+            <span className={`${scrolled ? "text-blue-600" : "text-blue-400"}`}>Fix</span>
+            <span className={`${scrolled ? "text-foreground" : "text-primary-foreground"}`}> Iceland</span>
           </span>
         </a>
 
