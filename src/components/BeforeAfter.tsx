@@ -132,8 +132,8 @@ const TapCard = ({ before, after, label }: { before: string; after: string; labe
 
 const BeforeAfter = () => {
   const { t } = useLanguage();
-
-  return (
+  const isMobile = useIsMobile();
+  const Card = isMobile ? TapCard : SliderCard;
     <section className="py-16 sm:py-24 bg-muted/30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
