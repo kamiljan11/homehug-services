@@ -47,6 +47,7 @@ const Footer = () => {
                     <li>{t("footer.ikeaAssembly")}</li>
                     <li>{t("footer.karcherClean")}</li>
                     <li>{t("footer.plumbing")}</li>
+                    <li>{t("footer.regularCleaning")}</li>
                     <li>{t("footer.deepClean")}</li>
                     <li>{t("footer.shelfInstall")}</li>
                     <li>{t("footer.generalRepairs")}</li>
