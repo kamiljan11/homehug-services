@@ -73,6 +73,17 @@ export const translations = {
     pl: ["Drobne naprawy hydrauliczne", "Wymiana kranów i udrażnianie", "Regulacja drzwi i okien", "Ogólne prace naprawcze"],
     is: ["Smá pípulagnaviðgerðir", "Skipt um krana og opna niðurföll", "Stillingar á dyrum og gluggum", "Almennar viðgerðir"],
   },
+  "services.regularCleaning": { en: "Regular Cleaning", pl: "Sprzątanie", is: "Almenn þrif" },
+  "services.regularCleaningDesc": {
+    en: "Standard apartment cleaning — kitchens, bathrooms, floors, dusting. Perfect for move-outs or regular upkeep.",
+    pl: "Standardowe sprzątanie mieszkania — kuchnia, łazienka, podłogi, kurz. Idealne przy wyprowadzce lub na co dzień.",
+    is: "Venjuleg hreingerning íbúðar — eldhús, baðherbergi, gólf, rykþurrkun. Fullkomið við útflutning eða reglubundið viðhald.",
+  },
+  "services.regularCleaningFeatures": {
+    en: ["Kitchen & bathroom cleaning", "Floor mopping & vacuuming", "Dusting & surface wipe-down", "Window sill & baseboard cleaning"],
+    pl: ["Czyszczenie kuchni i łazienki", "Mycie i odkurzanie podłóg", "Ścieranie kurzu i powierzchni", "Czyszczenie parapetów i listew"],
+    is: ["Hreingerning eldhúss og baðherbergis", "Gólfþvottur og ryksuga", "Rykþurrkun og yfirborðsþrif", "Þrif á gluggabrettum og gólflistum"],
+  },
   "services.deepClean": { en: "Deep Clean", pl: "Gruntowne czyszczenie", is: "Djúpþrif" },
   "services.deepCleanDesc": {
     en: "Shower cabins, tiles, kitchen hoods, ovens — we tackle the grime you've been avoiding. Sparkling results, every time.",
