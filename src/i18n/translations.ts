@@ -207,6 +207,7 @@ export const translations = {
   "footer.ikeaAssembly": { en: "IKEA & Furniture Assembly", pl: "Montaż IKEA i mebli", is: "IKEA og húsgagnsamsetning" },
   "footer.karcherClean": { en: "Kärcher Deep Clean", pl: "Czyszczenie Kärcher", is: "Kärcher djúpþrif" },
   "footer.plumbing": { en: "Minor Plumbing", pl: "Drobna hydraulika", is: "Smá pípulagnir" },
+  "footer.deepClean": { en: "Deep Clean (Shower, Tiles, Hood)", pl: "Gruntowne czyszczenie (prysznic, kafelki, okap)", is: "Djúpþrif (sturta, flísar, háfur)" },
   "footer.shelfInstall": { en: "Shelf & Curtain Rod Installation", pl: "Montaż półek i karniszy", is: "Uppsetning á hillum og gardínustöngum" },
   "footer.generalRepairs": { en: "General Repairs", pl: "Ogólne naprawy", is: "Almennar viðgerðir" },
 
