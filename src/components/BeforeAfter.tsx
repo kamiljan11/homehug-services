@@ -1,7 +1,8 @@
 import { useRef, useState, useCallback } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 import beforeWall from "@/assets/before-wall.jpg";
 import afterWall from "@/assets/after-wall.jpg";
@@ -16,7 +17,8 @@ const projects = [
   { before: beforeSofa, after: afterSofa, labelKey: "gallery.sofaClean" as const },
 ];
 
-const BeforeAfterCard = ({ before, after, label }: { before: string; after: string; label: string }) => {
+/** Desktop: drag slider. */
+const SliderCard = ({ before, after, label }: { before: string; after: string; label: string }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [sliderPos, setSliderPos] = useState(50);
   const isDragging = useRef(false);
@@ -70,8 +72,6 @@ const BeforeAfterCard = ({ before, after, label }: { before: string; after: stri
         <motion.div
           className="absolute top-1/2 z-20 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center -translate-y-1/2"
           style={{ left: `${sliderPos}%`, transform: `translateX(-50%) translateY(-50%)` }}
-          animate={{ scale: [1, 1.05, 1] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
         >
           <ChevronLeft className="w-4 h-4 text-foreground/70 -mr-1" />
           <ChevronRight className="w-4 h-4 text-foreground/70 -ml-1" />
@@ -82,6 +82,46 @@ const BeforeAfterCard = ({ before, after, label }: { before: string; after: stri
         <span className="absolute top-3 right-3 text-xs font-semibold px-3 py-1 rounded-full bg-accent text-accent-foreground backdrop-blur-sm z-20">
           {t("gallery.after")}
         </span>
+      </div>
+      <div className="p-4">
+        <p className="font-heading font-semibold text-card-foreground text-sm">{label}</p>
+      </div>
+    </motion.div>
+  );
+};
+
+/** Mobile: tap to toggle before/after. */
+const TapCard = ({ before, after, label }: { before: string; after: string; label: string }) => {
+  const [showBefore, setShowBefore] = useState(false);
+  const { t } = useLanguage();
+
+  return (
+    <motion.div className="rounded-2xl overflow-hidden shadow-lg border border-border bg-card">
+      <div
+        className="relative aspect-[4/5] overflow-hidden cursor-pointer"
+        onClick={() => setShowBefore((prev) => !prev)}
+      >
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={showBefore ? "before" : "after"}
+            src={showBefore ? before : after}
+            alt={showBefore ? "Before" : "After"}
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            draggable={false}
+          />
+        </AnimatePresence>
+        <span className={`absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm z-20 ${showBefore ? "bg-foreground/70 text-primary-foreground" : "bg-accent text-accent-foreground"}`}>
+          {showBefore ? t("gallery.before") : t("gallery.after")}
+        </span>
+        <div className="absolute bottom-3 inset-x-3 flex justify-center z-20">
+          <span className="text-xs font-medium px-4 py-1.5 rounded-full bg-white/90 text-foreground shadow-sm">
+            {showBefore ? t("gallery.tapAfter") : t("gallery.tapBefore")}
+          </span>
+        </div>
       </div>
       <div className="p-4">
         <p className="font-heading font-semibold text-card-foreground text-sm">{label}</p>
