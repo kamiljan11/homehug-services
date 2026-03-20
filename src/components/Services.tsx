@@ -52,8 +52,9 @@ const Services = () => {
           </p>
         </motion.div>
 
+        {/* Row 1: Deposit Saver + IKEA */}
         <motion.div
-          className="grid lg:grid-cols-2 gap-6 mb-6"
+          className="grid md:grid-cols-2 gap-6 mb-6"
           variants={stagger}
           initial="hidden"
           whileInView="visible"
@@ -107,66 +108,41 @@ const Services = () => {
             </motion.a>
           </motion.div>
 
-          {/* IKEA + Kärcher */}
-          <motion.div className="grid gap-6" variants={stagger}>
-            {([
-              { icon: Wrench, title: t("services.ikeaAssembly"), desc: t("services.ikeaDesc"), features: tArray("services.ikeaFeatures"), price: "8.000 ISK" },
-              { icon: Droplets, title: t("services.karcherClean"), desc: t("services.karcherDesc"), features: tArray("services.karcherFeatures"), price: "9.000 ISK" },
-              { icon: Sparkles, title: t("services.deepClean"), desc: t("services.deepCleanDesc"), features: tArray("services.deepCleanFeatures"), price: "12.000 ISK" },
-            ]).map((service, idx) => {
-              const Icon = service.icon;
-              return (
-                <motion.div
-                  key={idx}
-                  variants={fadeUp}
-                  initial="rest"
-                  whileHover="hover"
-                  className="rounded-2xl p-6 sm:p-8 bg-card shadow-lg border border-border transition-all duration-300 cursor-default"
-                >
-                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                    <div className="shrink-0">
-                      <motion.div
-                        className="w-14 h-14 rounded-xl flex items-center justify-center bg-primary/10"
-                        variants={iconFloat}
-                      >
-                        <Icon className="w-7 h-7 text-primary" />
-                      </motion.div>
-                    </div>
-                    <div>
-                      <h3 className="font-heading text-xl font-bold mb-1 text-card-foreground">{service.title}</h3>
-                      <p className="text-primary text-sm font-semibold mb-3">{t("services.fromPrice")} {service.price}</p>
-                      <p className="text-sm leading-relaxed mb-4 text-muted-foreground">{service.desc}</p>
-                      <ul className="space-y-1.5 mb-4">
-                        {service.features.map((f, i) => (
-                          <motion.li
-                            key={i}
-                            className="flex items-start gap-2 text-sm text-muted-foreground"
-                            initial={{ opacity: 0, x: -10 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 + i * 0.06 }}
-                          >
-                            <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-accent" />
-                            {f}
-                          </motion.li>
-                        ))}
-                      </ul>
-                      <motion.a
-                        href={WHATSAPP_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
-                        whileHover="hover"
-                        initial="rest"
-                      >
-                        <MessageCircle className="w-4 h-4" /> {t("services.getFreeQuote")} <motion.span variants={arrowSlide}><ArrowRight className="w-4 h-4" /></motion.span>
-                      </motion.a>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
+          {/* IKEA Assembly */}
+          <ServiceCard
+            icon={Wrench}
+            title={t("services.ikeaAssembly")}
+            desc={t("services.ikeaDesc")}
+            features={tArray("services.ikeaFeatures")}
+            price="8.000 ISK"
+            t={t}
+          />
+        </motion.div>
+
+        {/* Row 2: Kärcher + Deep Clean */}
+        <motion.div
+          className="grid md:grid-cols-2 gap-6 mb-6"
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <ServiceCard
+            icon={Droplets}
+            title={t("services.karcherClean")}
+            desc={t("services.karcherDesc")}
+            features={tArray("services.karcherFeatures")}
+            price="9.000 ISK"
+            t={t}
+          />
+          <ServiceCard
+            icon={Sparkles}
+            title={t("services.deepClean")}
+            desc={t("services.deepCleanDesc")}
+            features={tArray("services.deepCleanFeatures")}
+            price="12.000 ISK"
+            t={t}
+          />
         </motion.div>
 
         {/* Quick Fixes */}
