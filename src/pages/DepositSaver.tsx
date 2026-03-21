@@ -344,13 +344,13 @@ const DepositSaver = () => {
                     />
                   )}
                   <motion.div
-                    className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6 relative"
+                    className="w-14 h-14 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-3 sm:mb-6 relative"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Icon className="w-9 h-9 text-primary" />
+                    <Icon className="w-6 h-6 sm:w-9 sm:h-9 text-primary" />
                     <motion.span
-                      className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center"
+                      className="absolute -top-1.5 -right-1.5 sm:-top-2 sm:-right-2 bg-primary text-primary-foreground text-[10px] sm:text-xs font-bold w-5 h-5 sm:w-7 sm:h-7 rounded-full flex items-center justify-center"
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
@@ -359,8 +359,8 @@ const DepositSaver = () => {
                       {item.num}
                     </motion.span>
                   </motion.div>
-                  <h3 className="font-heading text-lg font-bold text-card-foreground mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed max-w-xs mx-auto">{item.desc}</p>
+                  <h3 className="font-heading text-xs sm:text-lg font-bold text-card-foreground mb-1 sm:mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground text-[10px] sm:text-sm leading-relaxed max-w-xs mx-auto hidden sm:block">{item.desc}</p>
                 </motion.div>
               );
             })}
