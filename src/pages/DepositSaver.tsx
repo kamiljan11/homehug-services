@@ -398,7 +398,7 @@ const DepositSaver = () => {
             >
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent" />
               <p className="text-muted-foreground mb-2 sm:mb-3 text-xs sm:text-sm uppercase tracking-wider font-medium">Most jobs</p>
-              <p className="font-heading text-2xl sm:text-5xl font-bold text-primary mb-2 sm:mb-3">
+              <p className="font-heading text-3xl sm:text-5xl font-bold text-primary mb-2 sm:mb-3">
                 30.000 – 80.000 ISK
               </p>
               <p className="text-muted-foreground text-sm mb-6 sm:mb-8">
