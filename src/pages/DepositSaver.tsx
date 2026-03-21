@@ -196,7 +196,7 @@ const DepositSaver = () => {
               <span className="inline-block bg-destructive/10 text-destructive border border-destructive/20 text-sm font-medium px-4 py-1.5 rounded-full mb-4">
                 ⚠️ The problem
               </span>
-              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-6">
+              <h2 className="font-heading text-2xl sm:text-4xl font-bold text-foreground mb-6">
                 Small damage =
                 <br />
                 <span className="text-destructive">less money back.</span>
