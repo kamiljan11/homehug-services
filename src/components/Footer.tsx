@@ -110,6 +110,25 @@ const Footer = () => {
             {t("footer.privacy")}
           </Link>
         </motion.div>
+
+        <motion.div
+          className="mt-6 text-center text-[10px] text-primary-foreground/30"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
+          Website crafted by{" "}
+          <a
+            href="https://reykjawwwik.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-foreground/50 hover:text-primary-foreground transition-colors underline underline-offset-2"
+          >
+            reykjawwwik.com
+          </a>
+          {" "}— Professional websites for your business
+        </motion.div>
       </div>
     </footer>
   );
