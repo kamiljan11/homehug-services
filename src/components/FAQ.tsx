@@ -64,6 +64,18 @@ const FAQ = () => {
                   >
                     <p className="px-6 pb-5 text-sm text-muted-foreground leading-relaxed">
                       {faq.a}
+                      {(i === 1 || i === 3) && (
+                        <span className="block mt-2">
+                          <a
+                            href={WHATSAPP_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-bold text-primary hover:text-primary/80 transition-colors underline underline-offset-2 text-sm"
+                          >
+                            Send us a photo now →
+                          </a>
+                        </span>
+                      )}
                     </p>
                   </motion.div>
                 )}
