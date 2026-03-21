@@ -26,12 +26,12 @@ const stagger = {
 };
 
 const fixes = [
-  { icon: PaintBucket, title: "Wall patching & paint touch-ups", desc: "Fill holes, sand smooth, and repaint to match" },
-  { icon: Footprints, title: "Floor scratch removal", desc: "Buff out scratches and restore the finish" },
-  { icon: DoorOpen, title: "Hinges, handles & fittings", desc: "Tighten, replace, and realign all hardware" },
-  { icon: Wrench, title: "Cabinet & shelf repairs", desc: "Fix loose shelves, doors, and drawer slides" },
-  { icon: Sofa, title: "Upholstery deep cleaning", desc: "Professional Kärcher cleaning for sofas & chairs" },
-  { icon: Hammer, title: "General wear & tear", desc: "All the small fixes landlords notice" },
+  { icon: PaintBucket, title: "Wall patching & painting", desc: "Those nail holes from shelves and picture frames? Gone." },
+  { icon: Footprints, title: "Floor scratch removal", desc: "Furniture marks and scuffs buffed out completely." },
+  { icon: DoorOpen, title: "Hinges, handles & fittings", desc: "Everything that's loose, wobbly, or not closing right." },
+  { icon: Wrench, title: "Cabinet & shelf repairs", desc: "Doors that don't close, drawers that stick — sorted." },
+  { icon: Sofa, title: "Upholstery deep cleaning", desc: "Coffee stains, pet hair, everyday wear — Kärcher cleaned." },
+  { icon: Hammer, title: "General wear & tear", desc: "All the little things landlords love to point out." },
 ];
 
 const steps = [
