@@ -353,8 +353,8 @@ const DepositSaver = () => {
               whileHover={{ y: -2 }}
             >
               <div className="flex items-start gap-3 sm:gap-4 flex-col sm:flex-row">
-                <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
-                  <SprayCan className="w-6 h-6 text-secondary" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
+                  <SprayCan className="w-5 h-5 sm:w-6 sm:h-6 text-secondary" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
