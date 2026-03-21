@@ -6,26 +6,32 @@ const faqs = [
   {
     q: "My inspection is in 3 days — can you still help?",
     a: "Most likely yes. Most jobs take 1–2 days. Send us photos now and we'll tell you right away if we can make it in time.",
+    cta: "Send photos now — we'll check →",
   },
   {
     q: "What if the damage is too serious to fix?",
     a: "We'll tell you honestly. If a repair won't save you money compared to the deduction, we won't waste your time or money.",
+    cta: "Ask us — honest answer guaranteed →",
   },
   {
     q: "Do I need to be home while you work?",
     a: "Nope. Most clients just leave a key or arrange access with the building. We'll coordinate whatever works for you.",
+    cta: "Let's arrange access →",
   },
   {
     q: "Is the quote really free? No catch?",
     a: "Zero catch. Send us photos on WhatsApp, we reply with a price. If you don't want to go ahead, no hard feelings.",
+    cta: "Get your free quote →",
   },
   {
     q: "What areas do you cover?",
     a: "Greater Reykjavík — Kópavogur, Hafnarfjörður, Garðabær, and Reykjanesbær. If you're nearby, just ask.",
+    cta: "Check if we cover your area →",
   },
   {
     q: "Can you match my wall paint exactly?",
     a: "Yes — we color-match to your existing paint so the patches blend in completely. Your landlord won't be able to tell.",
+    cta: "Send a photo of the wall →",
   },
 ];
 
