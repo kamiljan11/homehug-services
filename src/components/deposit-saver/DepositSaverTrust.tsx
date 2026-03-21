@@ -1,23 +1,45 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, ThumbsUp, Clock, Banknote } from "lucide-react";
+import { ShieldCheck, ThumbsUp, Clock, Banknote, Shield } from "lucide-react";
 
 const badges = [
-  { icon: ShieldCheck, title: "Satisfaction Guaranteed", desc: "Not happy? We'll make it right — free of charge." },
   { icon: ThumbsUp, title: "Many Deposits Saved", desc: "Trusted by tenants across Reykjavík." },
   { icon: Clock, title: "Fast Turnaround", desc: "Most jobs done in 1–2 days." },
   { icon: Banknote, title: "No Hidden Fees", desc: "The quote you get is the price you pay." },
 ];
 
 const DepositSaverTrust = () => (
-  <section className="py-10 sm:py-16 bg-background">
+  <section className="py-12 sm:py-20 bg-card border-y border-border">
     <div className="max-w-6xl mx-auto px-5 sm:px-6">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+      {/* Guarantee highlight */}
+      <motion.div
+        className="text-center mb-8 sm:mb-12"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <motion.div
+          className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-3 sm:mb-4"
+          whileHover={{ scale: 1.05 }}
+        >
+          <Shield className="w-7 h-7 sm:w-8 sm:h-8 text-accent" />
+        </motion.div>
+        <h2 className="font-heading text-xl sm:text-3xl font-bold text-card-foreground mb-2">
+          Satisfaction Guarantee
+        </h2>
+        <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-lg mx-auto">
+          If your landlord isn't satisfied, we'll come back and fix it —{" "}
+          <span className="font-semibold text-accent">free of charge.</span>
+        </p>
+      </motion.div>
+
+      {/* Trust badges */}
+      <div className="grid grid-cols-3 gap-3 sm:gap-6">
         {badges.map((badge, i) => {
           const Icon = badge.icon;
           return (
             <motion.div
               key={i}
-              className="text-center p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-card border border-border"
+              className="text-center p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-background border border-border"
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

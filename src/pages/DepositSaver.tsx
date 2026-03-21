@@ -25,13 +25,6 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.08 } },
 };
 
-const problems = [
-  { icon: Wrench, label: "Wall holes & cracks" },
-  { icon: Footprints, label: "Floor scratches" },
-  { icon: DoorOpen, label: "Loose hinges & fittings" },
-  { icon: Sofa, label: "Dirty sofa & upholstery" },
-];
-
 const fixes = [
   { icon: PaintBucket, title: "Wall patching & paint touch-ups", desc: "Fill holes, sand smooth, and repaint to match" },
   { icon: Footprints, title: "Floor scratch removal", desc: "Buff out scratches and restore the finish" },
@@ -66,7 +59,7 @@ const DepositSaver = () => {
         { label: "Contact", href: "#contact" },
       ]} />
 
-      {/* Hero */}
+      {/* ───── HERO ───── */}
       <section className="relative min-h-[80vh] sm:min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroImg} alt="" className="w-full h-full object-cover object-center" />
@@ -75,9 +68,8 @@ const DepositSaver = () => {
 
         <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-32 w-full">
           <div className="max-w-2xl">
-
             <motion.h1
-              className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-3 sm:mb-6"
+              className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -88,29 +80,10 @@ const DepositSaver = () => {
             </motion.h1>
 
             <motion.div
-              className="flex flex-wrap gap-1.5 sm:gap-2.5 mb-6 sm:mb-8"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-            >
-              {problems.map((p, i) => (
-                <motion.span
-                  key={i}
-                  className="inline-flex items-center gap-1.5 bg-primary-foreground/10 text-primary-foreground/80 text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full backdrop-blur-sm border border-primary-foreground/10"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.25 + i * 0.06 }}
-                >
-                  <p.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary" /> {p.label}
-                </motion.span>
-              ))}
-            </motion.div>
-
-            <motion.div
               className="flex flex-col sm:flex-row gap-3 sm:gap-4"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.3 }}
             >
               <motion.a
                 href={WHATSAPP_URL}
@@ -146,7 +119,7 @@ const DepositSaver = () => {
         </motion.a>
       </section>
 
-      {/* Stats bar */}
+      {/* ───── STATS + URGENCY (merged) ───── */}
       <section className="py-8 sm:py-14 bg-primary">
         <div className="max-w-6xl mx-auto px-5 sm:px-6">
           <div className="grid grid-cols-3 gap-4 sm:gap-8">
@@ -161,117 +134,56 @@ const DepositSaver = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
                 >
-                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
-                    <Icon className="w-6 h-6 text-secondary mx-auto mb-2" />
-                  </motion.div>
+                  <Icon className="w-6 h-6 text-secondary mx-auto mb-2" />
                   <p className="font-heading text-xl sm:text-3xl font-bold text-primary-foreground">{stat.value}</p>
                   <p className="text-primary-foreground/70 text-xs sm:text-sm mt-0.5 sm:mt-1">{stat.label}</p>
                 </motion.div>
               );
             })}
           </div>
-          <motion.p
-            className="text-center text-primary-foreground/60 text-sm mt-6 flex items-center justify-center gap-2"
+          <motion.div
+            className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 mt-6 pt-5 border-t border-primary-foreground/10"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            <MapPin className="w-4 h-4" />
-            Covering Reykjavík & Reykjanesbær
-          </motion.p>
+            <span className="flex items-center gap-2 text-primary-foreground/60 text-sm">
+              <MapPin className="w-4 h-4" />
+              Covering Reykjavík & Reykjanesbær
+            </span>
+            <span className="hidden sm:block text-primary-foreground/20">•</span>
+            <span className="flex items-center gap-2 text-secondary text-sm font-semibold">
+              <Clock className="w-4 h-4" />
+              Book at least 3 days before inspection
+            </span>
+          </motion.div>
         </div>
       </section>
 
-      {/* Urgency Banner */}
-      <section className="py-4 sm:py-5 bg-secondary/10 border-y border-secondary/20">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6">
+      {/* ───── THE PROBLEM (text only, no duplicate cards) ───── */}
+      <section id="problem" className="py-12 sm:py-24 bg-muted/30">
+        <div className="max-w-3xl mx-auto px-5 sm:px-6 text-center">
           <motion.div
-            className="flex items-center justify-center gap-2 sm:gap-3 text-center"
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
-            <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-secondary shrink-0" />
-            <p className="font-heading text-sm sm:text-base font-bold text-foreground">
-              Moving out soon?{" "}
-              <span className="text-secondary">Book at least 3 days before your inspection.</span>
+            <span className="inline-block bg-destructive/10 text-destructive border border-destructive/20 text-sm font-medium px-4 py-1.5 rounded-full mb-4">
+              ⚠️ The problem
+            </span>
+            <h2 className="font-heading text-2xl sm:text-4xl font-bold text-foreground mb-4 sm:mb-6">
+              Small damage = <span className="text-destructive">less money back.</span>
+            </h2>
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+              Landlords check everything — wall holes, floor scratches, loose fittings, dirty upholstery. Even minor issues can cost you tens of thousands of ISK. We fix it all for a fraction of the deduction.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* The Problem */}
-      <section id="problem" className="py-12 sm:py-24 bg-muted/30">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-            >
-              <span className="inline-block bg-destructive/10 text-destructive border border-destructive/20 text-sm font-medium px-4 py-1.5 rounded-full mb-4">
-                ⚠️ The problem
-              </span>
-              <h2 className="font-heading text-2xl sm:text-4xl font-bold text-foreground mb-6">
-                Small damage =
-                <br />
-                <span className="text-destructive">less money back.</span>
-              </h2>
-              <motion.p
-                className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-4"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-              >
-                Landlords check everything — even minor issues can reduce your deposit by tens of thousands of ISK.
-              </motion.p>
-              <motion.p
-                className="text-muted-foreground text-base sm:text-lg leading-relaxed"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-              >
-                A small wall hole or a few scratches on the floor? That's money out of your pocket. We fix it for a fraction of the cost.
-              </motion.p>
-            </motion.div>
-
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: Wrench, label: "Wall damage", desc: "Holes, cracks, scuffs" },
-                { icon: Footprints, label: "Floor issues", desc: "Scratches, dents, stains" },
-                { icon: DoorOpen, label: "Fittings", desc: "Hinges, handles, locks" },
-                { icon: Sofa, label: "Upholstery", desc: "Stains, odors, wear" },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  className="bg-card border border-border rounded-xl p-5 group cursor-default"
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.35, delay: i * 0.08 }}
-                  whileHover={{ y: -2 }}
-                >
-                  <motion.div
-                    className="w-10 h-10 bg-destructive/10 rounded-lg flex items-center justify-center mb-3"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <item.icon className="w-5 h-5 text-destructive" />
-                  </motion.div>
-                  <h3 className="font-heading font-bold text-foreground mb-1">{item.label}</h3>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What We Fix */}
+      {/* ───── WHAT WE FIX ───── */}
       <section id="services" className="py-12 sm:py-24 bg-card border-y border-border">
         <div className="max-w-6xl mx-auto px-5 sm:px-6">
           <motion.div
@@ -285,7 +197,7 @@ const DepositSaver = () => {
               What we fix
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              We fix the most common move-out problems. Focused fixes — no unnecessary work.
+              Focused fixes for the most common move-out problems — no unnecessary work.
             </p>
           </motion.div>
 
@@ -321,7 +233,10 @@ const DepositSaver = () => {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* ───── BEFORE & AFTER (moved up — visual proof right after services) ───── */}
+      <DepositSaverBeforeAfter />
+
+      {/* ───── HOW IT WORKS ───── */}
       <section id="how-it-works" className="py-12 sm:py-24 bg-card border-y border-border">
         <div className="max-w-6xl mx-auto px-5 sm:px-6">
           <motion.div
@@ -339,7 +254,7 @@ const DepositSaver = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-10">
+          <div className="grid grid-cols-3 gap-4 md:gap-10">
             {steps.map((item, i) => {
               const Icon = item.icon;
               return (
@@ -396,7 +311,7 @@ const DepositSaver = () => {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* ───── PRICING + ADD-ON ───── */}
       <section id="pricing" className="py-12 sm:py-24 bg-muted/30">
         <div className="max-w-3xl mx-auto px-5 sm:px-6 text-center">
           <motion.div
@@ -484,44 +399,16 @@ const DepositSaver = () => {
         </div>
       </section>
 
-      {/* Satisfaction Guarantee */}
-      <section className="py-10 sm:py-16 bg-card border-y border-border">
-        <div className="max-w-3xl mx-auto px-5 sm:px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <motion.div
-              className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4 sm:mb-6"
-              whileHover={{ scale: 1.05 }}
-            >
-              <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-accent" />
-            </motion.div>
-            <h2 className="font-heading text-xl sm:text-3xl font-bold text-card-foreground mb-3">
-              Satisfaction Guarantee
-            </h2>
-            <p className="text-muted-foreground text-sm sm:text-lg leading-relaxed max-w-lg mx-auto">
-              If your landlord isn't satisfied with the repairs, we'll come back and fix it —{" "}
-              <span className="font-semibold text-accent">free of charge.</span>
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Trust Badges */}
+      {/* ───── TRUST + GUARANTEE (merged) ───── */}
       <DepositSaverTrust />
 
-      {/* Before & After */}
-      <DepositSaverBeforeAfter />
-
-      {/* Testimonials */}
+      {/* ───── TESTIMONIALS ───── */}
       <DepositSaverTestimonials />
 
-      {/* FAQ */}
+      {/* ───── FAQ ───── */}
       <DepositSaverFAQ />
 
-      {/* Final CTA */}
+      {/* ───── FINAL CTA ───── */}
       <section id="contact" className="py-12 sm:py-24 bg-primary relative overflow-hidden">
         <motion.div
           className="absolute top-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-primary-foreground/5 rounded-full -translate-y-1/2 translate-x-1/3"
