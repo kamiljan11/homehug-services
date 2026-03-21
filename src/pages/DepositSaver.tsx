@@ -183,10 +183,10 @@ const DepositSaver = () => {
               ⚠️ The problem
             </span>
             <h2 className="font-heading text-2xl sm:text-4xl font-bold text-foreground mb-4 sm:mb-6">
-              Small damage = <span className="text-destructive">less money back.</span>
+              You lived here. <span className="text-destructive">Now it shows.</span>
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-              Landlords check everything — wall holes, floor scratches, loose fittings, dirty upholstery. Even minor issues can cost you tens of thousands of ISK. We fix it all for a fraction of the deduction.
+              A few nail holes from hanging shelves. Scratches on the floor from moving furniture. A scuff on the wall where the sofa was. It's normal — but your landlord will still deduct for it. Why lose 50.000+ ISK when we can fix it for less?
             </p>
           </motion.div>
         </div>
