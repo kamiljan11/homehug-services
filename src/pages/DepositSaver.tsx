@@ -183,6 +183,24 @@ const DepositSaver = () => {
         </div>
       </section>
 
+      {/* Urgency Banner */}
+      <section className="py-4 sm:py-5 bg-secondary/10 border-y border-secondary/20">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6">
+          <motion.div
+            className="flex items-center justify-center gap-2 sm:gap-3 text-center"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-secondary shrink-0" />
+            <p className="font-heading text-sm sm:text-base font-bold text-foreground">
+              Moving out soon?{" "}
+              <span className="text-secondary">Book at least 3 days before your inspection.</span>
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* The Problem */}
       <section id="problem" className="py-12 sm:py-24 bg-muted/30">
         <div className="max-w-6xl mx-auto px-5 sm:px-6">
