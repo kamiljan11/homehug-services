@@ -254,12 +254,12 @@ const DepositSaver = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Simple process</span>
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">No stress</span>
             <h2 className="font-heading text-2xl sm:text-4xl font-bold text-card-foreground mt-3 mb-4">
-              How it works
+              As easy as texting a friend
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Three simple steps to saving your deposit.
+              No forms. No appointments. Just snap a photo and send it over.
             </p>
           </motion.div>
 
