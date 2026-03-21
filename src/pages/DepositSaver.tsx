@@ -272,7 +272,7 @@ const DepositSaver = () => {
           </motion.div>
 
           <motion.div
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
@@ -282,7 +282,7 @@ const DepositSaver = () => {
               <motion.div
                 key={i}
                 variants={fadeUp}
-                className="flex items-start gap-4 p-6 rounded-xl bg-background border border-border shadow-sm group cursor-default"
+                className="flex items-start gap-3 sm:gap-4 p-4 sm:p-6 rounded-xl bg-background border border-border shadow-sm group cursor-default"
                 whileHover={{ y: -3, boxShadow: "0 8px 25px -8px hsl(var(--primary) / 0.15)" }}
                 transition={{ duration: 0.2 }}
               >
