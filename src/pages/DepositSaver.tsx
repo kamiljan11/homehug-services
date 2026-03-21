@@ -184,8 +184,8 @@ const DepositSaver = () => {
       </section>
 
       {/* The Problem */}
-      <section id="problem" className="py-16 sm:py-24 bg-muted/30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <section id="problem" className="py-12 sm:py-24 bg-muted/30">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
