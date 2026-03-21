@@ -413,6 +413,18 @@ const DepositSaver = () => {
         </div>
       </section>
 
+      {/* Trust Badges */}
+      <DepositSaverTrust />
+
+      {/* Before & After */}
+      <DepositSaverBeforeAfter />
+
+      {/* Testimonials */}
+      <DepositSaverTestimonials />
+
+      {/* FAQ */}
+      <DepositSaverFAQ />
+
       {/* Final CTA */}
       <section id="contact" className="py-16 sm:py-24 bg-primary relative overflow-hidden">
         <motion.div
