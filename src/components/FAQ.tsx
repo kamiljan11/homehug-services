@@ -62,21 +62,19 @@ const FAQ = () => {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.25, ease: "easeInOut" }}
                   >
-                    <p className="px-6 pb-5 text-sm text-muted-foreground leading-relaxed">
-                      {faq.a}
-                      {(i === 1 || i === 3) && (
-                        <span className="block mt-2">
-                          <a
-                            href={WHATSAPP_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-bold text-primary hover:text-primary/80 transition-colors underline underline-offset-2 text-sm"
-                          >
-                            Send us a photo now →
-                          </a>
-                        </span>
-                      )}
-                    </p>
+                    <div className="px-6 pb-5 text-sm text-muted-foreground leading-relaxed">
+                      <p>{faq.a}</p>
+                      <span className="block mt-3">
+                        <a
+                          href={WHATSAPP_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-bold text-primary hover:text-primary/80 transition-colors underline underline-offset-2 text-sm"
+                        >
+                          {faq.cta}
+                        </a>
+                      </span>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
