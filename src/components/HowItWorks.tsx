@@ -74,6 +74,25 @@ const HowItWorks = () => {
             );
           })}
         </div>
+
+        <motion.div
+          className="text-center mt-10"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+        >
+          <motion.a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-primary font-heading font-bold text-sm sm:text-base hover:text-primary/80 transition-colors"
+            whileHover={{ x: 3 }}
+          >
+            <Camera className="w-4 h-4 sm:w-5 sm:h-5" />
+            Ready? Send a photo and start here →
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );

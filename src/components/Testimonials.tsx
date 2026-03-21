@@ -95,6 +95,24 @@ const Testimonials = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.p
+          className="text-center mt-8 text-muted-foreground text-sm"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+        >
+          Join them.{" "}
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
+          >
+            Get your free quote now.
+          </a>
+        </motion.p>
       </div>
     </section>
   );

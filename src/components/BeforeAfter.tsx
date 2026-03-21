@@ -171,6 +171,26 @@ const BeforeAfter = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          className="text-center mt-8 sm:mt-12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+        >
+          <p className="text-muted-foreground text-sm sm:text-base mb-3">
+            Got something similar?{" "}
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
+            >
+              Send us a photo — we'll tell you the cost.
+            </a>
+          </p>
+        </motion.div>
       </div>
     </section>
   );
