@@ -82,11 +82,11 @@ const DepositSaver = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
+              <span className="text-secondary">Deposit Saver</span>
+              <br />
               Moving out?
               <br />
-              <span className="text-secondary">We fix the issues</span>
-              <br />
-              that cost you your deposit.
+              We fix the issues that cost you your deposit.
             </motion.h1>
 
             <motion.div
