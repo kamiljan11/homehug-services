@@ -35,9 +35,9 @@ const fixes = [
 ];
 
 const steps = [
-  { icon: Camera, num: "01", title: "Send photos", desc: "WhatsApp us pictures of the damage — it's free" },
-  { icon: MessageCircle, num: "02", title: "Get a quote", desc: "We reply with a clear price — usually same day" },
-  { icon: CheckCircle2, num: "03", title: "We fix it", desc: "Fast, professional repairs before your inspection" },
+  { icon: Camera, num: "01", title: "Send photos", desc: "Take a few pictures of the damage and WhatsApp them to us" },
+  { icon: MessageCircle, num: "02", title: "Get your price", desc: "We'll reply with an honest quote — usually the same day" },
+  { icon: CheckCircle2, num: "03", title: "We fix it", desc: "We come over, fix everything, and you're ready for inspection" },
 ];
 
 const stats = [
