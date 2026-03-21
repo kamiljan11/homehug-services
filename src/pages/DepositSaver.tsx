@@ -180,6 +180,16 @@ const DepositSaver = () => {
               );
             })}
           </div>
+          <motion.p
+            className="text-center text-primary-foreground/60 text-sm mt-6 flex items-center justify-center gap-2"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+          >
+            <MapPin className="w-4 h-4" />
+            Covering Reykjavík & Reykjanesbær
+          </motion.p>
         </div>
       </section>
 
