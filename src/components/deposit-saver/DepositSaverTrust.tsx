@@ -47,11 +47,11 @@ const DepositSaverTrust = () => (
               whileHover={{ y: -2 }}
             >
               <motion.div
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-2 sm:mb-3"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2 sm:mb-3"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
               </motion.div>
               <h3 className="font-heading font-bold text-card-foreground text-xs sm:text-sm mb-0.5 sm:mb-1">{badge.title}</h3>
               <p className="text-[10px] sm:text-xs text-muted-foreground leading-relaxed hidden sm:block">{badge.desc}</p>
