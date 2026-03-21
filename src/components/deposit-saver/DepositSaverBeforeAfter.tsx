@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import wallBefore from "@/assets/deposit-saver/wall-before.jpg";
 import wallAfter from "@/assets/deposit-saver/wall-after.jpg";
@@ -9,81 +10,158 @@ import cabinetBefore from "@/assets/deposit-saver/cabinet-before.jpg";
 import cabinetAfter from "@/assets/deposit-saver/cabinet-after.jpg";
 
 const examples = [
-  { label: "Wall hole patched & painted", beforeImg: wallBefore, afterImg: wallAfter },
-  { label: "Floor scratches removed", beforeImg: floorBefore, afterImg: floorAfter },
-  { label: "Cabinet hinge fixed", beforeImg: cabinetBefore, afterImg: cabinetAfter },
+  { label: "Wall hole patched & painted", before: wallBefore, after: wallAfter },
+  { label: "Floor scratches removed", before: floorBefore, after: floorAfter },
+  { label: "Cabinet hinge fixed", before: cabinetBefore, after: cabinetAfter },
 ];
 
-const ExampleCard = ({ example, index }: { example: typeof examples[0]; index: number }) => {
-  const [showAfter, setShowAfter] = useState(false);
-  const isMobile = useIsMobile();
+const SliderCard = ({ before, after, label }: { before: string; after: string; label: string }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [sliderPos, setSliderPos] = useState(50);
+  const isDragging = useRef(false);
+
+  const updatePosition = useCallback((clientX: number) => {
+    const rect = containerRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const x = clientX - rect.left;
+    const pct = Math.max(0, Math.min(100, (x / rect.width) * 100));
+    setSliderPos(pct);
+  }, []);
+
+  const handlePointerDown = useCallback((e: React.PointerEvent) => {
+    isDragging.current = true;
+    (e.target as HTMLElement).setPointerCapture(e.pointerId);
+    updatePosition(e.clientX);
+  }, [updatePosition]);
+
+  const handlePointerMove = useCallback((e: React.PointerEvent) => {
+    if (!isDragging.current) return;
+    updatePosition(e.clientX);
+  }, [updatePosition]);
+
+  const handlePointerUp = useCallback(() => {
+    isDragging.current = false;
+  }, []);
 
   return (
     <motion.div
-      className="bg-card border border-border rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer group"
-      initial={{ opacity: 0, y: 15 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
-      whileHover={{ y: -3 }}
-      onClick={() => setShowAfter(!showAfter)}
+      className="rounded-2xl overflow-hidden shadow-lg border border-border bg-card"
+      whileHover={{ y: -2 }}
+      transition={{ duration: 0.25 }}
     >
-      <div className="relative h-44 sm:h-64 overflow-hidden">
-        <AnimatePresence mode="wait">
-          <motion.img
-            key={showAfter ? "after" : "before"}
-            src={showAfter ? example.afterImg : example.beforeImg}
-            alt={`${example.label} — ${showAfter ? "after" : "before"}`}
-            className="w-full h-full object-cover"
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-          />
-        </AnimatePresence>
-
-        <div className="absolute top-2 left-2 sm:top-3 sm:left-3">
-          <span className={`text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full ${showAfter ? "bg-accent/90 text-accent-foreground" : "bg-destructive/90 text-destructive-foreground"}`}>
-            {showAfter ? "AFTER" : "BEFORE"}
-          </span>
-        </div>
+      <div
+        ref={containerRef}
+        className="relative aspect-[4/3] cursor-col-resize select-none touch-none overflow-hidden"
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+      >
+        <img src={after} alt="After" className="absolute inset-0 w-full h-full object-cover" draggable={false} />
+        <img
+          src={before}
+          alt="Before"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
+          draggable={false}
+        />
+        <div className="absolute top-0 bottom-0 w-[3px] bg-white shadow-md z-10" style={{ left: `${sliderPos}%`, transform: "translateX(-50%)" }} />
+        <motion.div
+          className="absolute top-1/2 z-20 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center -translate-y-1/2"
+          style={{ left: `${sliderPos}%`, transform: `translateX(-50%) translateY(-50%)` }}
+        >
+          <ChevronLeft className="w-4 h-4 text-foreground/70 -mr-1" />
+          <ChevronRight className="w-4 h-4 text-foreground/70 -ml-1" />
+        </motion.div>
+        <span className="absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full bg-foreground/70 text-primary-foreground backdrop-blur-sm z-20">
+          BEFORE
+        </span>
+        <span className="absolute top-3 right-3 text-xs font-semibold px-3 py-1 rounded-full bg-accent text-accent-foreground backdrop-blur-sm z-20">
+          AFTER
+        </span>
       </div>
-
-      <div className="p-3 sm:p-4">
-        <p className="font-heading font-bold text-card-foreground text-xs sm:text-sm">{example.label}</p>
-        <p className="text-[10px] sm:text-xs text-muted-foreground mt-0.5 sm:mt-1">
-          {isMobile ? "Tap" : "Click"} to toggle before/after
-        </p>
+      <div className="p-4">
+        <p className="font-heading font-semibold text-card-foreground text-sm">{label}</p>
       </div>
     </motion.div>
   );
 };
 
-const DepositSaverBeforeAfter = () => (
-  <section className="py-12 sm:py-24 bg-muted/30">
-    <div className="max-w-6xl mx-auto px-5 sm:px-6">
-      <motion.div
-        className="text-center mb-8 sm:mb-12"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <span className="text-primary font-semibold text-sm uppercase tracking-wider">Results</span>
-        <h2 className="font-heading text-2xl sm:text-4xl font-bold text-foreground mt-3 mb-3 sm:mb-4">
-          Before & After
-        </h2>
-        <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">
-          See the kind of fixes that save deposits.
-        </p>
-      </motion.div>
+const TapCard = ({ before, after, label }: { before: string; after: string; label: string }) => {
+  const [showBefore, setShowBefore] = useState(true);
 
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
-        {examples.map((ex, i) => (
-          <ExampleCard key={i} example={ex} index={i} />
-        ))}
+  return (
+    <motion.div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card">
+      <div
+        className="relative aspect-[4/3] overflow-hidden cursor-pointer"
+        onClick={() => setShowBefore((prev) => !prev)}
+      >
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={showBefore ? "before" : "after"}
+            src={showBefore ? before : after}
+            alt={showBefore ? "Before" : "After"}
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            draggable={false}
+          />
+        </AnimatePresence>
+        <span className={`absolute top-2 left-2 text-[10px] font-bold px-2.5 py-0.5 rounded-full backdrop-blur-sm z-20 ${showBefore ? "bg-destructive/90 text-destructive-foreground" : "bg-accent/90 text-accent-foreground"}`}>
+          {showBefore ? "BEFORE" : "AFTER"}
+        </span>
+        <div className="absolute bottom-2 inset-x-2 flex justify-center z-20">
+          <span className="text-[10px] font-medium px-3 py-1 rounded-full bg-white/90 text-foreground shadow-sm">
+            Tap to see {showBefore ? "after" : "before"}
+          </span>
+        </div>
       </div>
-    </div>
-  </section>
-);
+      <div className="p-3">
+        <p className="font-heading font-semibold text-card-foreground text-xs">{label}</p>
+      </div>
+    </motion.div>
+  );
+};
+
+const DepositSaverBeforeAfter = () => {
+  const isMobile = useIsMobile();
+  const Card = isMobile ? TapCard : SliderCard;
+
+  return (
+    <section className="py-12 sm:py-24 bg-muted/30">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6">
+        <motion.div
+          className="text-center mb-8 sm:mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Results</span>
+          <h2 className="font-heading text-2xl sm:text-4xl font-bold text-foreground mt-3 mb-3 sm:mb-4">
+            Before & After
+          </h2>
+          <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">
+            See the kind of fixes that save deposits.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
+          {examples.map((ex, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+            >
+              <Card before={ex.before} after={ex.after} label={ex.label} />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default DepositSaverBeforeAfter;
