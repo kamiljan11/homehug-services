@@ -375,7 +375,7 @@ const DepositSaver = () => {
                     Move-out Cleaning
                   </h3>
                   <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                    Landlords also deduct for poor cleaning. Bundle a professional move-out clean with your repairs and get your full deposit back.
+                    Landlords deduct for dirty apartments too. Add a professional clean to your repairs and walk out with nothing to worry about.
                   </p>
                   <div className="grid grid-cols-2 gap-2 mb-5">
                     {["Kitchen & appliances", "Bathroom & tiles", "Floors & baseboards", "Windows & frames"].map((item, i) => (
