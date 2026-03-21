@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 const testimonials = [
   { name: "Ewa K.", location: "Reykjavík", text: "Moving out was so stressful, but QuickFix saved my deposit! They patched the walls and fixed the floor scratches in one visit. Landlord didn't even notice.", rating: 5 },
@@ -94,6 +95,24 @@ const Testimonials = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.p
+          className="text-center mt-8 text-muted-foreground text-sm"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+        >
+          Join them.{" "}
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
+          >
+            Get your free quote now.
+          </a>
+        </motion.p>
       </div>
     </section>
   );
