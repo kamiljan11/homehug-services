@@ -20,11 +20,11 @@ const Index = () => {
       
       <Services />
       <BeforeAfter />
-      <ServiceArea />
       <AboutUs />
       <HowItWorks />
       <Testimonials />
       <FAQ />
+      <ServiceArea />
       <CTASection />
       <Footer />
       <FloatingWhatsApp />
