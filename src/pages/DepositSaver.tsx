@@ -9,6 +9,10 @@ import { PHONE_NUMBER, WHATSAPP_URL } from "@/lib/contact";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import DepositSaverFAQ from "@/components/deposit-saver/DepositSaverFAQ";
+import DepositSaverTestimonials from "@/components/deposit-saver/DepositSaverTestimonials";
+import DepositSaverBeforeAfter from "@/components/deposit-saver/DepositSaverBeforeAfter";
+import DepositSaverTrust from "@/components/deposit-saver/DepositSaverTrust";
 import heroImg from "@/assets/deposit-saver-hero.jpg";
 
 const fadeUp = {
