@@ -287,7 +287,7 @@ const DepositSaver = () => {
                 transition={{ duration: 0.2 }}
               >
                 <motion.div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center bg-primary/10 shrink-0"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center bg-primary/10 shrink-0"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
