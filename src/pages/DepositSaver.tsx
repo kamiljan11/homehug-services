@@ -313,7 +313,7 @@ const DepositSaver = () => {
             viewport={{ once: true }}
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Simple process</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-card-foreground mt-3 mb-4">
+            <h2 className="font-heading text-2xl sm:text-4xl font-bold text-card-foreground mt-3 mb-4">
               How it works
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
