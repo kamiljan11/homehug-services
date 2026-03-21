@@ -484,6 +484,31 @@ const DepositSaver = () => {
         </div>
       </section>
 
+      {/* Satisfaction Guarantee */}
+      <section className="py-10 sm:py-16 bg-card border-y border-border">
+        <div className="max-w-3xl mx-auto px-5 sm:px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <motion.div
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4 sm:mb-6"
+              whileHover={{ scale: 1.05 }}
+            >
+              <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-accent" />
+            </motion.div>
+            <h2 className="font-heading text-xl sm:text-3xl font-bold text-card-foreground mb-3">
+              Satisfaction Guarantee
+            </h2>
+            <p className="text-muted-foreground text-sm sm:text-lg leading-relaxed max-w-lg mx-auto">
+              If your landlord isn't satisfied with the repairs, we'll come back and fix it —{" "}
+              <span className="font-semibold text-accent">free of charge.</span>
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Trust Badges */}
       <DepositSaverTrust />
 
