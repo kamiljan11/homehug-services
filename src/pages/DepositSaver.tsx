@@ -328,15 +328,27 @@ const DepositSaver = () => {
             })}
           </div>
 
-          <motion.p
-            className="text-center mt-10 font-heading text-xl font-bold text-primary"
+          <motion.div
+            className="text-center mt-10"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
           >
-            Done. ✅
-          </motion.p>
+            <p className="font-heading text-lg sm:text-xl font-bold text-primary mb-2">
+              That's it. Done. ✅
+            </p>
+            <motion.a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary font-medium text-sm transition-colors"
+              whileHover={{ x: 3 }}
+            >
+              <Camera className="w-4 h-4" />
+              Start with step 1 — send us a photo →
+            </motion.a>
+          </motion.div>
         </div>
       </section>
 
