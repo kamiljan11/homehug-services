@@ -328,9 +328,9 @@ const DepositSaver = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Transparent pricing</span>
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Smart investment</span>
             <h2 className="font-heading text-2xl sm:text-4xl font-bold text-foreground mt-3 mb-6 sm:mb-8">
-              How much does it cost?
+              Spend a little now, save a lot later.
             </h2>
 
             <motion.div
