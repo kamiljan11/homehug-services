@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 const testimonials = [
   { name: "Ewa K.", location: "Reykjavík", text: "Moving out was so stressful, but QuickFix saved my deposit! They patched the walls and fixed the floor scratches in one visit. Landlord didn't even notice.", rating: 5 },
