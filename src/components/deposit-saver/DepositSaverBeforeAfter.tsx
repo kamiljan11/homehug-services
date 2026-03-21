@@ -51,7 +51,7 @@ const SliderCard = ({ before, after, label }: { before: string; after: string; l
     >
       <div
         ref={containerRef}
-        className="relative aspect-[4/3] cursor-col-resize select-none touch-none overflow-hidden"
+        className="relative aspect-[4/5] cursor-col-resize select-none touch-none overflow-hidden"
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
