@@ -52,7 +52,7 @@ const Navbar = ({ customLinks }: NavbarProps = {}) => {
             <span className={`${scrolled ? "text-[#3B82F6]" : "text-[#3B82F6]"}`}>Fix</span>
             <span className={`${scrolled ? "text-foreground" : "text-primary-foreground"}`}> Iceland</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
