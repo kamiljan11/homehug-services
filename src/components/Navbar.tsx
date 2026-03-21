@@ -6,12 +6,16 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import logo from "@/assets/logo.png";
 import { WHATSAPP_URL } from "@/lib/contact";
 
-const Navbar = () => {
+interface NavbarProps {
+  customLinks?: { label: string; href: string }[];
+}
+
+const Navbar = ({ customLinks }: NavbarProps = {}) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { t } = useLanguage();
 
-  const navLinks = [
+  const navLinks = customLinks || [
     { label: t("nav.services"), href: "#services" },
     { label: t("nav.howItWorks"), href: "#how-it-works" },
     { label: t("nav.faq"), href: "#faq" },

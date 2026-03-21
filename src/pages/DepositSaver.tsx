@@ -54,7 +54,13 @@ const DepositSaver = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <Navbar customLinks={[
+        { label: "The Problem", href: "#problem" },
+        { label: "Services", href: "#services" },
+        { label: "How It Works", href: "#how-it-works" },
+        { label: "Pricing", href: "#pricing" },
+        { label: "Contact", href: "#contact" },
+      ]} />
 
       {/* Hero */}
       <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center overflow-hidden">
@@ -244,7 +250,7 @@ const DepositSaver = () => {
       </section>
 
       {/* What We Fix */}
-      <section className="py-16 sm:py-24 bg-card border-y border-border">
+      <section id="services" className="py-16 sm:py-24 bg-card border-y border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             className="text-center mb-16"
@@ -294,7 +300,7 @@ const DepositSaver = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 sm:py-24 bg-card border-y border-border">
+      <section id="how-it-works" className="py-16 sm:py-24 bg-card border-y border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             className="text-center mb-16"
@@ -369,7 +375,7 @@ const DepositSaver = () => {
       </section>
 
       {/* Pricing */}
-      <section className="py-16 sm:py-24 bg-muted/30">
+      <section id="pricing" className="py-16 sm:py-24 bg-muted/30">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -404,7 +410,7 @@ const DepositSaver = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 sm:py-24 bg-primary relative overflow-hidden">
+      <section id="contact" className="py-16 sm:py-24 bg-primary relative overflow-hidden">
         <motion.div
           className="absolute top-0 right-0 w-96 h-96 bg-primary-foreground/5 rounded-full -translate-y-1/2 translate-x-1/3"
           animate={{ scale: [1, 1.1, 1], rotate: [0, 5, 0] }}
