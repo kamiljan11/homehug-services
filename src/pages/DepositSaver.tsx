@@ -409,6 +409,59 @@ const DepositSaver = () => {
                 <span>Usually cheaper than losing your deposit.</span>
               </div>
             </motion.div>
+
+            {/* Move-out Cleaning Add-on */}
+            <motion.div
+              className="mt-6 sm:mt-8 bg-card border-2 border-dashed border-secondary/40 rounded-2xl p-6 sm:p-8 relative overflow-hidden text-left"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              whileHover={{ y: -2 }}
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
+                  <SprayCan className="w-6 h-6 text-secondary" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="inline-flex items-center gap-1 bg-secondary/10 text-secondary text-xs font-bold px-2.5 py-1 rounded-full">
+                      <Plus className="w-3 h-3" /> ADD-ON
+                    </span>
+                  </div>
+                  <h3 className="font-heading text-lg sm:text-xl font-bold text-card-foreground mb-2">
+                    Move-out Cleaning
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                    Landlords also deduct for poor cleaning. Bundle a professional move-out clean with your repairs and get your full deposit back.
+                  </p>
+                  <div className="grid grid-cols-2 gap-2 mb-5">
+                    {["Kitchen & appliances", "Bathroom & tiles", "Floors & baseboards", "Windows & frames"].map((item, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-secondary shrink-0" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+                    <p className="font-heading text-xl sm:text-2xl font-bold text-secondary">
+                      from 25.000 ISK
+                    </p>
+                    <motion.a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground font-heading font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-secondary/90 transition-all"
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      Add to your quote
+                    </motion.a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
