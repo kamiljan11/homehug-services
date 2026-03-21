@@ -59,7 +59,7 @@ const AboutUs = () => {
             </motion.p>
           </motion.div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="hidden sm:grid grid-cols-2 gap-4">
             {traits.map((trait, i) => (
               <motion.div
                 key={i}
