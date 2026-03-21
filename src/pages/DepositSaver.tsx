@@ -438,12 +438,12 @@ const DepositSaver = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-heading text-2xl sm:text-4xl font-bold text-primary-foreground mb-3 sm:mb-4">
-              Fix it before inspection.
+              Your inspection is coming.
               <br />
-              <span className="text-secondary">Keep your deposit.</span>
+              <span className="text-secondary">Let's make sure you're ready.</span>
             </h2>
             <p className="text-primary-foreground/70 mb-8 sm:mb-10 text-sm sm:text-lg max-w-lg mx-auto">
-              Send us photos of the damage and we'll give you a free quote — usually within a few hours.
+              Snap a few photos of the damage, send them on WhatsApp, and we'll tell you exactly what it'll cost to fix — for free.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <motion.a
