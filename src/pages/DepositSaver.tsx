@@ -291,7 +291,7 @@ const DepositSaver = () => {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <f.icon className="w-6 h-6 text-primary" />
+                  <f.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </motion.div>
                 <div>
                   <p className="font-heading font-bold text-card-foreground mb-1">{f.title}</p>
