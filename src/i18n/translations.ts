@@ -200,9 +200,9 @@ export const translations = {
   // CTA
   "cta.title": { en: "Something Broken? We'll Fix It.", pl: "Coś zepsute? Naprawimy to.", is: "Eitthvað bilað? Við lögum það." },
   "cta.description": {
-    en: "Polish golden hands at your service. Send a photo, get a free quote in minutes. Cheapest rates, honest work, no hidden fees.",
-    pl: "Polskie złote ręce do Twoich usług. Wyślij zdjęcie, dostaniesz darmową wycenę w kilka minut. Najniższe ceny, uczciwa robota.",
-    is: "Pólskir gullhendir í þinni þjónustu. Sendu mynd, fáðu ókeypis tilboð á nokkrum mínútum. Lægsta verð, heiðarleg vinna.",
+    en: "Polish Handy Men at your service. Send a photo, get a free quote in minutes. Cheapest rates, honest work, no hidden fees.",
+    pl: "Polscy fachowcy do Twoich usług. Wyślij zdjęcie, dostaniesz darmową wycenę w kilka minut. Najniższe ceny, uczciwa robota.",
+    is: "Pólskir iðnaðarmenn í þinni þjónustu. Sendu mynd, fáðu ókeypis tilboð á nokkrum mínútum. Lægsta verð, heiðarleg vinna.",
   },
 
   // Footer
