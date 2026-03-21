@@ -1,8 +1,9 @@
 import { useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Camera } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 import beforeWall from "@/assets/before-wall.jpg";
 import afterWall from "@/assets/after-wall.jpg";
