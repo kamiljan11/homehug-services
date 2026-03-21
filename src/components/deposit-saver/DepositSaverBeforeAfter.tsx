@@ -1,11 +1,17 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useIsMobile } from "@/hooks/use-mobile";
+import wallBefore from "@/assets/deposit-saver/wall-before.jpg";
+import wallAfter from "@/assets/deposit-saver/wall-after.jpg";
+import floorBefore from "@/assets/deposit-saver/floor-before.jpg";
+import floorAfter from "@/assets/deposit-saver/floor-after.jpg";
+import cabinetBefore from "@/assets/deposit-saver/cabinet-before.jpg";
+import cabinetAfter from "@/assets/deposit-saver/cabinet-after.jpg";
 
 const examples = [
-  { label: "Wall hole patched & painted", before: "🕳️ Visible nail holes and scuffs", after: "✨ Smooth, freshly painted wall" },
-  { label: "Floor scratches removed", before: "😬 Deep scratches from furniture", after: "✨ Buffed and restored finish" },
-  { label: "Cabinet hinge fixed", before: "🔧 Loose, hanging door", after: "✨ Aligned and secure" },
+  { label: "Wall hole patched & painted", beforeImg: wallBefore, afterImg: wallAfter },
+  { label: "Floor scratches removed", beforeImg: floorBefore, afterImg: floorAfter },
+  { label: "Cabinet hinge fixed", beforeImg: cabinetBefore, afterImg: cabinetAfter },
 ];
 
 const ExampleCard = ({ example, index }: { example: typeof examples[0]; index: number }) => {
@@ -22,25 +28,22 @@ const ExampleCard = ({ example, index }: { example: typeof examples[0]; index: n
       whileHover={{ y: -3 }}
       onClick={() => setShowAfter(!showAfter)}
     >
-      <div className="relative h-48 bg-muted flex items-center justify-center overflow-hidden">
+      <div className="relative h-56 sm:h-64 overflow-hidden">
         <AnimatePresence mode="wait">
-          <motion.div
+          <motion.img
             key={showAfter ? "after" : "before"}
-            initial={{ opacity: 0, scale: 0.95 }}
+            src={showAfter ? example.afterImg : example.beforeImg}
+            alt={`${example.label} — ${showAfter ? "after" : "before"}`}
+            className="w-full h-full object-cover"
+            initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.05 }}
+            exit={{ opacity: 0, scale: 1.02 }}
             transition={{ duration: 0.3 }}
-            className="text-center px-6"
-          >
-            <p className="text-4xl mb-2">{showAfter ? "✅" : "⚠️"}</p>
-            <p className="text-sm font-medium text-muted-foreground">
-              {showAfter ? example.after : example.before}
-            </p>
-          </motion.div>
+          />
         </AnimatePresence>
 
         <div className="absolute top-3 left-3">
-          <span className={`text-xs font-bold px-3 py-1 rounded-full ${showAfter ? "bg-accent/20 text-accent" : "bg-destructive/20 text-destructive"}`}>
+          <span className={`text-xs font-bold px-3 py-1 rounded-full ${showAfter ? "bg-accent/90 text-accent-foreground" : "bg-destructive/90 text-destructive-foreground"}`}>
             {showAfter ? "AFTER" : "BEFORE"}
           </span>
         </div>
