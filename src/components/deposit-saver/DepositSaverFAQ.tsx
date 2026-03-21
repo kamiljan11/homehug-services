@@ -6,26 +6,32 @@ const faqs = [
   {
     q: "My inspection is in 3 days — can you still help?",
     a: "Most likely yes. Most jobs take 1–2 days. Send us photos now and we'll tell you right away if we can make it in time.",
+    cta: "Send photos now — we'll check →",
   },
   {
     q: "What if the damage is too serious to fix?",
     a: "We'll tell you honestly. If a repair won't save you money compared to the deduction, we won't waste your time or money.",
+    cta: "Ask us — honest answer guaranteed →",
   },
   {
     q: "Do I need to be home while you work?",
     a: "Nope. Most clients just leave a key or arrange access with the building. We'll coordinate whatever works for you.",
+    cta: "Let's arrange access →",
   },
   {
     q: "Is the quote really free? No catch?",
     a: "Zero catch. Send us photos on WhatsApp, we reply with a price. If you don't want to go ahead, no hard feelings.",
+    cta: "Get your free quote →",
   },
   {
     q: "What areas do you cover?",
     a: "Greater Reykjavík — Kópavogur, Hafnarfjörður, Garðabær, and Reykjanesbær. If you're nearby, just ask.",
+    cta: "Check if we cover your area →",
   },
   {
     q: "Can you match my wall paint exactly?",
     a: "Yes — we color-match to your existing paint so the patches blend in completely. Your landlord won't be able to tell.",
+    cta: "Send a photo of the wall →",
   },
 ];
 
@@ -81,21 +87,19 @@ const DepositSaverFAQ = () => {
                     transition={{ duration: 0.25 }}
                     className="overflow-hidden"
                   >
-                    <p className="px-4 sm:px-5 pb-4 sm:pb-5 text-muted-foreground leading-relaxed text-sm">
-                      {faq.a}
-                      {(i === 0 || i === 3) && (
-                        <span className="block mt-2">
-                          <a
-                            href={WHATSAPP_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-bold text-primary hover:text-primary/80 transition-colors underline underline-offset-2 text-sm"
-                          >
-                            {i === 0 ? "Send photos now — we'll check →" : "Send photos — zero obligation →"}
-                          </a>
-                        </span>
-                      )}
-                    </p>
+                    <div className="px-4 sm:px-5 pb-4 sm:pb-5 text-muted-foreground leading-relaxed text-sm">
+                      <p>{faq.a}</p>
+                      <span className="block mt-3">
+                        <a
+                          href={WHATSAPP_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-bold text-primary hover:text-primary/80 transition-colors underline underline-offset-2 text-sm"
+                        >
+                          {faq.cta}
+                        </a>
+                      </span>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
