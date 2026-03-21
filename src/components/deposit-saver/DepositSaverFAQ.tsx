@@ -4,28 +4,28 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    q: "How fast can you fix everything before my inspection?",
-    a: "Most jobs take 1–2 days. If your inspection is soon, let us know — we'll prioritize your booking.",
+    q: "My inspection is in 3 days — can you still help?",
+    a: "Most likely yes. Most jobs take 1–2 days. Send us photos now and we'll tell you right away if we can make it in time.",
   },
   {
-    q: "What if the damage is too big to fix?",
-    a: "We'll tell you upfront. If a repair won't save you money compared to the deduction, we'll be honest about it.",
+    q: "What if the damage is too serious to fix?",
+    a: "We'll tell you honestly. If a repair won't save you money compared to the deduction, we won't waste your time or money.",
   },
   {
-    q: "Do I need to be home during the repairs?",
-    a: "Not necessarily. Many clients leave us a key or arrange access. We'll coordinate what works best for you.",
+    q: "Do I need to be home while you work?",
+    a: "Nope. Most clients just leave a key or arrange access with the building. We'll coordinate whatever works for you.",
   },
   {
-    q: "Is the quote really free?",
-    a: "Yes — send us photos on WhatsApp and we'll reply with a price. No obligation, no hidden fees.",
+    q: "Is the quote really free? No catch?",
+    a: "Zero catch. Send us photos on WhatsApp, we reply with a price. If you don't want to go ahead, no hard feelings.",
   },
   {
     q: "What areas do you cover?",
-    a: "We cover the greater Reykjavík area including Kópavogur, Hafnarfjörður, Garðabær, and Reykjanesbær.",
+    a: "Greater Reykjavík — Kópavogur, Hafnarfjörður, Garðabær, and Reykjanesbær. If you're nearby, just ask.",
   },
   {
-    q: "Can you match the exact paint color on my walls?",
-    a: "Yes. We color-match to your existing paint so patches blend seamlessly with the rest of the wall.",
+    q: "Can you match my wall paint exactly?",
+    a: "Yes — we color-match to your existing paint so the patches blend in completely. Your landlord won't be able to tell.",
   },
 ];
 
@@ -43,10 +43,10 @@ const DepositSaverFAQ = () => {
         >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">FAQ</span>
           <h2 className="font-heading text-2xl sm:text-4xl font-bold text-foreground mt-3 mb-3 sm:mb-4">
-            Common questions
+            Questions you probably have
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">
-            Everything you need to know about our Deposit Saver service.
+            We get it — it's your money. Here are honest answers.
           </p>
         </motion.div>
 

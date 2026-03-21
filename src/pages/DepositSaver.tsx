@@ -26,24 +26,24 @@ const stagger = {
 };
 
 const fixes = [
-  { icon: PaintBucket, title: "Wall patching & paint touch-ups", desc: "Fill holes, sand smooth, and repaint to match" },
-  { icon: Footprints, title: "Floor scratch removal", desc: "Buff out scratches and restore the finish" },
-  { icon: DoorOpen, title: "Hinges, handles & fittings", desc: "Tighten, replace, and realign all hardware" },
-  { icon: Wrench, title: "Cabinet & shelf repairs", desc: "Fix loose shelves, doors, and drawer slides" },
-  { icon: Sofa, title: "Upholstery deep cleaning", desc: "Professional Kärcher cleaning for sofas & chairs" },
-  { icon: Hammer, title: "General wear & tear", desc: "All the small fixes landlords notice" },
+  { icon: PaintBucket, title: "Wall patching & painting", desc: "Those nail holes from shelves and picture frames? Gone." },
+  { icon: Footprints, title: "Floor scratch removal", desc: "Furniture marks and scuffs buffed out completely." },
+  { icon: DoorOpen, title: "Hinges, handles & fittings", desc: "Everything that's loose, wobbly, or not closing right." },
+  { icon: Wrench, title: "Cabinet & shelf repairs", desc: "Doors that don't close, drawers that stick — sorted." },
+  { icon: Sofa, title: "Upholstery deep cleaning", desc: "Coffee stains, pet hair, everyday wear — Kärcher cleaned." },
+  { icon: Hammer, title: "General wear & tear", desc: "All the little things landlords love to point out." },
 ];
 
 const steps = [
-  { icon: Camera, num: "01", title: "Send photos", desc: "WhatsApp us pictures of the damage — it's free" },
-  { icon: MessageCircle, num: "02", title: "Get a quote", desc: "We reply with a clear price — usually same day" },
-  { icon: CheckCircle2, num: "03", title: "We fix it", desc: "Fast, professional repairs before your inspection" },
+  { icon: Camera, num: "01", title: "Send photos", desc: "Take a few pictures of the damage and WhatsApp them to us" },
+  { icon: MessageCircle, num: "02", title: "Get your price", desc: "We'll reply with an honest quote — usually the same day" },
+  { icon: CheckCircle2, num: "03", title: "We fix it", desc: "We come over, fix everything, and you're ready for inspection" },
 ];
 
 const stats = [
-  { icon: AlertTriangle, value: "50.000+", label: "ISK average deposit deduction" },
-  { icon: BadgeCheck, value: "80%", label: "of landlords inspect for damage" },
-  { icon: Clock, value: "1–2 days", label: "is all we need to fix it" },
+  { icon: AlertTriangle, value: "50.000+", label: "ISK — average deposit deduction" },
+  { icon: BadgeCheck, value: "80%", label: "of landlords check for damage" },
+  { icon: Clock, value: "1–2 days", label: "and it's like you were never there" },
 ];
 
 const DepositSaver = () => {
@@ -76,8 +76,17 @@ const DepositSaver = () => {
             >
               <span className="text-secondary">Deposit Saver</span>
               <br />
-              We fix the issues that cost you your deposit.
+              Moving out? Don't let small damage eat your deposit.
             </motion.h1>
+
+            <motion.p
+              className="text-primary-foreground/70 text-sm sm:text-lg mb-6 sm:mb-8 max-w-xl leading-relaxed"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              You've lived here. Life happened. We fix the marks it left — so your landlord has nothing to deduct.
+            </motion.p>
 
             <motion.div
               className="flex flex-col sm:flex-row gap-3 sm:gap-4"
@@ -174,10 +183,10 @@ const DepositSaver = () => {
               ⚠️ The problem
             </span>
             <h2 className="font-heading text-2xl sm:text-4xl font-bold text-foreground mb-4 sm:mb-6">
-              Small damage = <span className="text-destructive">less money back.</span>
+              You lived here. <span className="text-destructive">Now it shows.</span>
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-              Landlords check everything — wall holes, floor scratches, loose fittings, dirty upholstery. Even minor issues can cost you tens of thousands of ISK. We fix it all for a fraction of the deduction.
+              A few nail holes from hanging shelves. Scratches on the floor from moving furniture. A scuff on the wall where the sofa was. It's normal — but your landlord will still deduct for it. Why lose 50.000+ ISK when we can fix it for less?
             </p>
           </motion.div>
         </div>
@@ -194,10 +203,10 @@ const DepositSaver = () => {
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our services</span>
             <h2 className="font-heading text-2xl sm:text-4xl font-bold text-card-foreground mt-3 mb-4">
-              What we fix
+              You focus on moving. We handle the rest.
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Focused fixes for the most common move-out problems — no unnecessary work.
+              No tools needed. No YouTube tutorials. Just tell us what's damaged and we'll take care of it.
             </p>
           </motion.div>
 
@@ -245,12 +254,12 @@ const DepositSaver = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Simple process</span>
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">No stress</span>
             <h2 className="font-heading text-2xl sm:text-4xl font-bold text-card-foreground mt-3 mb-4">
-              How it works
+              As easy as texting a friend
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Three simple steps to saving your deposit.
+              No forms. No appointments. Just snap a photo and send it over.
             </p>
           </motion.div>
 
@@ -319,9 +328,9 @@ const DepositSaver = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Transparent pricing</span>
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Smart investment</span>
             <h2 className="font-heading text-2xl sm:text-4xl font-bold text-foreground mt-3 mb-6 sm:mb-8">
-              How much does it cost?
+              Spend a little now, save a lot later.
             </h2>
 
             <motion.div
@@ -366,7 +375,7 @@ const DepositSaver = () => {
                     Move-out Cleaning
                   </h3>
                   <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                    Landlords also deduct for poor cleaning. Bundle a professional move-out clean with your repairs and get your full deposit back.
+                    Landlords deduct for dirty apartments too. Add a professional clean to your repairs and walk out with nothing to worry about.
                   </p>
                   <div className="grid grid-cols-2 gap-2 mb-5">
                     {["Kitchen & appliances", "Bathroom & tiles", "Floors & baseboards", "Windows & frames"].map((item, i) => (
@@ -429,12 +438,12 @@ const DepositSaver = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-heading text-2xl sm:text-4xl font-bold text-primary-foreground mb-3 sm:mb-4">
-              Fix it before inspection.
+              Your inspection is coming.
               <br />
-              <span className="text-secondary">Keep your deposit.</span>
+              <span className="text-secondary">Let's make sure you're ready.</span>
             </h2>
             <p className="text-primary-foreground/70 mb-8 sm:mb-10 text-sm sm:text-lg max-w-lg mx-auto">
-              Send us photos of the damage and we'll give you a free quote — usually within a few hours.
+              Snap a few photos of the damage, send them on WhatsApp, and we'll tell you exactly what it'll cost to fix — for free.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <motion.a

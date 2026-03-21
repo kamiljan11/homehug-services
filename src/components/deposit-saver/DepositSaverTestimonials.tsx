@@ -1,23 +1,22 @@
-import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
     name: "Ewa K.",
-    text: "I had holes in every wall from shelves. They patched and painted everything — landlord didn't notice a thing. Got my full deposit back!",
+    text: "I was panicking — holes everywhere from shelves I put up. They came, patched everything, color-matched the paint. My landlord walked through and said 'looks great.' Full deposit back.",
     rating: 5,
     saved: "85.000 ISK",
   },
   {
     name: "Tomasz R.",
-    text: "Floor scratches and a broken cabinet hinge. Fixed in one afternoon. The quote was exactly what I paid — no surprises.",
+    text: "Floor scratches from moving furniture and a cabinet door that wouldn't close. Fixed in one afternoon. The price was exactly what they quoted — no surprises. Wish I'd known about this sooner.",
     rating: 5,
     saved: "45.000 ISK",
   },
   {
     name: "Sigurður H.",
-    text: "My sofa had coffee stains everywhere. Their Kärcher cleaning made it look brand new. Landlord was impressed.",
+    text: "Two years of coffee spills on the sofa. I thought I'd lose my deposit for sure. Their cleaning made it look like new. Even the landlord was impressed.",
     rating: 5,
     saved: "60.000 ISK",
   },
@@ -50,12 +49,12 @@ const DepositSaverTestimonials = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <span className="text-primary font-semibold text-sm uppercase tracking-wider">Testimonials</span>
+        <span className="text-primary font-semibold text-sm uppercase tracking-wider">Real stories</span>
         <h2 className="font-heading text-2xl sm:text-4xl font-bold text-card-foreground mt-3 mb-3 sm:mb-4">
-          Tenants who saved their deposit
+          They were in your shoes
         </h2>
         <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">
-          Real stories from people who kept their money.
+          People who thought they'd lose their deposit — and didn't.
         </p>
       </motion.div>
 

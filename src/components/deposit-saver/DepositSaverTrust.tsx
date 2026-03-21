@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { ShieldCheck, ThumbsUp, Clock, Banknote, Shield } from "lucide-react";
 
 const badges = [
-  { icon: ThumbsUp, title: "Many Deposits Saved", desc: "Trusted by tenants across Reykjavík." },
-  { icon: Clock, title: "Fast Turnaround", desc: "Most jobs done in 1–2 days." },
-  { icon: Banknote, title: "No Hidden Fees", desc: "The quote you get is the price you pay." },
+  { icon: ThumbsUp, title: "Trusted by Tenants", desc: "Expats and locals across Reykjavík rely on us." },
+  { icon: Clock, title: "Done in 1–2 Days", desc: "Even last-minute? We'll make it work." },
+  { icon: Banknote, title: "No Surprises", desc: "The price we quote is the price you pay." },
 ];
 
 const DepositSaverTrust = () => (
@@ -24,10 +24,10 @@ const DepositSaverTrust = () => (
           <Shield className="w-7 h-7 sm:w-8 sm:h-8 text-accent" />
         </motion.div>
         <h2 className="font-heading text-xl sm:text-3xl font-bold text-card-foreground mb-2">
-          Satisfaction Guarantee
+          We stand behind our work.
         </h2>
         <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-lg mx-auto">
-          If your landlord isn't satisfied, we'll come back and fix it —{" "}
+          If your landlord finds something we missed, we'll come back and fix it —{" "}
           <span className="font-semibold text-accent">free of charge.</span>
         </p>
       </motion.div>
