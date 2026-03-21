@@ -9,15 +9,15 @@ const badges = [
 ];
 
 const DepositSaverTrust = () => (
-  <section className="py-12 sm:py-16 bg-background">
-    <div className="max-w-6xl mx-auto px-4 sm:px-6">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+  <section className="py-10 sm:py-16 bg-background">
+    <div className="max-w-6xl mx-auto px-5 sm:px-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
         {badges.map((badge, i) => {
           const Icon = badge.icon;
           return (
             <motion.div
               key={i}
-              className="text-center p-5 sm:p-6 rounded-2xl bg-card border border-border"
+              className="text-center p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-card border border-border"
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -25,14 +25,14 @@ const DepositSaverTrust = () => (
               whileHover={{ y: -2 }}
             >
               <motion.div
-                className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-2 sm:mb-3"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <Icon className="w-6 h-6 text-primary" />
+                <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
               </motion.div>
-              <h3 className="font-heading font-bold text-card-foreground text-sm mb-1">{badge.title}</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">{badge.desc}</p>
+              <h3 className="font-heading font-bold text-card-foreground text-xs sm:text-sm mb-0.5 sm:mb-1">{badge.title}</h3>
+              <p className="text-[10px] sm:text-xs text-muted-foreground leading-relaxed hidden sm:block">{badge.desc}</p>
             </motion.div>
           );
         })}

@@ -379,34 +379,34 @@ const DepositSaver = () => {
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="py-16 sm:py-24 bg-muted/30">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <section id="pricing" className="py-12 sm:py-24 bg-muted/30">
+        <div className="max-w-3xl mx-auto px-5 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Transparent pricing</span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mt-3 mb-8">
+            <h2 className="font-heading text-2xl sm:text-4xl font-bold text-foreground mt-3 mb-6 sm:mb-8">
               How much does it cost?
             </h2>
 
             <motion.div
-              className="bg-card border border-border rounded-2xl p-8 sm:p-10 shadow-lg relative overflow-hidden"
+              className="bg-card border border-border rounded-2xl p-6 sm:p-10 shadow-lg relative overflow-hidden"
               whileHover={{ y: -3 }}
               transition={{ duration: 0.2 }}
             >
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent" />
-              <p className="text-muted-foreground mb-3 text-sm uppercase tracking-wider font-medium">Most jobs</p>
-              <p className="font-heading text-4xl sm:text-5xl font-bold text-primary mb-3">
+              <p className="text-muted-foreground mb-2 sm:mb-3 text-xs sm:text-sm uppercase tracking-wider font-medium">Most jobs</p>
+              <p className="font-heading text-2xl sm:text-5xl font-bold text-primary mb-2 sm:mb-3">
                 30.000 – 80.000 ISK
               </p>
-              <p className="text-muted-foreground mb-8">
+              <p className="text-muted-foreground text-sm mb-6 sm:mb-8">
                 Depends on size and damage.
               </p>
-              <div className="flex items-center justify-center gap-2 text-accent font-semibold bg-accent/10 rounded-full px-5 py-2.5 mx-auto w-fit">
-                <CheckCircle2 className="w-5 h-5" />
-                <span>Usually much cheaper than losing your deposit.</span>
+              <div className="flex items-center justify-center gap-2 text-accent font-semibold bg-accent/10 rounded-full px-4 sm:px-5 py-2 sm:py-2.5 mx-auto w-fit text-xs sm:text-base">
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+                <span>Usually cheaper than losing your deposit.</span>
               </div>
             </motion.div>
           </motion.div>
