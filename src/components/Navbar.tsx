@@ -39,7 +39,7 @@ const Navbar = ({ customLinks }: NavbarProps = {}) => {
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-1.5">
+        <Link to="/" className="flex items-center gap-1.5">
           <motion.img
             src={logo}
             alt="QuickFix Iceland"
