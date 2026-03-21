@@ -68,7 +68,34 @@ const Testimonials = () => {
 
         <GoogleBadge />
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+        {/* Mobile: horizontal scroll slider */}
+        <div className="md:hidden -mx-4 px-4">
+          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mr-4 pr-4">
+            {testimonials.map((item) => (
+              <div
+                key={item.name}
+                className="bg-card rounded-2xl p-6 shadow-md border border-border relative overflow-hidden min-w-[280px] snap-center shrink-0 w-[85vw]"
+              >
+                <div className="absolute top-4 right-4 text-primary/10">
+                  <Quote className="w-8 h-8" />
+                </div>
+                <div className="flex gap-1 mb-3">
+                  {Array.from({ length: item.rating }).map((_, j) => (
+                    <Star key={j} className="w-3.5 h-3.5 fill-secondary text-secondary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground text-xs leading-relaxed mb-5 relative z-10">"{item.text}"</p>
+                <div>
+                  <p className="font-heading font-semibold text-card-foreground text-sm">{item.name}</p>
+                  <p className="text-xs text-muted-foreground">{item.location}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: grid */}
+        <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((item, i) => (
             <motion.div
               key={item.name}
