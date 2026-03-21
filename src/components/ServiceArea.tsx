@@ -29,7 +29,25 @@ const ServiceArea = () => {
             <MapPin className="w-5 h-5 text-primary" />
             <h3 className="font-heading text-lg font-bold text-foreground">{t("areas.title")}</h3>
           </div>
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+          {/* Mobile: clean 2-column grid */}
+          <div className="grid grid-cols-2 gap-2 sm:hidden">
+            {areas.map((area, i) => (
+              <motion.div
+                key={area}
+                initial={{ opacity: 0, y: 8 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: i * 0.04 }}
+                className="flex items-center gap-2 bg-primary/5 border border-primary/15 rounded-lg px-3 py-2.5"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                <span className="text-foreground text-sm font-medium">{area}</span>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Desktop: inline pills */}
+          <div className="hidden sm:flex flex-wrap justify-center gap-3">
             {areas.map((area, i) => (
               <motion.span
                 key={area}
