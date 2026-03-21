@@ -131,8 +131,8 @@ export const translations = {
 
   // About
   "about.badge": { en: "🇵🇱 About Us", pl: "🇵🇱 O nas", is: "🇵🇱 Um okkur" },
-  "about.title1": { en: "Polish Handymen,", pl: "Polscy fachowcy,", is: "Pólskir iðnaðarmenn," },
-  "about.title2": { en: "Now in Iceland.", pl: "Teraz na Islandii.", is: "Nú á Íslandi." },
+  "about.title1": { en: "Polish Handyman", pl: "Polski fachowiec", is: "Pólskur iðnaðarmaður" },
+  "about.title2": { en: "in Iceland.", pl: "na Islandii.", is: "á Íslandi." },
   "about.p1": {
     en: "Polish handymen who fix everything — from deposit-saving repairs to IKEA assembly. Reliable, affordable, no surprises. Snap a photo, get a quote.",
     pl: "Polscy fachowcy, którzy naprawią wszystko — od napraw ratujących kaucję po montaż IKEA. Solidni, niedrodzy, bez niespodzianek. Zrób zdjęcie, dostaniesz wycenę.",
