@@ -77,7 +77,7 @@ const DepositSaver = () => {
           <div className="max-w-2xl">
 
             <motion.h1
-              className="font-heading text-2xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-3 sm:mb-6"
+              className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-3 sm:mb-6"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -164,8 +164,8 @@ const DepositSaver = () => {
                   <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
                     <Icon className="w-6 h-6 text-secondary mx-auto mb-2" />
                   </motion.div>
-                  <p className="font-heading text-lg sm:text-3xl font-bold text-primary-foreground">{stat.value}</p>
-                  <p className="text-primary-foreground/70 text-[10px] sm:text-sm mt-0.5 sm:mt-1">{stat.label}</p>
+                  <p className="font-heading text-xl sm:text-3xl font-bold text-primary-foreground">{stat.value}</p>
+                  <p className="text-primary-foreground/70 text-xs sm:text-sm mt-0.5 sm:mt-1">{stat.label}</p>
                 </motion.div>
               );
             })}
@@ -196,7 +196,7 @@ const DepositSaver = () => {
               <span className="inline-block bg-destructive/10 text-destructive border border-destructive/20 text-sm font-medium px-4 py-1.5 rounded-full mb-4">
                 ⚠️ The problem
               </span>
-              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-6">
+              <h2 className="font-heading text-2xl sm:text-4xl font-bold text-foreground mb-6">
                 Small damage =
                 <br />
                 <span className="text-destructive">less money back.</span>
@@ -263,7 +263,7 @@ const DepositSaver = () => {
             viewport={{ once: true }}
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our services</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-card-foreground mt-3 mb-4">
+            <h2 className="font-heading text-2xl sm:text-4xl font-bold text-card-foreground mt-3 mb-4">
               What we fix
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
@@ -313,7 +313,7 @@ const DepositSaver = () => {
             viewport={{ once: true }}
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Simple process</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-card-foreground mt-3 mb-4">
+            <h2 className="font-heading text-2xl sm:text-4xl font-bold text-card-foreground mt-3 mb-4">
               How it works
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
@@ -398,7 +398,7 @@ const DepositSaver = () => {
             >
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent" />
               <p className="text-muted-foreground mb-2 sm:mb-3 text-xs sm:text-sm uppercase tracking-wider font-medium">Most jobs</p>
-              <p className="font-heading text-2xl sm:text-5xl font-bold text-primary mb-2 sm:mb-3">
+              <p className="font-heading text-3xl sm:text-5xl font-bold text-primary mb-2 sm:mb-3">
                 30.000 – 80.000 ISK
               </p>
               <p className="text-muted-foreground text-sm mb-6 sm:mb-8">
