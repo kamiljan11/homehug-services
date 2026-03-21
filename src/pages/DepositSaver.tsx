@@ -54,7 +54,13 @@ const DepositSaver = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <Navbar customLinks={[
+        { label: "The Problem", href: "#problem" },
+        { label: "Services", href: "#services" },
+        { label: "How It Works", href: "#how-it-works" },
+        { label: "Pricing", href: "#pricing" },
+        { label: "Contact", href: "#contact" },
+      ]} />
 
       {/* Hero */}
       <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center overflow-hidden">
