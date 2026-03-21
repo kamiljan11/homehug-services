@@ -90,9 +90,9 @@ const TapCard = ({ before, after, label }: { before: string; after: string; labe
   const [showBefore, setShowBefore] = useState(true);
 
   return (
-    <motion.div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card">
+    <motion.div className="rounded-2xl overflow-hidden shadow-lg border border-border bg-card">
       <div
-        className="relative aspect-[4/3] overflow-hidden cursor-pointer"
+        className="relative aspect-[4/5] overflow-hidden cursor-pointer"
         onClick={() => setShowBefore((prev) => !prev)}
       >
         <AnimatePresence mode="wait">
@@ -108,17 +108,17 @@ const TapCard = ({ before, after, label }: { before: string; after: string; labe
             draggable={false}
           />
         </AnimatePresence>
-        <span className={`absolute top-2 left-2 text-[10px] font-bold px-2.5 py-0.5 rounded-full backdrop-blur-sm z-20 ${showBefore ? "bg-destructive/90 text-destructive-foreground" : "bg-accent/90 text-accent-foreground"}`}>
+        <span className={`absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm z-20 ${showBefore ? "bg-foreground/70 text-primary-foreground" : "bg-accent text-accent-foreground"}`}>
           {showBefore ? "BEFORE" : "AFTER"}
         </span>
-        <div className="absolute bottom-2 inset-x-2 flex justify-center z-20">
-          <span className="text-[10px] font-medium px-3 py-1 rounded-full bg-white/90 text-foreground shadow-sm">
+        <div className="absolute bottom-3 inset-x-3 flex justify-center z-20">
+          <span className="text-xs font-medium px-4 py-1.5 rounded-full bg-white/90 text-foreground shadow-sm">
             Tap to see {showBefore ? "after" : "before"}
           </span>
         </div>
       </div>
-      <div className="p-3">
-        <p className="font-heading font-semibold text-card-foreground text-xs">{label}</p>
+      <div className="p-4">
+        <p className="font-heading font-semibold text-card-foreground text-sm">{label}</p>
       </div>
     </motion.div>
   );
