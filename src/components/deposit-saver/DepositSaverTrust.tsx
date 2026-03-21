@@ -24,10 +24,10 @@ const DepositSaverTrust = () => (
           <Shield className="w-7 h-7 sm:w-8 sm:h-8 text-accent" />
         </motion.div>
         <h2 className="font-heading text-xl sm:text-3xl font-bold text-card-foreground mb-2">
-          Satisfaction Guarantee
+          We stand behind our work.
         </h2>
         <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-lg mx-auto">
-          If your landlord isn't satisfied, we'll come back and fix it —{" "}
+          If your landlord finds something we missed, we'll come back and fix it —{" "}
           <span className="font-semibold text-accent">free of charge.</span>
         </p>
       </motion.div>
