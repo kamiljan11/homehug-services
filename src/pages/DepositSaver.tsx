@@ -75,16 +75,8 @@ const DepositSaver = () => {
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-32 w-full">
           <div className="max-w-2xl">
-            <motion.div
-              className="mb-6 flex items-center gap-3"
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <span className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full shadow-lg">
-                <Shield className="w-4 h-4" /> Deposit Saver
-              </span>
-            </motion.div>
+
+
 
             <motion.h1
               className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4 sm:mb-6"
