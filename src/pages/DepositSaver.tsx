@@ -410,7 +410,7 @@ const DepositSaver = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 sm:py-24 bg-primary relative overflow-hidden">
+      <section id="contact" className="py-16 sm:py-24 bg-primary relative overflow-hidden">
         <motion.div
           className="absolute top-0 right-0 w-96 h-96 bg-primary-foreground/5 rounded-full -translate-y-1/2 translate-x-1/3"
           animate={{ scale: [1, 1.1, 1], rotate: [0, 5, 0] }}
