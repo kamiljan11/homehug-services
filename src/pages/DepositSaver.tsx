@@ -76,8 +76,17 @@ const DepositSaver = () => {
             >
               <span className="text-secondary">Deposit Saver</span>
               <br />
-              We fix the issues that cost you your deposit.
+              Moving out? Don't let small damage eat your deposit.
             </motion.h1>
+
+            <motion.p
+              className="text-primary-foreground/70 text-sm sm:text-lg mb-6 sm:mb-8 max-w-xl leading-relaxed"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              You've lived here. Life happened. We fix the marks it left — so your landlord has nothing to deduct.
+            </motion.p>
 
             <motion.div
               className="flex flex-col sm:flex-row gap-3 sm:gap-4"
