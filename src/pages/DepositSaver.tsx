@@ -84,8 +84,6 @@ const DepositSaver = () => {
             >
               <span className="text-secondary">Deposit Saver</span>
               <br />
-              Moving out?
-              <br />
               We fix the issues that cost you your deposit.
             </motion.h1>
 
