@@ -3,7 +3,7 @@ import { ShieldCheck, ThumbsUp, Clock, Banknote } from "lucide-react";
 
 const badges = [
   { icon: ShieldCheck, title: "Satisfaction Guaranteed", desc: "Not happy? We'll make it right — free of charge." },
-  { icon: ThumbsUp, title: "100+ Deposits Saved", desc: "Trusted by tenants across Reykjavík." },
+  { icon: ThumbsUp, title: "Many Deposits Saved", desc: "Trusted by tenants across Reykjavík." },
   { icon: Clock, title: "Fast Turnaround", desc: "Most jobs done in 1–2 days." },
   { icon: Banknote, title: "No Hidden Fees", desc: "The quote you get is the price you pay." },
 ];
