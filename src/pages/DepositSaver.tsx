@@ -147,9 +147,9 @@ const DepositSaver = () => {
       </section>
 
       {/* Stats bar */}
-      <section className="py-10 sm:py-14 bg-primary">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+      <section className="py-8 sm:py-14 bg-primary">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6">
+          <div className="grid grid-cols-3 gap-4 sm:gap-8">
             {stats.map((stat, i) => {
               const Icon = stat.icon;
               return (
