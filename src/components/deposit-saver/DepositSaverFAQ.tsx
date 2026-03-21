@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-
+import { WHATSAPP_URL } from "@/lib/contact";
 const faqs = [
   {
     q: "My inspection is in 3 days — can you still help?",
