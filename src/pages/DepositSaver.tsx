@@ -250,7 +250,7 @@ const DepositSaver = () => {
       </section>
 
       {/* What We Fix */}
-      <section className="py-16 sm:py-24 bg-card border-y border-border">
+      <section id="services" className="py-16 sm:py-24 bg-card border-y border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             className="text-center mb-16"
