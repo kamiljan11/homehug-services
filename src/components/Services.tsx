@@ -152,16 +152,24 @@ const Services = () => {
                 </motion.li>
               ))}
             </ul>
-            <motion.a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-secondary hover:text-secondary/80 transition-colors"
-              whileHover="hover"
-              initial="rest"
-            >
-              <MessageCircle className="w-4 h-4" /> {t("services.getFreeQuote")} <motion.span variants={arrowSlide}><ArrowRight className="w-4 h-4" /></motion.span>
-            </motion.a>
+            <div className="flex flex-wrap items-center gap-4">
+              <motion.a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-secondary hover:text-secondary/80 transition-colors"
+                whileHover="hover"
+                initial="rest"
+              >
+                <MessageCircle className="w-4 h-4" /> {t("services.getFreeQuote")} <motion.span variants={arrowSlide}><ArrowRight className="w-4 h-4" /></motion.span>
+              </motion.a>
+              <Link
+                to="/deposit-saver"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+              >
+                Learn more <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </motion.div>
 
           {/* IKEA — narrower right */}
