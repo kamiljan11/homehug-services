@@ -67,19 +67,17 @@ const DepositSaver = () => {
       ]} />
 
       {/* Hero */}
-      <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[80vh] sm:min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroImg} alt="" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/80 via-foreground/60 to-foreground/80" />
         </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-32 w-full">
+        <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-32 w-full">
           <div className="max-w-2xl">
 
-
-
             <motion.h1
-              className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4 sm:mb-6"
+              className="font-heading text-2xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-3 sm:mb-6"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -90,7 +88,7 @@ const DepositSaver = () => {
             </motion.h1>
 
             <motion.div
-              className="flex flex-wrap gap-2.5 mb-8"
+              className="flex flex-wrap gap-1.5 sm:gap-2.5 mb-6 sm:mb-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -98,18 +96,18 @@ const DepositSaver = () => {
               {problems.map((p, i) => (
                 <motion.span
                   key={i}
-                  className="inline-flex items-center gap-2 bg-primary-foreground/10 text-primary-foreground/80 text-sm px-4 py-2 rounded-full backdrop-blur-sm border border-primary-foreground/10"
+                  className="inline-flex items-center gap-1.5 bg-primary-foreground/10 text-primary-foreground/80 text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full backdrop-blur-sm border border-primary-foreground/10"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.25 + i * 0.06 }}
                 >
-                  <p.icon className="w-4 h-4 text-secondary" /> {p.label}
+                  <p.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary" /> {p.label}
                 </motion.span>
               ))}
             </motion.div>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
@@ -118,7 +116,7 @@ const DepositSaver = () => {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-heading font-bold text-base px-8 py-4 rounded-xl hover:bg-accent/90 transition-all hover:shadow-lg hover:shadow-accent/25"
+                className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-heading font-bold text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl hover:bg-accent/90 transition-all hover:shadow-lg hover:shadow-accent/25"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -127,7 +125,7 @@ const DepositSaver = () => {
               </motion.a>
               <motion.a
                 href={`tel:${PHONE_NUMBER}`}
-                className="inline-flex items-center justify-center gap-2 bg-primary-foreground/10 text-primary-foreground font-heading font-bold text-base px-8 py-4 rounded-xl hover:bg-primary-foreground/20 transition-all backdrop-blur-sm"
+                className="inline-flex items-center justify-center gap-2 bg-primary-foreground/10 text-primary-foreground font-heading font-bold text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl hover:bg-primary-foreground/20 transition-all backdrop-blur-sm"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -140,11 +138,11 @@ const DepositSaver = () => {
 
         <motion.a
           href="#problem"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/50 hover:text-primary-foreground/80 transition-colors"
+          className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/50 hover:text-primary-foreground/80 transition-colors"
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <ArrowDown className="w-6 h-6" />
+          <ArrowDown className="w-5 h-5 sm:w-6 sm:h-6" />
         </motion.a>
       </section>
 
