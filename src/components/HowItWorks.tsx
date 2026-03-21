@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Camera, MessageCircle, CheckCircle } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 const HowItWorks = () => {
   const { t } = useLanguage();
