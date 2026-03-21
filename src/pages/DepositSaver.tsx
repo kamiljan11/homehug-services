@@ -134,9 +134,9 @@ const DepositSaver = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
                 >
-                  <Icon className="w-6 h-6 text-secondary mx-auto mb-2" />
-                  <p className="font-heading text-xl sm:text-3xl font-bold text-primary-foreground">{stat.value}</p>
-                  <p className="text-primary-foreground/70 text-xs sm:text-sm mt-0.5 sm:mt-1">{stat.label}</p>
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-secondary mx-auto mb-1.5 sm:mb-2" />
+                  <p className="font-heading text-lg sm:text-3xl font-bold text-primary-foreground">{stat.value}</p>
+                  <p className="text-primary-foreground/70 text-[10px] sm:text-sm mt-0.5 sm:mt-1 leading-tight">{stat.label}</p>
                 </motion.div>
               );
             })}
