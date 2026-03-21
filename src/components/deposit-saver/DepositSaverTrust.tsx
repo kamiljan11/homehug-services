@@ -33,28 +33,26 @@ const DepositSaverTrust = () => (
       </motion.div>
 
       {/* Trust badges */}
-      <div className="grid grid-cols-3 gap-3 sm:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6">
         {badges.map((badge, i) => {
           const Icon = badge.icon;
           return (
             <motion.div
               key={i}
-              className="text-center p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-background border border-border"
+              className="flex sm:flex-col items-center sm:text-center gap-3 sm:gap-0 p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-background border border-border"
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
               whileHover={{ y: -2 }}
             >
-              <motion.div
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2 sm:mb-3"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-accent/10 flex items-center justify-center shrink-0 sm:mx-auto sm:mb-3">
                 <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
-              </motion.div>
-              <h3 className="font-heading font-bold text-card-foreground text-xs sm:text-sm mb-0.5 sm:mb-1">{badge.title}</h3>
-              <p className="text-[10px] sm:text-xs text-muted-foreground leading-relaxed hidden sm:block">{badge.desc}</p>
+              </div>
+              <div className="sm:text-center">
+                <h3 className="font-heading font-bold text-card-foreground text-sm sm:text-sm mb-0.5 sm:mb-1">{badge.title}</h3>
+                <p className="text-xs sm:text-xs text-muted-foreground leading-relaxed">{badge.desc}</p>
+              </div>
             </motion.div>
           );
         })}

@@ -134,27 +134,27 @@ const DepositSaver = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
                 >
-                  <Icon className="w-6 h-6 text-secondary mx-auto mb-2" />
-                  <p className="font-heading text-xl sm:text-3xl font-bold text-primary-foreground">{stat.value}</p>
-                  <p className="text-primary-foreground/70 text-xs sm:text-sm mt-0.5 sm:mt-1">{stat.label}</p>
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-secondary mx-auto mb-1.5 sm:mb-2" />
+                  <p className="font-heading text-lg sm:text-3xl font-bold text-primary-foreground">{stat.value}</p>
+                  <p className="text-primary-foreground/70 text-[10px] sm:text-sm mt-0.5 sm:mt-1 leading-tight">{stat.label}</p>
                 </motion.div>
               );
             })}
           </div>
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 mt-6 pt-5 border-t border-primary-foreground/10"
+            className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-6 mt-4 sm:mt-6 pt-4 sm:pt-5 border-t border-primary-foreground/10"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            <span className="flex items-center gap-2 text-primary-foreground/60 text-sm">
-              <MapPin className="w-4 h-4" />
+            <span className="flex items-center gap-1.5 sm:gap-2 text-primary-foreground/60 text-xs sm:text-sm">
+              <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               Covering Reykjavík & Reykjanesbær
             </span>
             <span className="hidden sm:block text-primary-foreground/20">•</span>
-            <span className="flex items-center gap-2 text-secondary text-sm font-semibold">
-              <Clock className="w-4 h-4" />
+            <span className="flex items-center gap-1.5 sm:gap-2 text-secondary text-xs sm:text-sm font-semibold">
+              <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               Book at least 3 days before inspection
             </span>
           </motion.div>
@@ -352,9 +352,9 @@ const DepositSaver = () => {
               transition={{ delay: 0.2 }}
               whileHover={{ y: -2 }}
             >
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
-                  <SprayCan className="w-6 h-6 text-secondary" />
+              <div className="flex items-start gap-3 sm:gap-4 flex-col sm:flex-row">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
+                  <SprayCan className="w-5 h-5 sm:w-6 sm:h-6 text-secondary" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
