@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import {
   Shield, AlertTriangle, Camera, MessageCircle, Phone,
   ArrowDown, CheckCircle2, Wrench, PaintBucket, Footprints,
-  DoorOpen, Sofa, Hammer, Clock, BadgeCheck, MapPin
+  DoorOpen, Sofa, Hammer, Clock, BadgeCheck, MapPin, SprayCan, Plus
 } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PHONE_NUMBER, WHATSAPP_URL } from "@/lib/contact";
