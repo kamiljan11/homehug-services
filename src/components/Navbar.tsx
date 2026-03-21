@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, MessageCircle, Menu, X } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -38,7 +39,7 @@ const Navbar = ({ customLinks }: NavbarProps = {}) => {
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-1.5">
+        <Link to="/" className="flex items-center gap-1.5">
           <motion.img
             src={logo}
             alt="QuickFix Iceland"
@@ -51,7 +52,7 @@ const Navbar = ({ customLinks }: NavbarProps = {}) => {
             <span className={`${scrolled ? "text-[#3B82F6]" : "text-[#3B82F6]"}`}>Fix</span>
             <span className={`${scrolled ? "text-foreground" : "text-primary-foreground"}`}> Iceland</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
