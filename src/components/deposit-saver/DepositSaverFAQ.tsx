@@ -83,6 +83,18 @@ const DepositSaverFAQ = () => {
                   >
                     <p className="px-4 sm:px-5 pb-4 sm:pb-5 text-muted-foreground leading-relaxed text-sm">
                       {faq.a}
+                      {(i === 0 || i === 3) && (
+                        <span className="block mt-2">
+                          <a
+                            href={WHATSAPP_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-bold text-primary hover:text-primary/80 transition-colors underline underline-offset-2 text-sm"
+                          >
+                            {i === 0 ? "Send photos now — we'll check →" : "Send photos — zero obligation →"}
+                          </a>
+                        </span>
+                      )}
                     </p>
                   </motion.div>
                 )}
