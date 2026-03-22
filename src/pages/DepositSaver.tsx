@@ -41,7 +41,6 @@ const steps = [
 ];
 
 const stats = [
-  { icon: AlertTriangle, value: "50.000+", label: "ISK — average deposit deduction" },
   { icon: BadgeCheck, value: "80%", label: "of landlords check for damage" },
   { icon: Clock, value: "1–2 days", label: "and it's like you were never there" },
 ];
