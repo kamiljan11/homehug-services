@@ -154,7 +154,30 @@ const BeforeAfter = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Mobile: horizontal slider */}
+        <div className="md:hidden -mx-4 px-4">
+          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4" style={{ WebkitOverflowScrolling: "touch" }}>
+            {projects.map((project, i) => (
+              <motion.div
+                key={i}
+                className="snap-center shrink-0 w-[85vw]"
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+              >
+                <TapCard
+                  before={project.before}
+                  after={project.after}
+                  label={t(project.labelKey)}
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (
             <motion.div
               key={i}
@@ -163,7 +186,7 @@ const BeforeAfter = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
             >
-              <Card
+              <SliderCard
                 before={project.before}
                 after={project.after}
                 label={t(project.labelKey)}
