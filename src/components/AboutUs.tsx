@@ -58,6 +58,20 @@ const AboutUs = () => {
             >
               {t("about.p3")}
             </motion.p>
+            <motion.a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-6 text-primary font-heading font-bold text-sm sm:text-base hover:text-primary/80 transition-colors"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+              whileHover={{ x: 3 }}
+            >
+              <Camera className="w-4 h-4 sm:w-5 sm:h-5" />
+              Snap a photo, get a quote →
+            </motion.a>
           </motion.div>
 
           <div className="hidden sm:grid grid-cols-2 gap-4">
