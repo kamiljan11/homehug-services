@@ -182,7 +182,7 @@ const DepositSaver = () => {
               You lived here. <span className="text-destructive">Now it shows.</span>
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-              A few nail holes from hanging shelves. Scratches on the floor from moving furniture. A scuff on the wall where the sofa was. It's normal — but your landlord will still deduct for it. Why lose 50.000+ ISK when we can fix it for less?
+              A few nail holes from hanging shelves. Scratches on the floor from moving furniture. A scuff on the wall where the sofa was. It's normal — but your landlord can use it to keep your entire deposit. We're talking 600.000–800.000 ISK gone. We fix it so they have nothing to hold against you.
             </p>
           </motion.div>
         </div>
