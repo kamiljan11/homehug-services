@@ -14,6 +14,7 @@ import DepositSaverTestimonials from "@/components/deposit-saver/DepositSaverTes
 import DepositSaverBeforeAfter from "@/components/deposit-saver/DepositSaverBeforeAfter";
 import DepositSaverTrust from "@/components/deposit-saver/DepositSaverTrust";
 import heroImg from "@/assets/deposit-saver-hero.jpg";
+import AboutUs from "@/components/AboutUs";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 15 },
@@ -392,6 +393,9 @@ const DepositSaver = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* ───── ABOUT US ───── */}
+      <AboutUs />
 
       <Footer />
       <FloatingWhatsApp />
