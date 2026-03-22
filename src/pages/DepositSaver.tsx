@@ -393,6 +393,9 @@ const DepositSaver = () => {
         </div>
       </section>
 
+      {/* ───── ABOUT US ───── */}
+      <AboutUs />
+
       <Footer />
       <FloatingWhatsApp />
     </div>
