@@ -75,7 +75,7 @@ const DepositSaver = () => {
             >
               <span className="text-secondary">Deposit Saver</span>
               <br />
-              Moving out? Don't let small damage eat your deposit.
+              Moving out? We fix the small stuff.
             </motion.h1>
 
             <motion.p
