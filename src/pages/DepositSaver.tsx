@@ -149,23 +149,6 @@ const DepositSaver = () => {
               );
             })}
           </div>
-          <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-6 mt-4 sm:mt-6 pt-4 sm:pt-5 border-t border-primary-foreground/10"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-          >
-            <span className="flex items-center gap-1.5 sm:gap-2 text-primary-foreground/60 text-xs sm:text-sm">
-              <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              Covering Reykjavík & Reykjanesbær
-            </span>
-            <span className="hidden sm:block text-primary-foreground/20">•</span>
-            <span className="flex items-center gap-1.5 sm:gap-2 text-secondary text-xs sm:text-sm font-semibold">
-              <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              Book at least 3 days before inspection
-            </span>
-          </motion.div>
         </div>
       </section>
 
