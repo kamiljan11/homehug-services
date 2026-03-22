@@ -130,7 +130,7 @@ const DepositSaver = () => {
       {/* ───── STATS + URGENCY (merged) ───── */}
       <section className="py-8 sm:py-14 bg-primary">
         <div className="max-w-6xl mx-auto px-5 sm:px-6">
-          <div className="grid grid-cols-3 gap-4 sm:gap-8">
+          <div className="grid grid-cols-2 gap-4 sm:gap-8 max-w-md sm:max-w-lg mx-auto">
             {stats.map((stat, i) => {
               const Icon = stat.icon;
               return (
