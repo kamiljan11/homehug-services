@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Wrench, Clock, PiggyBank, Users } from "lucide-react";
+import { Wrench, Clock, PiggyBank, Users, Camera } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 const AboutUs = () => {
   const { t } = useLanguage();
