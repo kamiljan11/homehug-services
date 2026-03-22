@@ -54,7 +54,7 @@ const DepositSaver = () => {
         { label: "The Problem", href: "#problem" },
         { label: "Services", href: "#services" },
         { label: "How It Works", href: "#how-it-works" },
-        { label: "Pricing", href: "#pricing" },
+        
         { label: "Contact", href: "#contact" },
       ]} />
 
