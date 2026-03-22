@@ -202,11 +202,8 @@ const DepositSaver = () => {
             viewport={{ once: true }}
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our services</span>
-            <h2 className="font-heading text-2xl sm:text-4xl font-bold text-card-foreground mt-3 mb-4">
-              You focus on moving. We handle the rest.
-            </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
-              No tools needed. No YouTube tutorials. Just tell us what's damaged and we'll take care of it.
+            <p className="text-muted-foreground max-w-xl mx-auto mt-3">
+              Just tell us what's damaged and we'll take care of it.
             </p>
           </motion.div>
 
