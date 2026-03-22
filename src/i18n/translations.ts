@@ -25,9 +25,9 @@ export const translations = {
   "services.subtitle": { en: "What We Fix", pl: "Co naprawiamy", is: "Hvað lagum við" },
   "services.title": { en: "Built to Fix, at Your Service", pl: "Stworzeni do napraw, do Twoich usług", is: "Skapaðir til að laga, í þinni þjónustu" },
   "services.description": {
-    en: "No job is too small. If it's broken, we fix it. If it needs building, we build it. Polish craftsmanship, lowest prices guaranteed.",
-    pl: "Żadne zlecenie nie jest za małe. Jeśli coś jest zepsute — naprawimy. Jeśli trzeba zmontować — zmontujemy. Polska jakość, najniższe ceny.",
-    is: "Ekkert verkefni er of lítið. Ef það er bilað, lögum við það. Ef það þarf að byggja, byggjum við það. Pólsk handverk, lægsta verð tryggt.",
+    en: "No job is too small. If it's broken, we fix it. If it needs building, we build it.",
+    pl: "Żadne zlecenie nie jest za małe. Jeśli coś jest zepsute — naprawimy. Jeśli trzeba zmontować — zmontujemy.",
+    is: "Ekkert verkefni er of lítið. Ef það er bilað, lögum við það. Ef það þarf að byggja, byggjum við það.",
   },
   "services.depositSaver": { en: "Deposit Saver", pl: "Odzyskaj kaucję", is: "Bjarga tryggingu" },
   "services.depositSaverDesc": {

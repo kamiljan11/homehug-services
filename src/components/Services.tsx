@@ -100,10 +100,7 @@ const Services = () => {
           <span className="text-primary font-semibold text-sm uppercase tracking-wider inline-block">
             {t("services.subtitle")}
           </span>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
-            {t("services.title")}
-          </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-muted-foreground max-w-xl mx-auto mt-3">
             {t("services.description")}
           </p>
         </motion.div>
