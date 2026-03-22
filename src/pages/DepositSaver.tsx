@@ -54,7 +54,7 @@ const DepositSaver = () => {
         { label: "The Problem", href: "#problem" },
         { label: "Services", href: "#services" },
         { label: "How It Works", href: "#how-it-works" },
-        { label: "Pricing", href: "#pricing" },
+        
         { label: "Contact", href: "#contact" },
       ]} />
 
@@ -345,93 +345,7 @@ const DepositSaver = () => {
         </div>
       </section>
 
-      {/* ───── PRICING + ADD-ON ───── */}
-      <section id="pricing" className="py-12 sm:py-24 bg-muted/30">
-        <div className="max-w-3xl mx-auto px-5 sm:px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Smart investment</span>
-            <h2 className="font-heading text-2xl sm:text-4xl font-bold text-foreground mt-3 mb-6 sm:mb-8">
-              Spend a little now, save a lot later.
-            </h2>
 
-            <motion.div
-              className="bg-card border border-border rounded-2xl p-6 sm:p-10 shadow-lg relative overflow-hidden"
-              whileHover={{ y: -3 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent" />
-              <p className="text-muted-foreground mb-2 sm:mb-3 text-xs sm:text-sm uppercase tracking-wider font-medium">Most jobs</p>
-              <p className="font-heading text-3xl sm:text-5xl font-bold text-primary mb-2 sm:mb-3">
-                30.000 – 80.000 ISK
-              </p>
-              <p className="text-muted-foreground text-sm mb-6 sm:mb-8">
-                Depends on size and damage.
-              </p>
-              <div className="flex items-center justify-center gap-2 text-accent font-semibold bg-accent/10 rounded-full px-4 sm:px-5 py-2 sm:py-2.5 mx-auto w-fit text-xs sm:text-base">
-                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
-                <span>Usually cheaper than losing your deposit.</span>
-              </div>
-            </motion.div>
-
-            {/* Move-out Cleaning Add-on */}
-            <motion.div
-              className="mt-6 sm:mt-8 bg-card border-2 border-dashed border-secondary/40 rounded-2xl p-6 sm:p-8 relative overflow-hidden text-left"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              whileHover={{ y: -2 }}
-            >
-              <div className="flex items-start gap-3 sm:gap-4 flex-col sm:flex-row">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
-                  <SprayCan className="w-5 h-5 sm:w-6 sm:h-6 text-secondary" />
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="inline-flex items-center gap-1 bg-secondary/10 text-secondary text-xs font-bold px-2.5 py-1 rounded-full">
-                      <Plus className="w-3 h-3" /> ADD-ON
-                    </span>
-                  </div>
-                  <h3 className="font-heading text-lg sm:text-xl font-bold text-card-foreground mb-2">
-                    Move-out Cleaning
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                    Landlords deduct for dirty apartments too. Add a professional clean to your repairs and walk out with nothing to worry about.
-                  </p>
-                  <div className="grid grid-cols-2 gap-2 mb-5">
-                    {["Kitchen & appliances", "Bathroom & tiles", "Floors & baseboards", "Windows & frames"].map((item, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-secondary shrink-0" />
-                        <span>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
-                    <p className="font-heading text-xl sm:text-2xl font-bold text-secondary">
-                      from 25.000 ISK
-                    </p>
-                    <motion.a
-                      href={WHATSAPP_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground font-heading font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-secondary/90 transition-all"
-                      whileHover={{ scale: 1.03 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <MessageCircle className="w-4 h-4" />
-                      Add to your quote
-                    </motion.a>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* ───── TRUST + GUARANTEE (merged) ───── */}
       <DepositSaverTrust />
