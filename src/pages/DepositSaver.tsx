@@ -178,9 +178,6 @@ const DepositSaver = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="inline-block bg-destructive/10 text-destructive border border-destructive/20 text-sm font-medium px-4 py-1.5 rounded-full mb-4">
-              ⚠️ The problem
-            </span>
             <h2 className="font-heading text-2xl sm:text-4xl font-bold text-foreground mb-4 sm:mb-6">
               You lived here. <span className="text-destructive">Now it shows.</span>
             </h2>
