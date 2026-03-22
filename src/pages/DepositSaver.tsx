@@ -239,9 +239,6 @@ const DepositSaver = () => {
         </div>
       </section>
 
-      {/* ───── BEFORE & AFTER (moved up — visual proof right after services) ───── */}
-      <DepositSaverBeforeAfter />
-
       {/* ───── HOW IT WORKS ───── */}
       <section id="how-it-works" className="py-12 sm:py-24 bg-card border-y border-border">
         <div className="max-w-6xl mx-auto px-5 sm:px-6">
@@ -329,6 +326,8 @@ const DepositSaver = () => {
         </div>
       </section>
 
+      {/* ───── BEFORE & AFTER ───── */}
+      <DepositSaverBeforeAfter />
 
 
       {/* ───── TRUST + GUARANTEE (merged) ───── */}
