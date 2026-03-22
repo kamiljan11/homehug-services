@@ -146,7 +146,26 @@ const DepositSaverBeforeAfter = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Mobile: horizontal scroll */}
+        <div className="md:hidden -mx-5 px-5">
+          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4" style={{ WebkitOverflowScrolling: "touch" }}>
+            {examples.map((ex, i) => (
+              <motion.div
+                key={i}
+                className="snap-center shrink-0 w-[85vw]"
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+              >
+                <TapCard before={ex.before} after={ex.after} label={ex.label} />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {examples.map((ex, i) => (
             <motion.div
               key={i}
@@ -155,7 +174,7 @@ const DepositSaverBeforeAfter = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
             >
-              <Card before={ex.before} after={ex.after} label={ex.label} />
+              <SliderCard before={ex.before} after={ex.after} label={ex.label} />
             </motion.div>
           ))}
         </div>
