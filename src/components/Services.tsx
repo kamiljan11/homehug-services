@@ -238,7 +238,7 @@ const Services = () => {
                 </motion.div>
                 <div className="flex-1">
                   <h3 className="font-heading text-xl font-bold mb-1 text-card-foreground">{t("services.quickFixes")}</h3>
-                  <p className="text-primary text-sm font-semibold mb-3">{t("services.fromPrice")} 6.000 ISK</p>
+                  <p className="text-primary text-sm font-semibold mb-3"><p className="text-primary text-sm font-semibold mb-3">{t("services.fromPrice")} 15.000 ISK</p></p>
                   <p className="text-sm leading-relaxed mb-4 text-muted-foreground">{t("services.quickFixesDesc")}</p>
                   <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-1.5 mb-4">
                     {tArray("services.quickFixesFeatures").map((f, i) => (
