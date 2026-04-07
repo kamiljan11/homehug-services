@@ -35,8 +35,7 @@ const Footer = () => {
                   <div className="flex items-center gap-2.5 mb-4">
                     <img src={logo} alt="QuickFix Iceland" className="w-11 h-11 brightness-150" />
                     <span className="font-heading font-bold text-lg">
-                      <span className="text-[#EF4444]">Quick</span>
-                      <span className="text-[#3B82F6]">Fix</span>
+                      <span className="text-[#EF4444]">QuickFix</span>
                       <span className="text-primary-foreground"> Iceland</span>
                     </span>
                   </div>
