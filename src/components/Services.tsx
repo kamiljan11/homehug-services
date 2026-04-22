@@ -53,8 +53,7 @@ const ServiceCard = ({ icon: Icon, title, desc, features, price, t, compact, cla
     >
       <Icon className={`${compact ? "w-5 h-5" : "w-7 h-7"} text-primary`} />
     </motion.div>
-    <h3 className={`font-heading ${compact ? "text-lg" : "text-xl"} font-bold mb-1 text-card-foreground`}>{title}</h3>
-    <p className="text-primary text-sm font-semibold mb-3">{t("services.fromPrice")} {price}</p>
+    <h3 className={`font-heading ${compact ? "text-lg" : "text-xl"} font-bold mb-2 text-card-foreground`}>{title}</h3>
     <p className="text-sm leading-relaxed mb-4 text-muted-foreground">{desc}</p>
     <ul className={`${compact ? "space-y-1" : "space-y-1.5"} mb-4`}>
       {features.map((f, i) => (
@@ -129,8 +128,7 @@ const Services = () => {
             >
               <Shield className="w-7 h-7 text-primary-foreground" />
             </motion.div>
-            <h3 className="font-heading text-2xl font-bold mb-1">{t("services.depositSaver")}</h3>
-            <p className="text-secondary text-sm font-semibold mb-3">{t("services.fromPrice")} 15.000 ISK / hour + travel fee</p>
+            <h3 className="font-heading text-2xl font-bold mb-2">{t("services.depositSaver")}</h3>
             <p className="text-sm leading-relaxed mb-6 text-primary-foreground/75">
               {t("services.depositSaverDesc")}
             </p>
@@ -237,8 +235,7 @@ const Services = () => {
                   <Hammer className="w-7 h-7 text-primary" />
                 </motion.div>
                 <div className="flex-1">
-                  <h3 className="font-heading text-xl font-bold mb-1 text-card-foreground">{t("services.quickFixes")}</h3>
-                  <p className="text-primary text-sm font-semibold mb-3"><p className="text-primary text-sm font-semibold mb-3">{t("services.fromPrice")} 15.000 ISK</p></p>
+                  <h3 className="font-heading text-xl font-bold mb-2 text-card-foreground">{t("services.quickFixes")}</h3>
                   <p className="text-sm leading-relaxed mb-4 text-muted-foreground">{t("services.quickFixesDesc")}</p>
                   <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-1.5 mb-4">
                     {tArray("services.quickFixesFeatures").map((f, i) => (
