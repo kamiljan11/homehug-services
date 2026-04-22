@@ -10,9 +10,9 @@ export const translations = {
 
   // Hero
   "hero.badge": { en: "Polish Golden Hands in Iceland", pl: "Polskie Złote Ręce na Islandii", is: "Pólskir gullhendir á Íslandi" },
-  "hero.title1": { en: "We Fix What Others Can't", pl: "We Fix What Others Can't", is: "We Fix What Others Can't" },
-  "hero.title2": { en: "(or won't 😉)", pl: "(or won't 😉)", is: "(or won't 😉)" },
-  "hero.title3": { en: "by Polish Handymen", pl: "by Polish Handymen", is: "by Polish Handymen" },
+  "hero.title1": { en: "Polish Handymen", pl: "Polish Handymen", is: "Polish Handymen" },
+  "hero.title2": { en: "We Fix What Others Can't", pl: "We Fix What Others Can't", is: "We Fix What Others Can't" },
+  "hero.title3": { en: "(or won't 😉)", pl: "(or won't 😉)", is: "(or won't 😉)" },
   "hero.description": {
     en: "We're the kind of guys who've been helping friends and family with repairs for years. We work fast, we work well, and we always find the cheapest solution. No upselling, no inflated quotes — just honest work. 💪",
     pl: "Jesteśmy ekipą, która od lat pomaga znajomym i rodzinie w naprawach. Pracujemy szybko, dobrze i zawsze znajdziemy najtańsze rozwiązanie. Bez naciągania, bez zawyżonych wycen — po prostu uczciwa robota. 💪",
