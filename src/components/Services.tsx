@@ -160,7 +160,7 @@ const Services = () => {
               </motion.a>
               <Link
                 to="/deposit-saver"
-                className="inline-flex items-center gap-2 text-sm font-bold text-primary-foreground bg-primary-foreground/15 hover:bg-primary-foreground/25 px-4 py-2 rounded-lg transition-all border border-primary-foreground/20"
+                className="inline-flex items-center gap-2 text-sm font-bold text-primary bg-secondary hover:bg-secondary/90 px-5 py-2.5 rounded-lg transition-all shadow-lg shadow-secondary/30 hover:shadow-secondary/50 hover:scale-105"
               >
                 Learn more <ArrowRight className="w-4 h-4" />
               </Link>
