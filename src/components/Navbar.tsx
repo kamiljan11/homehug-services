@@ -43,7 +43,7 @@ const Navbar = ({ customLinks }: NavbarProps = {}) => {
           <motion.img
             src={logo}
             alt="QuickFix Iceland"
-            className="w-14 h-14"
+            className="h-10 w-auto object-contain"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           />
