@@ -48,7 +48,7 @@ const Navbar = ({ customLinks }: NavbarProps = {}) => {
             transition={{ duration: 0.2 }}
           />
           <span className={`font-heading font-bold text-lg tracking-tight transition-colors`}>
-            <span className="text-[#EF4444]">QuickFix</span>
+            <span className="text-[#EF4444] my-[10px] mb-0 mt-[30px]">QuickFix</span>
             <span className={`${scrolled ? "text-foreground" : "text-primary-foreground"}`}> Iceland</span>
           </span>
         </Link>
