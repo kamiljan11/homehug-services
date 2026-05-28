@@ -2,11 +2,13 @@ import { motion } from "framer-motion";
 import { Phone, MessageCircle, MapPin, Mail, Clock } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import logo from "@/assets/logo.png";
-import { PHONE_NUMBER, WHATSAPP_URL, EMAIL } from "@/lib/contact";
+import { PHONE_NUMBER, EMAIL } from "@/lib/contact";
 import { Link } from "react-router-dom";
+import { useDemoModal } from "@/components/DemoModal";
 
 const Footer = () => {
   const { t } = useLanguage();
+  const { openDemo } = useDemoModal();
 
   const columnVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -63,15 +65,30 @@ const Footer = () => {
                   <ul className="space-y-3 text-sm">
                     <li className="flex items-center gap-2">
                       <Phone className="w-4 h-4 shrink-0" />
-                      <a href={`tel:${PHONE_NUMBER}`} className="hover:text-primary-foreground transition-colors">{PHONE_NUMBER}</a>
+                      <button
+                        onClick={() => openDemo("phone")}
+                        className="hover:text-primary-foreground transition-colors text-left"
+                      >
+                        {PHONE_NUMBER}
+                      </button>
                     </li>
                     <li className="flex items-center gap-2">
                       <MessageCircle className="w-4 h-4 shrink-0" />
-                      <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors">WhatsApp</a>
+                      <button
+                        onClick={() => openDemo("whatsapp")}
+                        className="hover:text-primary-foreground transition-colors"
+                      >
+                        WhatsApp
+                      </button>
                     </li>
                     <li className="flex items-center gap-2">
                       <Mail className="w-4 h-4 shrink-0" />
-                      <a href={`mailto:${EMAIL}`} className="hover:text-primary-foreground transition-colors">{EMAIL}</a>
+                      <button
+                        onClick={() => openDemo("email")}
+                        className="hover:text-primary-foreground transition-colors text-left"
+                      >
+                        {EMAIL}
+                      </button>
                     </li>
                     <li className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 shrink-0" />

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/contact";
+import { useDemoModal } from "@/components/DemoModal";
+
 const faqs = [
   {
     q: "My inspection is in 3 days — can you still help?",
@@ -37,6 +38,7 @@ const faqs = [
 
 const DepositSaverFAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const { openDemo } = useDemoModal();
 
   return (
     <section id="faq" className="py-12 sm:py-24 bg-muted/30">
@@ -90,14 +92,12 @@ const DepositSaverFAQ = () => {
                     <div className="px-4 sm:px-5 pb-4 sm:pb-5 text-muted-foreground leading-relaxed text-sm">
                       <p>{faq.a}</p>
                       <span className="block mt-3">
-                        <a
-                          href={WHATSAPP_URL}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <button
+                          onClick={() => openDemo("whatsapp")}
                           className="font-bold text-primary hover:text-primary/80 transition-colors underline underline-offset-2 text-sm"
                         >
                           {faq.cta}
-                        </a>
+                        </button>
                       </span>
                     </div>
                   </motion.div>

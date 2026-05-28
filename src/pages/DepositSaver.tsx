@@ -5,7 +5,7 @@ import {
   DoorOpen, Sofa, Hammer, Clock, BadgeCheck, MapPin, SprayCan, Plus
 } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { PHONE_NUMBER, WHATSAPP_URL } from "@/lib/contact";
+import { useDemoModal } from "@/components/DemoModal";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -48,6 +48,7 @@ const stats = [
 
 const DepositSaver = () => {
   const { t } = useLanguage();
+  const { openDemo } = useDemoModal();
 
   return (
     <div className="min-h-screen bg-background">
@@ -94,26 +95,24 @@ const DepositSaver = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <motion.a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <motion.button
+                onClick={() => openDemo("whatsapp")}
                 className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-heading font-bold text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl hover:bg-accent/90 transition-all hover:shadow-lg hover:shadow-accent/25"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <Camera className="w-5 h-5" />
                 Send photos for free quote
-              </motion.a>
-              <motion.a
-                href={`tel:${PHONE_NUMBER}`}
+              </motion.button>
+              <motion.button
+                onClick={() => openDemo("phone")}
                 className="inline-flex items-center justify-center gap-2 bg-primary-foreground/10 text-primary-foreground font-heading font-bold text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl hover:bg-primary-foreground/20 transition-all backdrop-blur-sm"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <Phone className="w-5 h-5" />
                 Call us
-              </motion.a>
+              </motion.button>
             </motion.div>
           </div>
         </div>
@@ -153,7 +152,7 @@ const DepositSaver = () => {
         </div>
       </section>
 
-      {/* ───── THE PROBLEM (text only, no duplicate cards) ───── */}
+      {/* ───── THE PROBLEM ───── */}
       <section id="problem" className="py-12 sm:py-24 bg-muted/30">
         <div className="max-w-3xl mx-auto px-5 sm:px-6 text-center">
           <motion.div
@@ -226,14 +225,12 @@ const DepositSaver = () => {
           >
             <p className="text-muted-foreground text-sm sm:text-base">
               See your problem on the list?{" "}
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => openDemo("whatsapp")}
                 className="font-bold text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
               >
                 Send us a photo — quote is free.
-              </a>
+              </button>
             </p>
           </motion.div>
         </div>
@@ -312,16 +309,14 @@ const DepositSaver = () => {
             <p className="font-heading text-lg sm:text-xl font-bold text-primary mb-2">
               That's it. Done. ✅
             </p>
-            <motion.a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.button
+              onClick={() => openDemo("whatsapp")}
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary font-medium text-sm transition-colors"
               whileHover={{ x: 3 }}
             >
               <Camera className="w-4 h-4" />
               Start with step 1 — send us a photo →
-            </motion.a>
+            </motion.button>
           </motion.div>
         </div>
       </section>
@@ -329,8 +324,7 @@ const DepositSaver = () => {
       {/* ───── BEFORE & AFTER ───── */}
       <DepositSaverBeforeAfter />
 
-
-      {/* ───── TRUST + GUARANTEE (merged) ───── */}
+      {/* ───── TRUST + GUARANTEE ───── */}
       <DepositSaverTrust />
 
       {/* ───── TESTIMONIALS ───── */}
@@ -368,26 +362,24 @@ const DepositSaver = () => {
               Snap a few photos of the damage, send them on WhatsApp, and we'll tell you exactly what it'll cost to fix — for free.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <motion.a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <motion.button
+                onClick={() => openDemo("whatsapp")}
                 className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-heading font-bold text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl hover:bg-accent/90 transition-all shadow-lg"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <MessageCircle className="w-5 h-5" />
                 Send photos on WhatsApp
-              </motion.a>
-              <motion.a
-                href={`tel:${PHONE_NUMBER}`}
+              </motion.button>
+              <motion.button
+                onClick={() => openDemo("phone")}
                 className="inline-flex items-center justify-center gap-2 bg-primary-foreground text-primary font-heading font-bold text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl hover:bg-primary-foreground/90 transition-all shadow-lg"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <Phone className="w-5 h-5" />
                 Request quote by phone
-              </motion.a>
+              </motion.button>
             </div>
           </motion.div>
         </div>

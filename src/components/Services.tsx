@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Shield, Wrench, Hammer, Droplets, Sparkles, Home, ArrowRight, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { WHATSAPP_URL } from "@/lib/contact";
+import { useDemoModal } from "@/components/DemoModal";
 
 const cardHover = {
   rest: { y: 0 },
@@ -40,51 +40,53 @@ interface ServiceCardProps {
   className?: string;
 }
 
-const ServiceCard = ({ icon: Icon, title, desc, features, price, t, compact, className = "" }: ServiceCardProps) => (
-  <motion.div
-    variants={fadeUp}
-    initial="rest"
-    whileHover="hover"
-    className={`rounded-2xl p-6 sm:p-8 bg-card shadow-lg border border-border transition-all duration-300 cursor-default ${className}`}
-  >
+const ServiceCard = ({ icon: Icon, title, desc, features, price, t, compact, className = "" }: ServiceCardProps) => {
+  const { openDemo } = useDemoModal();
+  return (
     <motion.div
-      className={`${compact ? "w-11 h-11 rounded-lg mb-4" : "w-14 h-14 rounded-xl mb-6"} flex items-center justify-center bg-primary/10`}
-      variants={iconFloat}
-    >
-      <Icon className={`${compact ? "w-5 h-5" : "w-7 h-7"} text-primary`} />
-    </motion.div>
-    <h3 className={`font-heading ${compact ? "text-lg" : "text-xl"} font-bold mb-2 text-card-foreground`}>{title}</h3>
-    <p className="text-sm leading-relaxed mb-4 text-muted-foreground">{desc}</p>
-    <ul className={`${compact ? "space-y-1" : "space-y-1.5"} mb-4`}>
-      {features.map((f, i) => (
-        <motion.li
-          key={i}
-          className="flex items-start gap-2 text-sm text-muted-foreground"
-          initial={{ opacity: 0, x: -10 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 + i * 0.06 }}
-        >
-          <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-accent" />
-          {f}
-        </motion.li>
-      ))}
-    </ul>
-    <motion.a
-      href={WHATSAPP_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
-      whileHover="hover"
+      variants={fadeUp}
       initial="rest"
+      whileHover="hover"
+      className={`rounded-2xl p-6 sm:p-8 bg-card shadow-lg border border-border transition-all duration-300 cursor-default ${className}`}
     >
-      <MessageCircle className="w-4 h-4" /> {t("services.getFreeQuote")} <motion.span variants={arrowSlide}><ArrowRight className="w-4 h-4" /></motion.span>
-    </motion.a>
-  </motion.div>
-);
+      <motion.div
+        className={`${compact ? "w-11 h-11 rounded-lg mb-4" : "w-14 h-14 rounded-xl mb-6"} flex items-center justify-center bg-primary/10`}
+        variants={iconFloat}
+      >
+        <Icon className={`${compact ? "w-5 h-5" : "w-7 h-7"} text-primary`} />
+      </motion.div>
+      <h3 className={`font-heading ${compact ? "text-lg" : "text-xl"} font-bold mb-2 text-card-foreground`}>{title}</h3>
+      <p className="text-sm leading-relaxed mb-4 text-muted-foreground">{desc}</p>
+      <ul className={`${compact ? "space-y-1" : "space-y-1.5"} mb-4`}>
+        {features.map((f, i) => (
+          <motion.li
+            key={i}
+            className="flex items-start gap-2 text-sm text-muted-foreground"
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 + i * 0.06 }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-accent" />
+            {f}
+          </motion.li>
+        ))}
+      </ul>
+      <motion.button
+        onClick={() => openDemo("whatsapp")}
+        className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+        whileHover="hover"
+        initial="rest"
+      >
+        <MessageCircle className="w-4 h-4" /> {t("services.getFreeQuote")} <motion.span variants={arrowSlide}><ArrowRight className="w-4 h-4" /></motion.span>
+      </motion.button>
+    </motion.div>
+  );
+};
 
 const Services = () => {
   const { t, tArray } = useLanguage();
+  const { openDemo } = useDemoModal();
 
   return (
     <section id="services" className="py-16 sm:py-24 bg-muted/30">
@@ -148,16 +150,14 @@ const Services = () => {
               ))}
             </ul>
             <div className="flex flex-wrap items-center gap-4">
-              <motion.a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <motion.button
+                onClick={() => openDemo("whatsapp")}
                 className="inline-flex items-center gap-2 text-sm font-semibold text-secondary hover:text-secondary/80 transition-colors"
                 whileHover="hover"
                 initial="rest"
               >
                 <MessageCircle className="w-4 h-4" /> {t("services.getFreeQuote")} <motion.span variants={arrowSlide}><ArrowRight className="w-4 h-4" /></motion.span>
-              </motion.a>
+              </motion.button>
               <Link
                 to="/deposit-saver"
                 className="inline-flex items-center gap-2 text-sm font-bold text-primary bg-secondary hover:bg-secondary/90 px-5 py-2.5 rounded-lg transition-all shadow-lg shadow-secondary/30 hover:shadow-secondary/50 hover:scale-105"
@@ -252,16 +252,14 @@ const Services = () => {
                       </motion.li>
                     ))}
                   </ul>
-                  <motion.a
-                    href={WHATSAPP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <motion.button
+                    onClick={() => openDemo("whatsapp")}
                     className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
                     whileHover="hover"
                     initial="rest"
                   >
                     <MessageCircle className="w-4 h-4" /> {t("services.getFreeQuote")} <motion.span variants={arrowSlide}><ArrowRight className="w-4 h-4" /></motion.span>
-                  </motion.a>
+                  </motion.button>
                 </div>
               </div>
             </motion.div>

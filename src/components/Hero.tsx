@@ -3,10 +3,11 @@ import { Phone, MessageCircle, ArrowDown } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import heroImg from "@/assets/hero-handyman.jpg";
 import heroMobileImg from "@/assets/hero-handyman-mobile.jpg";
-import { PHONE_NUMBER, WHATSAPP_URL } from "@/lib/contact";
+import { useDemoModal } from "@/components/DemoModal";
 
 const Hero = () => {
   const { t } = useLanguage();
+  const { openDemo } = useDemoModal();
 
   return (
     <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center overflow-hidden">
@@ -60,26 +61,24 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <motion.a
-              href={`tel:${PHONE_NUMBER}`}
+            <motion.button
+              onClick={() => openDemo("phone")}
               className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-heading font-bold text-base px-8 py-4 rounded-xl hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/25"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
               <Phone className="w-5 h-5" />
               {t("hero.callNow")}
-            </motion.a>
-            <motion.a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            </motion.button>
+            <motion.button
+              onClick={() => openDemo("whatsapp")}
               className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-heading font-bold text-base px-8 py-4 rounded-xl hover:bg-accent/90 transition-all hover:shadow-lg hover:shadow-accent/25"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
               <MessageCircle className="w-5 h-5" />
               {t("hero.whatsappQuote")}
-            </motion.a>
+            </motion.button>
           </motion.div>
         </div>
       </div>

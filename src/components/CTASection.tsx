@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { Phone, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { PHONE_NUMBER, WHATSAPP_URL } from "@/lib/contact";
+import { useDemoModal } from "@/components/DemoModal";
 
 const CTASection = () => {
   const { t } = useLanguage();
+  const { openDemo } = useDemoModal();
 
   return (
     <section id="contact" className="py-16 sm:py-24 bg-primary relative overflow-hidden">
@@ -33,26 +34,24 @@ const CTASection = () => {
             {t("cta.description")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.a
-              href={`tel:${PHONE_NUMBER}`}
+            <motion.button
+              onClick={() => openDemo("phone")}
               className="inline-flex items-center justify-center gap-2 bg-primary-foreground text-primary font-heading font-bold text-base px-8 py-4 rounded-xl hover:bg-primary-foreground/90 transition-all shadow-lg"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
               <Phone className="w-5 h-5" />
               {t("hero.callNow")}
-            </motion.a>
-            <motion.a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            </motion.button>
+            <motion.button
+              onClick={() => openDemo("whatsapp")}
               className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-heading font-bold text-base px-8 py-4 rounded-xl hover:bg-accent/90 transition-all shadow-lg"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
               <MessageCircle className="w-5 h-5" />
               {t("hero.whatsappQuote")}
-            </motion.a>
+            </motion.button>
           </div>
         </motion.div>
       </div>
