@@ -5,7 +5,7 @@ import { Phone, MessageCircle, Menu, X } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import LanguageSwitcher from "./LanguageSwitcher";
 import logo from "@/assets/logo.png";
-import { WHATSAPP_URL } from "@/lib/contact";
+import { useDemoModal } from "@/components/DemoModal";
 
 interface NavbarProps {
   customLinks?: { label: string; href: string }[];
@@ -15,6 +15,7 @@ const Navbar = ({ customLinks }: NavbarProps = {}) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { t } = useLanguage();
+  const { openDemo } = useDemoModal();
 
   const navLinks = customLinks || [
     { label: t("nav.services"), href: "#services" },
@@ -71,16 +72,14 @@ const Navbar = ({ customLinks }: NavbarProps = {}) => {
             </motion.a>
           ))}
           <LanguageSwitcher scrolled={scrolled} />
-          <motion.a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <motion.button
+            onClick={() => openDemo("whatsapp")}
             className="bg-accent text-accent-foreground text-sm font-semibold px-5 py-2 rounded-lg hover:bg-accent/90 transition-colors"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
           >
             {t("nav.getQuote")}
-          </motion.a>
+          </motion.button>
         </div>
 
         {/* Mobile toggle */}
@@ -118,17 +117,15 @@ const Navbar = ({ customLinks }: NavbarProps = {}) => {
                 </motion.a>
               ))}
               <LanguageSwitcher />
-              <motion.a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <motion.button
+                onClick={() => openDemo("whatsapp")}
                 className="bg-accent text-accent-foreground text-center font-semibold px-5 py-3 rounded-lg mt-2"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.25 }}
               >
                 {t("nav.getQuote")}
-              </motion.a>
+              </motion.button>
             </div>
           </motion.div>
         )}

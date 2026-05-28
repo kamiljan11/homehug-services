@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { Wrench, Clock, PiggyBank, Users, Camera } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { WHATSAPP_URL } from "@/lib/contact";
+import { useDemoModal } from "@/components/DemoModal";
 
 const AboutUs = () => {
   const { t } = useLanguage();
+  const { openDemo } = useDemoModal();
 
   const traits = [
     { icon: Wrench, label: t("about.trait1Label"), desc: t("about.trait1Desc") },
@@ -58,10 +59,8 @@ const AboutUs = () => {
             >
               {t("about.p3")}
             </motion.p>
-            <motion.a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.button
+              onClick={() => openDemo("whatsapp")}
               className="inline-flex items-center gap-2 mt-6 text-primary font-heading font-bold text-sm sm:text-base hover:text-primary/80 transition-colors"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -71,7 +70,7 @@ const AboutUs = () => {
             >
               <Camera className="w-4 h-4 sm:w-5 sm:h-5" />
               Snap a photo, get a quote →
-            </motion.a>
+            </motion.button>
           </motion.div>
 
           <div className="hidden sm:grid grid-cols-2 gap-4">
