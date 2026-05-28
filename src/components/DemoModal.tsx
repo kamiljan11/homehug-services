@@ -2,7 +2,6 @@ import { createContext, useContext, useState, useEffect } from "react";
 import type { ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, MessageCircle, Phone, Mail, ExternalLink } from "lucide-react";
-import { PHONE_NUMBER, EMAIL } from "@/lib/contact";
 
 type DemoAction = "whatsapp" | "phone" | "email";
 
@@ -20,24 +19,24 @@ const actionConfig = {
     iconColor: "#25D366",
     bgColor: "rgba(37, 211, 102, 0.12)",
     label: "WhatsApp",
-    detail: PHONE_NUMBER,
-    message: "In the real website this opens WhatsApp and starts a chat with QuickFix Iceland directly.",
+    message:
+      "On the real website, this button opens WhatsApp with a pre-filled message to QuickFix Iceland. Your WhatsApp app launches instantly with the conversation ready — all you need to do is attach a photo and hit send.",
   },
   phone: {
     icon: Phone,
     iconColor: "#EF4444",
     bgColor: "rgba(239, 68, 68, 0.12)",
     label: "Phone Call",
-    detail: PHONE_NUMBER,
-    message: "In the real website this calls QuickFix Iceland directly from your phone.",
+    message:
+      "On the real website, this button dials QuickFix Iceland directly from your phone. One tap and you're connected — no need to search for or save the number manually.",
   },
   email: {
     icon: Mail,
     iconColor: "#3B82F6",
     bgColor: "rgba(59, 130, 246, 0.12)",
     label: "Email",
-    detail: EMAIL,
-    message: "In the real website this opens your email app to contact QuickFix Iceland.",
+    message:
+      "On the real website, this opens your default email app with QuickFix Iceland's address already filled in. Just describe what needs fixing and send — they'll reply with a quote.",
   },
 } as const;
 
@@ -92,7 +91,7 @@ const DemoModal = ({ action, onClose }: DemoModalProps) => {
           Demo mode
         </span>
 
-        {/* Icon + contact detail */}
+        {/* Icon + label */}
         <div className="flex items-center gap-3 mb-4">
           <div
             className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
@@ -100,10 +99,7 @@ const DemoModal = ({ action, onClose }: DemoModalProps) => {
           >
             <Icon className="w-6 h-6" style={{ color: config.iconColor }} />
           </div>
-          <div>
-            <p className="font-heading font-bold text-foreground text-base">{config.label}</p>
-            <p className="text-muted-foreground text-sm font-mono">{config.detail}</p>
-          </div>
+          <p className="font-heading font-bold text-foreground text-base">{config.label}</p>
         </div>
 
         {/* Message */}
