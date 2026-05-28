@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Phone, MessageCircle, MapPin, Mail, Clock } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import logo from "@/assets/logo.png";
-import { PHONE_NUMBER, EMAIL } from "@/lib/contact";
 import { Link } from "react-router-dom";
 import { useDemoModal } from "@/components/DemoModal";
 
@@ -69,7 +68,7 @@ const Footer = () => {
                         onClick={() => openDemo("phone")}
                         className="hover:text-primary-foreground transition-colors text-left"
                       >
-                        {PHONE_NUMBER}
+                        Call Us
                       </button>
                     </li>
                     <li className="flex items-center gap-2">
@@ -87,7 +86,7 @@ const Footer = () => {
                         onClick={() => openDemo("email")}
                         className="hover:text-primary-foreground transition-colors text-left"
                       >
-                        {EMAIL}
+                        Email Us
                       </button>
                     </li>
                     <li className="flex items-center gap-2">
@@ -134,16 +133,15 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          Website crafted by{" "}
+          Websites like this from only 19.990 kr./mán. —{" "}
           <a
-            href="https://reykjawwwik.com/"
+            href="https://reykjawwwik.is"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary-foreground/50 hover:text-primary-foreground transition-colors underline underline-offset-2"
           >
-            reykjawwwik.com
+            customized by Business Autopilot
           </a>
-          {" "}— Professional websites for your business
         </motion.div>
       </div>
     </footer>

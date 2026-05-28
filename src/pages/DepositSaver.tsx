@@ -7,6 +7,7 @@ import {
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useDemoModal } from "@/components/DemoModal";
 import Navbar from "@/components/Navbar";
+import ReykjawwwikPromo from "@/components/ReykjawwwikPromo";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import DepositSaverFAQ from "@/components/deposit-saver/DepositSaverFAQ";
@@ -56,7 +57,6 @@ const DepositSaver = () => {
         { label: "The Problem", href: "#problem" },
         { label: "Services", href: "#services" },
         { label: "How It Works", href: "#how-it-works" },
-        
         { label: "Contact", href: "#contact" },
       ]} />
 
@@ -127,7 +127,7 @@ const DepositSaver = () => {
         </motion.a>
       </section>
 
-      {/* ───── STATS + URGENCY (merged) ───── */}
+      {/* ───── STATS + URGENCY ───── */}
       <section className="py-8 sm:py-14 bg-primary">
         <div className="max-w-6xl mx-auto px-5 sm:px-6">
           <div className="grid grid-cols-2 gap-4 sm:gap-8 max-w-md sm:max-w-lg mx-auto">
@@ -387,6 +387,9 @@ const DepositSaver = () => {
 
       {/* ───── ABOUT US ───── */}
       <AboutUs />
+
+      {/* ───── REYKJAWWWIK PROMO ───── */}
+      <ReykjawwwikPromo />
 
       <Footer />
       <FloatingWhatsApp />
