@@ -120,7 +120,9 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <p>© {new Date().getFullYear()} QuickFix Reykjavík. {t("footer.rights")}</p>
+          <p>© {new Date().getFullYear()} QuickFix Reykjavík. {t("footer.rights")}{" · "}built by{" "}
+            <a href="https://kamiljan.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors underline">Kamil Jan</a>
+          </p>
           <Link to="/privacy" className="hover:text-primary-foreground transition-colors underline">
             {t("footer.privacy")}
           </Link>
