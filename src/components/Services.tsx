@@ -30,7 +30,6 @@ interface ServiceCardProps {
   title: string;
   desc: string;
   features: string[];
-  price: string;
   t: (key: TranslationKey) => string;
   compact?: boolean;
   className?: string;
@@ -170,7 +169,6 @@ const Services = () => {
               title={t("services.ikeaAssembly")}
               desc={t("services.ikeaDesc")}
               features={tArray("services.ikeaFeatures")}
-              price="8.000 ISK"
               t={t}
               className="h-full"
             />
@@ -183,7 +181,6 @@ const Services = () => {
               title={t("services.karcherClean")}
               desc={t("services.karcherDesc")}
               features={tArray("services.karcherFeatures")}
-              price="10.000 ISK"
               t={t}
               className="h-full"
             />
@@ -196,7 +193,6 @@ const Services = () => {
               title={t("services.deepClean")}
               desc={t("services.deepCleanDesc")}
               features={tArray("services.deepCleanFeatures")}
-              price="16.000 ISK"
               t={t}
               className="h-full"
             />
@@ -209,7 +205,6 @@ const Services = () => {
               title={t("services.regularCleaning")}
               desc={t("services.regularCleaningDesc")}
               features={tArray("services.regularCleaningFeatures")}
-              price="8.000 ISK"
               t={t}
               className="h-full"
             />

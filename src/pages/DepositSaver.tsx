@@ -4,7 +4,6 @@ import {
   ArrowDown, CheckCircle2, Wrench, PaintBucket, Footprints,
   DoorOpen, Sofa, Hammer, Clock, BadgeCheck
 } from "lucide-react";
-import { useLanguage } from "@/i18n/LanguageContext";
 import { useDemoModal } from "@/components/DemoModal";
 import Navbar from "@/components/Navbar";
 import ReykjawwwikPromo from "@/components/ReykjawwwikPromo";
@@ -48,7 +47,6 @@ const stats = [
 ];
 
 const DepositSaver = () => {
-  useLanguage(); // keep context subscription (re-render on language switch); t itself unused here
   const { openDemo } = useDemoModal();
 
   return (
