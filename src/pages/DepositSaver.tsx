@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 import {
-  Shield, AlertTriangle, Camera, MessageCircle, Phone,
+  Camera, MessageCircle, Phone,
   ArrowDown, CheckCircle2, Wrench, PaintBucket, Footprints,
-  DoorOpen, Sofa, Hammer, Clock, BadgeCheck, MapPin, SprayCan, Plus
+  DoorOpen, Sofa, Hammer, Clock, BadgeCheck
 } from "lucide-react";
-import { useLanguage } from "@/i18n/LanguageContext";
 import { useDemoModal } from "@/components/DemoModal";
 import Navbar from "@/components/Navbar";
 import ReykjawwwikPromo from "@/components/ReykjawwwikPromo";
@@ -48,7 +47,6 @@ const stats = [
 ];
 
 const DepositSaver = () => {
-  const { t } = useLanguage();
   const { openDemo } = useDemoModal();
 
   return (

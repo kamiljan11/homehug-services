@@ -1,7 +1,6 @@
 import { useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useIsMobile } from "@/hooks/use-mobile";
 import wallBefore from "@/assets/deposit-saver/wall-before.jpg";
 import wallAfter from "@/assets/deposit-saver/wall-after.jpg";
 import floorBefore from "@/assets/deposit-saver/floor-before.jpg";
@@ -125,9 +124,6 @@ const TapCard = ({ before, after, label }: { before: string; after: string; labe
 };
 
 const DepositSaverBeforeAfter = () => {
-  const isMobile = useIsMobile();
-  const Card = isMobile ? TapCard : SliderCard;
-
   return (
     <section className="py-12 sm:py-24 bg-muted/30">
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
