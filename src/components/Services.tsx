@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Shield, Wrench, Hammer, Droplets, Sparkles, Home, ArrowRight, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import type { TranslationKey } from "@/i18n/translations";
 import { useDemoModal } from "@/components/DemoModal";
 
 const cardHover = {
@@ -35,7 +36,7 @@ interface ServiceCardProps {
   desc: string;
   features: string[];
   price: string;
-  t: (key: string) => string;
+  t: (key: TranslationKey) => string;
   compact?: boolean;
   className?: string;
 }
