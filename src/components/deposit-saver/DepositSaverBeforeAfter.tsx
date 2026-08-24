@@ -125,8 +125,7 @@ const TapCard = ({ before, after, label }: { before: string; after: string; labe
 };
 
 const DepositSaverBeforeAfter = () => {
-  const isMobile = useIsMobile();
-  const Card = isMobile ? TapCard : SliderCard;
+  useIsMobile(); // keep hook subscription; both card variants are rendered below via CSS breakpoints
 
   return (
     <section className="py-12 sm:py-24 bg-muted/30">

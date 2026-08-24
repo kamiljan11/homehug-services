@@ -5,11 +5,6 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import type { TranslationKey } from "@/i18n/translations";
 import { useDemoModal } from "@/components/DemoModal";
 
-const cardHover = {
-  rest: { y: 0 },
-  hover: { y: -3, transition: { duration: 0.25, ease: "easeOut" } },
-};
-
 const iconFloat = {
   rest: { rotate: 0, scale: 1 },
   hover: { rotate: 5, scale: 1.05, transition: { duration: 0.3 } },
@@ -41,7 +36,7 @@ interface ServiceCardProps {
   className?: string;
 }
 
-const ServiceCard = ({ icon: Icon, title, desc, features, price, t, compact, className = "" }: ServiceCardProps) => {
+const ServiceCard = ({ icon: Icon, title, desc, features, t, compact, className = "" }: ServiceCardProps) => {
   const { openDemo } = useDemoModal();
   return (
     <motion.div

@@ -1,6 +1,6 @@
 import { useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Camera } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { WHATSAPP_URL } from "@/lib/contact";
@@ -133,8 +133,7 @@ const TapCard = ({ before, after, label }: { before: string; after: string; labe
 
 const BeforeAfter = () => {
   const { t } = useLanguage();
-  const isMobile = useIsMobile();
-  const Card = isMobile ? TapCard : SliderCard;
+  useIsMobile(); // keep hook subscription; both card variants are rendered below via CSS breakpoints
 
   return (
     <section className="py-16 sm:py-24 bg-muted/30">

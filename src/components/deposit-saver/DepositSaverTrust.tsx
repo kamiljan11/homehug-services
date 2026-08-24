@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, ThumbsUp, Clock, Banknote, Shield } from "lucide-react";
+import { ThumbsUp, Clock, Banknote, Shield } from "lucide-react";
 
 const badges = [
   { icon: ThumbsUp, title: "Trusted by Tenants", desc: "Expats and locals across Reykjavík rely on us." },

@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import {
-  Shield, AlertTriangle, Camera, MessageCircle, Phone,
+  Camera, MessageCircle, Phone,
   ArrowDown, CheckCircle2, Wrench, PaintBucket, Footprints,
-  DoorOpen, Sofa, Hammer, Clock, BadgeCheck, MapPin, SprayCan, Plus
+  DoorOpen, Sofa, Hammer, Clock, BadgeCheck
 } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useDemoModal } from "@/components/DemoModal";
@@ -48,7 +48,7 @@ const stats = [
 ];
 
 const DepositSaver = () => {
-  const { t } = useLanguage();
+  useLanguage(); // keep context subscription (re-render on language switch); t itself unused here
   const { openDemo } = useDemoModal();
 
   return (
