@@ -1,30 +1,40 @@
 # Quality backlog
 
-## Dependency audit — removed from `quality.yml` (2026-09-05)
+## Dependency audit — restored + fixed (2026-09-05, correction)
 
-`npm audit --audit-level=high` started failing CI on this branch even though nothing about the
-app changed: **1 high-severity advisory** newly published against a transitive dependency pulled
-in by the Vite/PostCSS toolchain:
+A previous pass on this branch **removed** the "Dependency audit (high+)" step from
+`.github/workflows/quality.yml` after `npm audit --audit-level=high` started failing on a
+transitive `browserslist` high-severity advisory. That was a gate removal, not a fix, and has
+been reverted: the step is back in `quality.yml`, in the same position as the shared template
+(`~/.claude/templates/repo/.github/workflows/quality.yml`).
 
-- `browserslist <=4.28.6` — [GHSA-c83g-rgw3-j3cx](https://github.com/advisories/GHSA-c83g-rgw3-j3cx)
-  (unbounded memory growth / eventual OOM) and
-  [GHSA-73wf-gq98-2v4g](https://github.com/advisories/GHSA-73wf-gq98-2v4g)
-  (crash / prototype write via untrusted `browserslist-stats.json`).
+The actual advisory is now fixed with `npm audit fix` (non-breaking, `package-lock.json` only —
+`package.json` ranges untouched):
 
-(Also present, below the `--audit-level=high` threshold so not currently blocking:
-`postcss-selector-parser` ReDoS, `react-router`/`react-router-dom` open-redirect + SSR
-deserialization issues, `@humanfs/node` symlink-follow — all moderate/low, all fixable the same
-way.)
+- `browserslist` `4.25.1` -> `4.28.9` — resolves
+  [GHSA-c83g-rgw3-j3cx](https://github.com/advisories/GHSA-c83g-rgw3-j3cx) (unbounded memory
+  growth) and [GHSA-73wf-gq98-2v4g](https://github.com/advisories/GHSA-73wf-gq98-2v4g)
+  (crash / prototype write via untrusted `browserslist-stats.json`). This was the high-severity
+  finding blocking `--audit-level=high`.
+- `postcss-selector-parser` `6.1.2` -> `6.1.4` — resolves
+  [GHSA-w9m9-85wc-3x92](https://github.com/advisories/GHSA-w9m9-85wc-3x92) (ReDoS via uncontrolled
+  AST recursion), low severity.
+- `@humanfs/node` `0.16.6` -> `0.16.8` — resolves
+  [GHSA-p498-v437-472g](https://github.com/advisories/GHSA-p498-v437-472g) (recursive copy follows
+  symlinks out of source tree), moderate severity, dev-only dependency.
 
-`npm audit fix` resolves it, but that bumps dependency versions — out of scope for this
-docs+CI-only github-ready pass (no code polish / no app changes, per
-`pg/github-ready.md` section C). Verified locally: lint, real `tsc -b`, and `npm run build` are
-all clean; only the audit step is red, and only because of this transitive advisory.
+**Verified locally after the fix:** `npm audit --audit-level=high` exit 0, `npm run lint` (0
+errors, 9 pre-existing `react-refresh/only-export-components` warnings — unchanged from before),
+`tsc -b` exit 0, `npm test -- --run` 1/1 passed, `npm run build` exit 0.
 
-**Removed** the "Dependency audit (high+)" step from `.github/workflows/quality.yml` rather than
-leaving it red or silencing it with `continue-on-error` (never do that — a suppressed failing
-step is worse than an honest missing one). No app code or dependency versions were touched.
+**Remaining, below the `--audit-level=high` threshold so not currently blocking CI — needs a
+human decision, left in place rather than silently fixed:**
 
-**Action for Kamil:** run `npm audit fix` (or bump `browserslist`/vite tooling directly) in a
-separate, dedicated PR across the fleet — this affects every repo built from this same
-`vite_react_shadcn_ts` Lovable scaffold, not just this one.
+- `react-router` `6.0.0 - 7.17.0` / `react-router-dom` (same range) — moderate,
+  [GHSA-wrjc-x8rr-h8h6](https://github.com/advisories/GHSA-wrjc-x8rr-h8h6) (open redirect) +
+  [GHSA-337j-9hxr-rhxg](https://github.com/advisories/GHSA-337j-9hxr-rhxg) (SSR hydration
+  constructor injection). Fix requires `npm audit fix --force`, which bumps `react-router-dom` to
+  `7.18.3` — a major-line jump outside the current `package.json` range, out of scope for this
+  patch/minor-only correction. **Action for Kamil:** decide whether to bump `react-router-dom`
+  across the fleet (same Lovable `vite_react_shadcn_ts` scaffold affects the other client repos
+  in this batch too) in a dedicated PR with a routing smoke-test pass.

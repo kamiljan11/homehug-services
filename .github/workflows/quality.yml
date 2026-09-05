@@ -45,6 +45,10 @@ jobs:
         if: hashFiles('package.json') != ''
         run: npm run test:coverage --if-present -- --run
 
+      - name: Dependency audit (high+)
+        if: hashFiles('package-lock.json') != ''
+        run: npm audit --audit-level=high
+
       - name: License check (copyleft blokuje sprzedaz)
         if: hashFiles('package-lock.json') != ''
         run: npx --yes license-checker-rseidelsohn --production --summary --failOn "GPL;AGPL;SSPL"
