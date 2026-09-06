@@ -29,7 +29,9 @@ jobs:
 
       - name: Typecheck
         if: hashFiles('tsconfig.json') != ''
-        run: npx tsc --noEmit
+        # Project references ("files": [] + "references", vite) => `tsc --noEmit` sprawdza NIC. Wtedy `tsc -b`.
+        run: |
+          if grep -q '"references"' tsconfig.json; then npx tsc -b; else npx tsc --noEmit; fi
 
       - name: Tests
         if: hashFiles('package.json') != ''
